@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "CRootLanguageData::MakeName(char const*, bool, bool, char const*):RootLanguageData.h">
+         <PersistentStrings>
+            <PersistentString
+               value = "sName">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "FindSrcItemAt:EditUtils.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[EditDictCtrller FindAttrsInScan:AndMarkInText:]:EditDictCtrller.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "MeanAttrs">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[WordData MeansString:ToType:]:DictCore.mm">
+         <PersistentStrings>
+            <PersistentString
+               value = "sMeans.Mid(i)">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "+[TrdProxis TrdWithDes:AndDes:]:TrdProxis.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[WordData DeleteMeansForType:]:DictCore.mm">
+      </ContextState>
+      <ContextState
+         contextName = "+[TrdProxis initTrdApi]:TrdProxis.m">
+      </ContextState>
+      <ContextState
+         contextName = "+[WordData WordDataWithIndex:]:DictCore.mm">
+      </ContextState>
+      <ContextState
+         contextName = "CSentenceDataObject::CSentenceDataObject(COracion*):SentenceDataObject.h">
+      </ContextState>
+      <ContextState
+         contextName = "WordDataFormated(CMFCString&amp;, CMFCString&amp;, signed char):DictCore.mm">
+      </ContextState>
+      <ContextState
+         contextName = "CDictData::ParseTxt(CMFCString const&amp;):DictData.cpp">
+      </ContextState>
+      <ContextState
+         contextName = "CParseText::GetTextOra(int&amp;):ParseText.cpp">
+         <PersistentStrings>
+            <PersistentString
+               value = "m_Txt[j]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[TrdCore TranslateFromParse:]:TrdCore.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "src2[18]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[Translate OnNextTrd:]:Translate.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[EditDictCtrller FillType:Code:Data:]:EditDictCtrller.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "nTipos">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[TrdProxis TranslateText:]:TrdProxis.m">
+      </ContextState>
+      <ContextState
+         contextName = "CDictData::IsCondition(CMFCString const&amp;, int&amp;):DictData.cpp">
+      </ContextState>
+      <ContextState
+         contextName = "CNodeAllocator::GetNewNode(CMFCObject*, CListNode*, signed char):ArrayUtil.h">
+         <PersistentStrings>
+            <PersistentString
+               value = "arrNodes">
+            </PersistentString>
+            <PersistentString
+               value = "iNodeCount">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "+[DictCore TypesStringFromIndex:]:DictCore.mm">
+      </ContextState>
+      <ContextState
+         contextName = "-[EditDictCtrller initWithWord:AtIndex:InWindow:]:EditDictCtrller.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "Means">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "CParseWordsInSentence::GetFormat():ParseWordsInSentence.h">
+         <PersistentStrings>
+            <PersistentString
+               value = "m_Format">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "CDictData::SetDat(CMFCString const&amp;, CMFCString const&amp;):DictData.cpp">
+         <PersistentStrings>
+            <PersistentString
+               value = "aData.Mid(i)">
+            </PersistentString>
+            <PersistentString
+               value = "aType">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "CSentenceDataObject::GetPtrSentence():SentenceDataObject.h">
+      </ContextState>
+      <ContextState
+         contextName = "CDictGen::Get(int, int):DictMain.cpp">
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>

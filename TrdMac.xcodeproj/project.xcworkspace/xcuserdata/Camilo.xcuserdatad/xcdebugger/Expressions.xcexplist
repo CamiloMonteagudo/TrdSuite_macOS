@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "CSentenceDataObject::GetPtrSentence():SentenceDataObject.h">
+      </ContextState>
+      <ContextState
+         contextName = "CTranslationUser::GetPtrSentence():TranslationProcess.h">
+      </ContextState>
+      <ContextState
+         contextName = "CIsInInterrogativeSentence::Test():IsInInterrogativeSentence.h">
+      </ContextState>
+      <ContextState
+         contextName = "CTranslation::ProcessStepArray():Translation.cpp">
+      </ContextState>
+      <ContextState
+         contextName = "CIsFirstLetterInFirstWordUpperCase::Test():IsFirstLetterInFirstWordUpperCase.h">
+      </ContextState>
+      <ContextState
+         contextName = "CStepInSentence::Process():StepInSentence.h">
+      </ContextState>
+      <ContextState
+         contextName = "-[TrdCore TranslateFromParse:]:TrdCore.m">
+      </ContextState>
+      <ContextState
+         contextName = "CScanWordsInDictionary::FindInDic(CWord*):ScanWordsInDictionary.h">
+      </ContextState>
+      <ContextState
+         contextName = "CFindWordSentenceInDict::Execute(CListNode*, CWord*):FindWordSentenceInDict.h">
+      </ContextState>
+      <ContextState
+         contextName = "CFindBracketPhraseInSentence::Execute(CListNode*, CWord*):FindPhrasesInSentence.cpp">
+         <PersistentStrings>
+            <PersistentString
+               value = "sNewPhrase">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>
