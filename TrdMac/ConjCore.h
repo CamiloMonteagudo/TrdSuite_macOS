@@ -124,6 +124,7 @@ class ReducData
 +(BOOL) IsVerb;
 +(BOOL) IsNowConjugate: (NSString *)sVerb Lang:(int) lng;
 +(BOOL) IsVerbWord:(NSString*) word InLang:(int) lng;
++(BOOL) IsLastConjOk;
 
 +(NSString*) GetInfinitive;
 

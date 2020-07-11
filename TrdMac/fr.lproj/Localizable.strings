@@ -1,40 +1,40 @@
 "UILang" = "3";
 
-"ConjViewWords"   = "Conjugaciones por palabras";
-"ConjViewModes"   = "Conjugaciones por modos";
-"ConjViewPersons" = "Conjugaciones por personas";
+"ConjViewWords"   = "Conjugaisons (par mot)";
+"ConjViewModes"   = "Conjugaisons (par mode)";
+"ConjViewPersons" = "Conjugaisons (par personne)";
 
 "AppTitle" = "Translator Suite";
-"NewDoc"   = "Documento Nuevo";
+"NewDoc"   = "Nouveau Document";
 
-"TextTrdNotSaved" = "El documento traducido no ha sido guardado, ¿Desea guardarlo?";
-"TextSrcNotSaved" = "El documento original no ha sido guardado, ¿Desea guardarlo?";
+"TextTrdNotSaved" = "Le document traduit ne pouvait pas etre traduit, Voulez-vous enregistrer les modifications";
+"TextSrcNotSaved" = "Le document traduit a été modifié.\n Voulez-vous enregistrer les modifications?";
 
-"Save"            = "Guardar";
-"DontSave"        = "No Guardar";
-"Cancel"          = "Cancelar";
-"WarningTitle"    = "Advertencia";
-"OK"              = "Aceptar";
+"Save"            = "Enregistrer";
+"DontSave"        = "Pas Enregistrer";
+"Cancel"          = "Annuler";
+"WarningTitle"    = "Avertissement";
+"OK"              = "Accepter";
 
-"SaveSourceTitle" = "Guardar el documento fuente";
-"SaveTrdTitle"    = "Guardar el documento traducido";
-"Source"          = "Fuente";
-"Translation"     = "Traducción";
+"SaveSourceTitle" = "Sauvegarder le document original";
+"SaveTrdTitle"    = "Sauvegarder le document traduit";
+"Source"          = "Original";
+"Translation"     = "Traduction";
 
-"NoSaveText"     = "El documento no pudo ser guardado";
-"NoLoadText"     = "El documento no pudo ser cargado";
-"NoRoot"         = "No hay raices";
+"NoSaveText"     = "Le document n'a pas été sauvegardé";
+"NoLoadText"     = "Le document n'a pas été chargé";
+"NoRoot"         = "Il n'y a pas racines";
 
-"SelSentence"    = "Seleccione una oración";
+"SelSentence"    = "Sélectionnez une phrase";
 
-"TrdAsTipo" = "Translations as:";
+"TrdAsTipo" = "Traduction en tant que: ";
 
-"mnuItemMasc" = "Masculine";
-"mnuItemFem"  = "Feminine";
-"mnuItemNtr"  = "Neuter";
+"mnuItemMasc" = "Masculin";
+"mnuItemFem"  = "Féminin";
+"mnuItemNtr"  = "Neutre";
 
-"mnuItemSng" = "Singular";
-"mnuItemPlr" = "Plurar";
+"mnuItemSng" = "Singulier";
+"mnuItemPlr" = "Pluriel";
 
-"DataFrmError" = "The format of '%@' is not correct";
-"Error"        = "Error";
+"DataFrmError" = "Le format des '%@' n'est pas correct";
+"Error"        = "Erreur";

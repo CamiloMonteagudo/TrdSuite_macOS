@@ -1,8 +1,8 @@
 "UILang" = "0";
 
-"ConjViewWords"   = "Conjugaciones por palabras";
-"ConjViewModes"   = "Conjugaciones por modos";
-"ConjViewPersons" = "Conjugaciones por personas";
+"ConjViewWords"   = "Conjugaciones (por palabra)";
+"ConjViewModes"   = "Conjugaciones (por modos)";
+"ConjViewPersons" = "Conjugaciones (por personas)";
 
 "AppTitle" = "Translator Suite";
 "NewDoc"   = "Documento Nuevo";
@@ -27,7 +27,7 @@
 
 "SelSentence"    = "Seleccione una oración";
 
-"TrdAsTipo" = "Tranducciones como:";
+"TrdAsTipo" = "Tranducciones como: ";
 
 "mnuItemMasc" = "Masculino";
 "mnuItemFem"  = "Femenino";

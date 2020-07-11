@@ -30,10 +30,12 @@
 @property (weak) IBOutlet NSTableView *ConjsList;
 @property (weak) IBOutlet NSTextField *lbConjMode;
 @property (weak) IBOutlet NSTextField *ConjHdr;
+@property (weak) IBOutlet NSButton *btnCnjFlag;
 
 - (IBAction)OnChangeVerb:(NSSearchField *)sender;
 - (IBAction)OnClickConj:(id)sender;
 - (IBAction)OnChangeMode:(id)sender;
+- (IBAction)OnChangeLang:(id)sender;
 
 @end
 
@@ -110,7 +112,17 @@
   CnjCells = nil;
   [_ConjsList reloadData];
   
-  [self UpdateConjugate];                         // Actualiza los datos de la conjución
+  if( [ConjCore IsLastConjOk] )                           // Si la última conjugación fue correcta
+    [self UpdateConjugate];                               // Actualiza los datos de la conjución
+  }
+
+//--------------------------------------------------------------------------------------------------------------------------------------------------------
+// Cambia el idioma de conjugación
+- (IBAction)OnChangeLang:(id)sender
+  {
+  _Trd = !_Trd;                                           // Intercambia idioma de conjugación
+  
+  [self ConjugateVerbAlways:NO];
   }
 
 //--------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -120,7 +132,11 @@
   int lng = (_Trd)? LGDes : LGSrc;
   
   if( [ConjCore nowLang] != lng )                           // Si cambio el idioma de conjugación
+    {
     [ConjCore LoadConjLang:lng];                            // Carga la conjugacion para el idiom actual
+    
+    _btnCnjFlag.title = LGFlag(lng);                        // Bandera para el idioma de conjugación
+    }
   
   NSString* sVerb = _sWord.stringValue;                     // Toma el contenido del editor
   
@@ -136,8 +152,8 @@
   {
   if( [ConjCore ConjVerb:sVerb] )                          // Si se puedo obtener las conjugaciones
     {
-    [self UpdateConjugate];                         // Actualiza los datos de la conjución
-//    [_LstConjs SelectConj:sVerb  ];                         // Selecciona las conjugaciones tecleadas
+    [self UpdateConjugate];                                // Actualiza los datos de la conjución
+//    [_LstConjs SelectConj:sVerb  ];                      // Selecciona las conjugaciones tecleadas
 //    
 //    _btnConj.hidden = TRUE;
 //    [_HdrConjs ShowDataVerb:IsVerb];

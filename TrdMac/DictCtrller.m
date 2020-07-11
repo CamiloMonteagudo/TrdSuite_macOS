@@ -191,7 +191,9 @@
 // Crea un menu con todas las raices disponibles
 - (void) CreateMenuRoots:(NSMutableArray*) roots
   {
-  if( roots.count == 0 )                                                // Si no hay ninguna raiz
+  NSInteger n = roots.count;                                            // Guarda cantidad de raices
+  
+  if( n == 0 )                                                          // Si no hay ninguna raiz
     [roots insertObject:NSLocalizedString(@"NoRoot", @"") atIndex:0];   // Adiciona un cartelito
   
   NSMenu* Mnu = [[NSMenu alloc] init];                                  // Crea el menu
@@ -202,7 +204,7 @@
     NSMenuItem* Item = [[NSMenuItem alloc] init ];                      // Crea un item de menu
     
     Item.title  = roots[i];                                             // Le pone la raiz en item del menu
-    Item.tag    = roots.count;                                          // Guarda la cantidad de raices
+    Item.tag    = n;                                                    // Guarda la cantidad de raices
     Item.target = self;                                                 // Pone objeto donde se atiende la accion
     Item.action = @selector(OnSelectRoot:);                             // Pone procedimiento para atender la accion
     

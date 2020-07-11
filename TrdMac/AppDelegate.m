@@ -408,8 +408,8 @@ NSDictionary* attrPurchaseItem = @{ NSForegroundColorAttributeName:col2, NSFontA
 
   NSAlert *alert = [[NSAlert alloc] init];
   
-  [alert addButtonWithTitle: NSLocalizedString(@"DontSave"    , @"")];
   [alert addButtonWithTitle: NSLocalizedString(@"Save"        , @"")];
+  [alert addButtonWithTitle: NSLocalizedString(@"DontSave"    , @"")];
   [alert addButtonWithTitle: NSLocalizedString(@"Cancel"      , @"")];
   [alert setMessageText:     NSLocalizedString(@"WarningTitle", @"")];
   [alert setInformativeText: NSLocalizedString(txt            , @"")];
@@ -420,14 +420,14 @@ NSDictionary* attrPurchaseItem = @{ NSForegroundColorAttributeName:col2, NSFontA
    {
    [alert.window orderOut:nil];
    
-   if( returnCode == NSAlertFirstButtonReturn )               // No guarda el texto
+   if( returnCode == NSAlertSecondButtonReturn )               // No guarda el texto
      {
      if( trd ) SaveTrd = FALSE;                               // Deciste de guardar el texto traducido
      else      SaveSrc = FALSE;                               // Deciste de guardar el texto fuente
      
      [self AfterOfSave];                                      // Termina el proceso de salva
      }
-   else if( returnCode == NSAlertSecondButtonReturn )         // Salva el texto
+   else if( returnCode == NSAlertFirstButtonReturn  )         // Salva el texto
      {
      [_TrdView SaveTextTrd: trd];                             // Manda a guardar el texto
      }

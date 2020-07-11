@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="10116"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner">
@@ -62,6 +63,7 @@
                 <outlet property="ConjHdr" destination="5m5-A3-rNY" id="06b-Ej-6Eu"/>
                 <outlet property="ConjsList" destination="dsx-0x-2Kw" id="P7r-z5-vuy"/>
                 <outlet property="btnChgMode" destination="R8j-HN-PSh" id="ADK-Xc-Ie0"/>
+                <outlet property="btnCnjFlag" destination="Bhb-ry-x30" id="eKi-a6-IcN"/>
                 <outlet property="btnConj" destination="Cws-96-eo1" id="u4q-hi-wEr"/>
                 <outlet property="lbConjMode" destination="7zi-sY-26k" id="6YJ-a8-dYZ"/>
                 <outlet property="sWord" destination="rCp-QG-3Ep" id="zg2-m1-3Z1"/>
@@ -784,42 +786,42 @@
         <window title="Translator Suite" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="QvC-M9-y7g">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="441" y="112" width="1024" height="642"/>
+            <rect key="contentRect" x="441" y="112" width="1280" height="695"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1057"/>
-            <value key="minSize" type="size" width="800" height="600"/>
+            <value key="minSize" type="size" width="1280" height="695"/>
             <view key="contentView" id="EiT-Mj-1SZ">
-                <rect key="frame" x="0.0" y="0.0" width="1024" height="642"/>
+                <rect key="frame" x="0.0" y="0.0" width="1280" height="695"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <splitView dividerStyle="thin" vertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lWM-Nh-5kq">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="642"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1280" height="695"/>
                         <subviews>
                             <customView id="mWr-el-jaw" userLabel="PanelTextos">
-                                <rect key="frame" x="0.0" y="0.0" width="710" height="642"/>
+                                <rect key="frame" x="0.0" y="0.0" width="966" height="695"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <subviews>
                                     <splitView dividerStyle="thin" translatesAutoresizingMaskIntoConstraints="NO" id="aMt-XX-x1q">
-                                        <rect key="frame" x="0.0" y="0.0" width="710" height="642"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="966" height="695"/>
                                         <subviews>
                                             <customView id="1bt-gn-tPl" userLabel="Texto Origen">
-                                                <rect key="frame" x="0.0" y="0.0" width="710" height="313"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="966" height="339"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <subviews>
                                                     <scrollView horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yo9-Ps-NQV" customClass="SyncScrollView">
-                                                        <rect key="frame" x="6" y="3" width="701" height="304"/>
+                                                        <rect key="frame" x="6" y="3" width="957" height="330"/>
                                                         <clipView key="contentView" id="3h4-cS-Whc">
-                                                            <rect key="frame" x="1" y="1" width="223" height="133"/>
+                                                            <rect key="frame" x="1" y="1" width="940" height="328"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
                                                                 <textView importsGraphics="NO" usesInspectorBar="YES" selectionGranularity="word" findStyle="bar" incrementalSearchingEnabled="YES" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" usesFontPanel="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" textReplacement="YES" spellingCorrection="YES" grammarChecking="YES" smartInsertDelete="YES" id="joe-30-2p8">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="223" height="379"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="940" height="328"/>
                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                                    <size key="minSize" width="684" height="302"/>
-                                                                    <size key="maxSize" width="701" height="10000000"/>
+                                                                    <size key="minSize" width="940" height="328"/>
+                                                                    <size key="maxSize" width="1100" height="10000000"/>
                                                                     <color key="insertionPointColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                                                    <size key="minSize" width="684" height="302"/>
-                                                                    <size key="maxSize" width="701" height="10000000"/>
+                                                                    <size key="minSize" width="940" height="328"/>
+                                                                    <size key="maxSize" width="1100" height="10000000"/>
                                                                 </textView>
                                                             </subviews>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -829,7 +831,7 @@
                                                             <autoresizingMask key="autoresizingMask"/>
                                                         </scroller>
                                                         <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="aoI-Tf-X28">
-                                                            <rect key="frame" x="685" y="1" width="15" height="302"/>
+                                                            <rect key="frame" x="941" y="1" width="15" height="328"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                         </scroller>
                                                     </scrollView>
@@ -842,24 +844,24 @@
                                                 </constraints>
                                             </customView>
                                             <customView id="US0-kQ-0y9" userLabel="Texto Traducido">
-                                                <rect key="frame" x="0.0" y="314" width="710" height="328"/>
+                                                <rect key="frame" x="0.0" y="340" width="966" height="355"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <subviews>
                                                     <scrollView horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dv6-pr-dVs" customClass="SyncScrollView">
-                                                        <rect key="frame" x="6" y="6" width="701" height="319"/>
+                                                        <rect key="frame" x="6" y="6" width="957" height="346"/>
                                                         <clipView key="contentView" id="VJU-zg-1Vb">
-                                                            <rect key="frame" x="1" y="1" width="223" height="133"/>
+                                                            <rect key="frame" x="1" y="1" width="940" height="344"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
                                                                 <textView importsGraphics="NO" usesInspectorBar="YES" selectionGranularity="word" findStyle="bar" incrementalSearchingEnabled="YES" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" usesFontPanel="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" textReplacement="YES" spellingCorrection="YES" grammarChecking="YES" smartInsertDelete="YES" id="xYR-ea-pUG">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="223" height="398"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="940" height="344"/>
                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                                    <size key="minSize" width="684" height="317"/>
-                                                                    <size key="maxSize" width="701" height="10000000"/>
+                                                                    <size key="minSize" width="940" height="344"/>
+                                                                    <size key="maxSize" width="1100" height="10000000"/>
                                                                     <color key="insertionPointColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                                                    <size key="minSize" width="684" height="317"/>
-                                                                    <size key="maxSize" width="701" height="10000000"/>
+                                                                    <size key="minSize" width="940" height="344"/>
+                                                                    <size key="maxSize" width="1100" height="10000000"/>
                                                                 </textView>
                                                             </subviews>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -869,7 +871,7 @@
                                                             <autoresizingMask key="autoresizingMask"/>
                                                         </scroller>
                                                         <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="PYO-kg-y8M">
-                                                            <rect key="frame" x="685" y="1" width="15" height="317"/>
+                                                            <rect key="frame" x="941" y="1" width="15" height="344"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                         </scroller>
                                                     </scrollView>
@@ -896,20 +898,20 @@
                                 </constraints>
                             </customView>
                             <customView id="CSJ-k6-KSh" userLabel="PanelTools">
-                                <rect key="frame" x="711" y="0.0" width="313" height="642"/>
+                                <rect key="frame" x="967" y="0.0" width="313" height="695"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <subviews>
                                     <tabView translatesAutoresizingMaskIntoConstraints="NO" id="67A-cb-4Yi">
-                                        <rect key="frame" x="-7" y="-10" width="327" height="654"/>
+                                        <rect key="frame" x="-7" y="-10" width="327" height="707"/>
                                         <font key="font" metaFont="system"/>
                                         <tabViewItems>
                                             <tabViewItem label="Dictionary" identifier="1" id="zDf-SQ-exi">
                                                 <view key="view" id="uu5-uL-Cru">
-                                                    <rect key="frame" x="10" y="33" width="307" height="608"/>
+                                                    <rect key="frame" x="10" y="33" width="307" height="661"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <subviews>
                                                         <customView translatesAutoresizingMaskIntoConstraints="NO" id="z0E-ze-uTV" userLabel="Bar Superior">
-                                                            <rect key="frame" x="2" y="572" width="301" height="36"/>
+                                                            <rect key="frame" x="2" y="625" width="301" height="36"/>
                                                             <subviews>
                                                                 <searchField wantsLayer="YES" verticalHuggingPriority="750" tag="100" translatesAutoresizingMaskIntoConstraints="NO" id="Ev6-4f-3Bf" userLabel="sWord">
                                                                     <rect key="frame" x="0.0" y="7" width="227" height="22"/>
@@ -982,7 +984,7 @@
                                                             </constraints>
                                                         </customView>
                                                         <scrollView horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" horizontalScrollElasticity="none" translatesAutoresizingMaskIntoConstraints="NO" id="vd7-zK-Zb6" userLabel="WordData">
-                                                            <rect key="frame" x="2" y="412" width="301" height="160"/>
+                                                            <rect key="frame" x="2" y="465" width="301" height="160"/>
                                                             <clipView key="contentView" id="XZ5-gK-kEn">
                                                                 <rect key="frame" x="1" y="1" width="223" height="133"/>
                                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1013,7 +1015,7 @@
                                                             </scroller>
                                                         </scrollView>
                                                         <customView translatesAutoresizingMaskIntoConstraints="NO" id="Qg9-pe-rO8" userLabel="Bar Intermedia">
-                                                            <rect key="frame" x="2" y="382" width="301" height="30"/>
+                                                            <rect key="frame" x="2" y="435" width="301" height="30"/>
                                                             <subviews>
                                                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" tag="101" translatesAutoresizingMaskIntoConstraints="NO" id="1kJ-w6-INr">
                                                                     <rect key="frame" x="-2" y="0.0" width="154" height="17"/>
@@ -1067,13 +1069,13 @@
                                                             </constraints>
                                                         </customView>
                                                         <scrollView autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" horizontalScrollElasticity="none" translatesAutoresizingMaskIntoConstraints="NO" id="GU3-NB-ECa" userLabel="Words List">
-                                                            <rect key="frame" x="2" y="2" width="301" height="380"/>
+                                                            <rect key="frame" x="2" y="2" width="301" height="433"/>
                                                             <clipView key="contentView" id="pay-9a-faF">
-                                                                <rect key="frame" x="1" y="1" width="299" height="363"/>
+                                                                <rect key="frame" x="1" y="1" width="299" height="431"/>
                                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                 <subviews>
                                                                     <tableView verticalHuggingPriority="750" tag="102" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" selectionHighlightStyle="sourceList" alternatingRowBackgroundColors="YES" columnReordering="NO" columnResizing="NO" multipleSelection="NO" autosaveColumns="NO" typeSelect="NO" rowSizeStyle="automatic" viewBased="YES" id="vDC-jd-oB5">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="299" height="0.0"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="299" height="431"/>
                                                                         <autoresizingMask key="autoresizingMask"/>
                                                                         <size key="intercellSpacing" width="3" height="2"/>
                                                                         <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -1130,7 +1132,7 @@
                                                             </scroller>
                                                         </scrollView>
                                                         <textField autoresizesSubviews="NO" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="juB-Y4-mFM" userLabel="FlagDes">
-                                                            <rect key="frame" x="259" y="417" width="25" height="20"/>
+                                                            <rect key="frame" x="259" y="470" width="25" height="20"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="21" id="AZu-k1-g2R"/>
                                                                 <constraint firstAttribute="height" constant="20" id="fr5-jT-gvQ"/>
@@ -1177,11 +1179,11 @@
                                             </tabViewItem>
                                             <tabViewItem label="Conjugations" identifier="2" id="gv4-rN-N7K">
                                                 <view key="view" id="o14-Mb-ngJ">
-                                                    <rect key="frame" x="10" y="33" width="307" height="608"/>
+                                                    <rect key="frame" x="10" y="33" width="307" height="661"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <subviews>
                                                         <searchField wantsLayer="YES" verticalHuggingPriority="750" tag="200" translatesAutoresizingMaskIntoConstraints="NO" id="rCp-QG-3Ep">
-                                                            <rect key="frame" x="2" y="580" width="265" height="22"/>
+                                                            <rect key="frame" x="2" y="633" width="265" height="22"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="22" id="KIe-IH-AYI"/>
                                                             </constraints>
@@ -1195,7 +1197,7 @@
                                                             </connections>
                                                         </searchField>
                                                         <button toolTip="Change the mode to group conjugations" tag="201" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="R8j-HN-PSh" userLabel="BtnModes">
-                                                            <rect key="frame" x="2" y="554" width="30" height="24"/>
+                                                            <rect key="frame" x="2" y="607" width="30" height="24"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="30" id="7Lx-oG-hgo"/>
                                                                 <constraint firstAttribute="height" constant="24" id="ZxZ-X4-hRH"/>
@@ -1209,13 +1211,13 @@
                                                             </connections>
                                                         </button>
                                                         <scrollView autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" horizontalScrollElasticity="none" translatesAutoresizingMaskIntoConstraints="NO" id="xjQ-hL-ZkN">
-                                                            <rect key="frame" x="2" y="2" width="301" height="487"/>
+                                                            <rect key="frame" x="2" y="2" width="301" height="540"/>
                                                             <clipView key="contentView" id="JLs-La-agY">
-                                                                <rect key="frame" x="1" y="1" width="299" height="485"/>
+                                                                <rect key="frame" x="1" y="1" width="299" height="538"/>
                                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                 <subviews>
                                                                     <tableView verticalHuggingPriority="750" tag="202" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" selectionHighlightStyle="none" alternatingRowBackgroundColors="YES" columnReordering="NO" columnResizing="NO" multipleSelection="NO" autosaveColumns="NO" typeSelect="NO" rowSizeStyle="automatic" viewBased="YES" id="dsx-0x-2Kw">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="299" height="0.0"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="299" height="538"/>
                                                                         <autoresizingMask key="autoresizingMask"/>
                                                                         <size key="intercellSpacing" width="3" height="2"/>
                                                                         <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -1278,7 +1280,7 @@
                                                             </scroller>
                                                         </scrollView>
                                                         <button toolTip="Search conjugations" tag="201" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Cws-96-eo1">
-                                                            <rect key="frame" x="273" y="579" width="30" height="24"/>
+                                                            <rect key="frame" x="273" y="632" width="30" height="24"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="30" id="G75-ZY-J1T"/>
                                                                 <constraint firstAttribute="height" constant="24" id="ww2-UM-NVh"/>
@@ -1291,19 +1293,8 @@
                                                                 <action selector="OnClickConj:" target="yUg-FD-lwV" id="esc-ym-MdU"/>
                                                             </connections>
                                                         </button>
-                                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="7zi-sY-26k">
-                                                            <rect key="frame" x="30" y="558" width="275" height="17"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="height" constant="17" id="Rpk-kW-POr"/>
-                                                            </constraints>
-                                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Conjugations (by word)" id="Ge2-aN-5xl">
-                                                                <font key="font" metaFont="system"/>
-                                                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                                            </textFieldCell>
-                                                        </textField>
                                                         <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="5m5-A3-rNY">
-                                                            <rect key="frame" x="2" y="489" width="301" height="65"/>
+                                                            <rect key="frame" x="2" y="542" width="301" height="65"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="65" id="5Vw-pZ-WEf"/>
                                                             </constraints>
@@ -1313,6 +1304,31 @@
                                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                             </textFieldCell>
                                                         </textField>
+                                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="7zi-sY-26k">
+                                                            <rect key="frame" x="30" y="611" width="275" height="17"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="17" id="Rpk-kW-POr"/>
+                                                            </constraints>
+                                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Conjugations (by word)" id="Ge2-aN-5xl">
+                                                                <font key="font" metaFont="system"/>
+                                                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                            </textFieldCell>
+                                                        </textField>
+                                                        <button toolTip="Search conjugations" tag="201" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Bhb-ry-x30" userLabel="BntCnjFlag">
+                                                            <rect key="frame" x="237" y="605" width="30" height="24"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="24" id="49A-S2-Qiu"/>
+                                                                <constraint firstAttribute="width" constant="30" id="mXI-HJ-EdV"/>
+                                                            </constraints>
+                                                            <buttonCell key="cell" type="bevel" title=" " bezelStyle="regularSquare" alignment="center" imageScaling="proportionallyDown" inset="2" id="PvY-hL-LzS">
+                                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                                <font key="font" metaFont="system" size="16"/>
+                                                            </buttonCell>
+                                                            <connections>
+                                                                <action selector="OnChangeLang:" target="yUg-FD-lwV" id="RhE-L7-1at"/>
+                                                            </connections>
+                                                        </button>
                                                     </subviews>
                                                     <constraints>
                                                         <constraint firstItem="5m5-A3-rNY" firstAttribute="leading" secondItem="o14-Mb-ngJ" secondAttribute="leading" constant="2" id="3b9-Dp-sb8"/>
@@ -1323,6 +1339,7 @@
                                                         <constraint firstItem="R8j-HN-PSh" firstAttribute="leading" secondItem="o14-Mb-ngJ" secondAttribute="leading" constant="2" id="NoB-gi-Piy"/>
                                                         <constraint firstAttribute="bottom" secondItem="xjQ-hL-ZkN" secondAttribute="bottom" constant="2" id="R84-F5-YW9"/>
                                                         <constraint firstItem="7zi-sY-26k" firstAttribute="bottom" secondItem="R8j-HN-PSh" secondAttribute="bottom" constant="-4" id="RiV-n1-gP3"/>
+                                                        <constraint firstAttribute="trailing" secondItem="Bhb-ry-x30" secondAttribute="trailing" constant="40" id="SdT-Af-WIb"/>
                                                         <constraint firstAttribute="trailing" secondItem="7zi-sY-26k" secondAttribute="trailing" constant="4" id="WNT-v5-ouJ"/>
                                                         <constraint firstItem="R8j-HN-PSh" firstAttribute="top" secondItem="rCp-QG-3Ep" secondAttribute="bottom" constant="2" id="aIw-eI-xmA"/>
                                                         <constraint firstItem="7zi-sY-26k" firstAttribute="leading" secondItem="R8j-HN-PSh" secondAttribute="trailing" id="bqv-wC-NVY"/>
@@ -1333,6 +1350,7 @@
                                                         <constraint firstItem="xjQ-hL-ZkN" firstAttribute="leading" secondItem="R8j-HN-PSh" secondAttribute="leading" id="nA5-EP-eqv"/>
                                                         <constraint firstAttribute="trailing" secondItem="5m5-A3-rNY" secondAttribute="trailing" constant="4" id="p9A-fg-Pcc"/>
                                                         <constraint firstItem="xjQ-hL-ZkN" firstAttribute="top" secondItem="5m5-A3-rNY" secondAttribute="bottom" id="tev-1n-B8D"/>
+                                                        <constraint firstItem="Bhb-ry-x30" firstAttribute="firstBaseline" secondItem="7zi-sY-26k" secondAttribute="firstBaseline" id="xzN-Ie-zYa"/>
                                                     </constraints>
                                                 </view>
                                             </tabViewItem>

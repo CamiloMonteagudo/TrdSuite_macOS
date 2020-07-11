@@ -52,6 +52,7 @@ static BOOL _IsVerb;
     {
     _CData.cLang = lng;                                                     // Inicializa datos de la palabra
     _CData.Ok    = FALSE;
+    _CData.Word  = "";
     
     switch( lng )                                                           // Obtiene conjugaciones de acuerdo al idioma
       {
@@ -67,11 +68,7 @@ static BOOL _IsVerb;
               _CData.Count = sizeof(ItConjData)/sizeof(cjData);             // Número de conjuaciones en italiano
               Strs = StrsIt;                                                // Cadenas de texto en italiano
               break;
-      case 3: _CData.Conjs = NULL;                                          // Datos del ALEMÁN (no se usa)
-              _CData.Count = 0;
-              Strs = StrsEn;
-              break;
-      case 4: _CData.Conjs = FrConjData;                                    // Datos de las conjugaciones en FRANCÉS
+      case 3: _CData.Conjs = FrConjData;                                    // Datos de las conjugaciones en FRANCÉS
               _CData.Count = sizeof(FrConjData)/sizeof(cjData);             // Número de conjugaciones en francés
               Strs = StrsFr;                                                // Cadenas de texto en francés
               break;
@@ -128,6 +125,13 @@ static CStringA* pNoumsAll[] = { pNoumPresnt, pNoumPass, pNoumFuture};
       }
     }
     
+  return _CData.Ok;
+  }
+
+//--------------------------------------------------------------------------------------------------------------------------------------------------------
+// Retorna si la útima conjugacion fue satisfactoria o no
++(BOOL) IsLastConjOk
+  {
   return _CData.Ok;
   }
 
@@ -897,6 +901,7 @@ static NSDictionary* attrErr = @{ NSFontAttributeName:fontConjBoldMid, NSForegro
 +(NSAttributedString*) GetConjHeaderInMode:(int) Mode
   {
   NSMutableAttributedString* Str = [[NSMutableAttributedString alloc] init];
+  if( _CData.Conjs==NULL ) return Str;
 
   for( int i=0; i<3; ++i )
     {
