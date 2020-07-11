@@ -15,8 +15,13 @@
 
 @property (weak,nonatomic) NSWindow *window;
 
+@property (nonatomic) BOOL SrcModify;
+@property (nonatomic) BOOL TrdModify;
+
+
 -(BOOL) OpenTextAtUrl:(NSURL*) url;
 -(void) NewText;
+-(void) SaveTextTrd:(BOOL) trd;
 
 @end
 //=========================================================================================================================================================

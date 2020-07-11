@@ -444,7 +444,7 @@ BOOL CRedWord::AdjRedCheck(CRWhData* hData, const CStringA& root, const CStringA
 	//char language[4];
 	//_itoa_s(hData->m_Idioma,language,4,10);
 
-	WORD genero,numero,grado,decl,artic;
+	WORD genero,numero,grado;
 	CStringA adjconc;
 
   for( grado=0; grado < 3; grado++ )

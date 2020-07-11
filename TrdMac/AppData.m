@@ -76,8 +76,8 @@ int iUser = 0;
 //NSString* sPack = @"All";
 //#endif
 
-//                                        EsEn, EsIt, EsFr, EnEs, EnIt, EnFr, ItEs, ItEn, ItFr, FrEs, FrEn, FrIt
-static BOOL _InstDir[DIRCount] = { 1,   1,  1,   1,  0,   0,   1,  0,   0,   1,   0,  0 };
+//                              EsEn, EsIt, EsFr, EnEs, EnIt, EnFr, ItEs, ItEn, ItFr, FrEs, FrEn, FrIt
+static BOOL _InstDir[DIRCount] = { 1,    1,    1,    1,    1,    1,    1,    1,    1,    1,    1,    1   };
 
 //=========================================================================================================================================================
 // Abreviatura de de los idiomas segun el codigo ISO

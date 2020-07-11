@@ -56,10 +56,6 @@
                                             {
                                             [self FindActualWord];
                                             }];
-  
-  
-  NSLog(@"Llamo DictCtrller->awakeFromNib");
-  
   }
 
 //--------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -160,21 +156,23 @@
     if( [DictCore Found] )                                                // Si esta en el diccionario
       [Roots insertObject:word atIndex:0];                                // La agrega como la primera raiz
     }
+
+  [self CreateMenuRoots:Roots];                                           // Crea un menu con las raices y lo muestra
   
-  int nRoots = (int)Roots.count;                                          // Obtiene la cantidad de raices
-  if( nRoots == 0 ) return;                                               // Si no hay niguna, no hace nada
+//  int nRoots = (int)Roots.count;                                          // Obtiene la cantidad de raices
+//  if( nRoots == 0 ) return;                                               // Si no hay niguna, no hace nada
   
-  _sWord.stringValue = Roots[0];
-  [self FindActualWord];
-  
-  if( nRoots > 1 )
-    {
-    NSLog(@"Palabra '%@' raices %d", word, nRoots );
-    
-    for(int i=0; i<nRoots; ++i )
-      NSLog(@"Raiz %d: %@", i, Roots[i] );
-    }
-  
+//  _sWord.stringValue = Roots[0];
+//  [self FindActualWord];
+//  
+//  if( nRoots > 1 )
+//    {
+//    NSLog(@"Palabra '%@' raices %d", word, nRoots );
+//    
+//    for(int i=0; i<nRoots; ++i )
+//      NSLog(@"Raiz %d: %@", i, Roots[i] );
+//    }
+//  
 //  _PanelSrc.Text = Roots[0];
 //  [self FindInDictWord];
 //  
@@ -188,6 +186,71 @@
 //  NextRoot = 1;
   
   }
+
+//--------------------------------------------------------------------------------------------------------------------------------------------------------
+// Crea un menu con todas las raices disponibles
+- (void) CreateMenuRoots:(NSMutableArray*) roots
+  {
+  BOOL word = TRUE;
+  if( roots.count == 0 )
+    {
+    word = FALSE;
+    [roots insertObject:NSLocalizedString(@"NoRoot", @"") atIndex:0];
+    }
+  
+  NSMenu* Mnu = [[NSMenu alloc] init];
+  
+  for( int i=0; i<roots.count; ++i )
+    {
+    NSMenuItem* Item = [[NSMenuItem alloc] init ];
+    
+    Item.title  = roots[i];
+    Item.tag    = word;
+    Item.target = self;
+    Item.action = @selector(OnSelectRoot:);
+    Item.state = NSOffState;
+    
+    [Mnu addItem:Item];
+    }
+  
+ // _btnWordRoots.menu = Mnu;
+  
+  [self ShowMenu:Mnu AtButton:_btnWordRoots];
+  }
+
+//--------------------------------------------------------------------------------------------------------------------------------------------------------
+// Muestra el menú 'Mnu' sobre el boton 'Bnt'
+- (void)ShowMenu:(NSMenu*) Mnu AtButton:(NSView*) Bnt
+  {
+  NSPopUpButtonCell* cel = [[NSPopUpButtonCell alloc] initTextCell:@"" pullsDown:NO];
+  cel.menu = Mnu;
+  
+  NSSize szBtn = Bnt.frame.size;
+//  NSRect rc = NSMakeRect(0, -Mnu.size.height, 0, 0);
+//  NSRect rc = NSMakeRect(-(Mnu.size.width-szBtn.width), Mnu.size.height+szBtn.height, Mnu.size.width, Mnu.size.height);
+  NSRect rc = NSMakeRect(szBtn.width-Mnu.size.width+10, szBtn.height, Mnu.size.width, Mnu.size.height);
+  
+  [cel performClickWithFrame:rc inView:Bnt];
+  }
+
+//--------------------------------------------------------------------------------------------------------------------------------------------------------
+// Se llama cuando se selecciona mostrar una raiz de una palabra
+- (void)OnSelectRoot:(id)sender
+  {
+  NSMenuItem* Item = sender;
+  
+  if( !Item.tag )
+    {
+    _btnWordRoots.hidden = TRUE;
+    }
+  else
+    {
+    _sWord.stringValue = Item.title;
+    [self FindActualWord];
+    }
+  }
+
+
 
 //--------------------------------------------------------------------------------------------------------------------------------------------------------
 // Se llama cuando se cambia una palabra mediante la edicción
@@ -250,6 +313,7 @@ static bool NoSelChange;
   NSString* sKey = [DictCore getWordAt:idx];
   
   _sWord.stringValue = sKey;
+  _btnWordRoots.hidden = true;
   
   [self UpdateWordDataAt:idx];                                      // Pone los datos de la palabra
   }

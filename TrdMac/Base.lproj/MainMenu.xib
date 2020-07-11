@@ -144,7 +144,7 @@
                             </menuItem>
                             <menuItem title="Save…" keyEquivalent="s" id="pxx-59-PXV">
                                 <connections>
-                                    <action selector="saveDocument:" target="-1" id="teZ-XB-qJY"/>
+                                    <action selector="OnSaveDocumet:" target="Pt1-Cc-qmC" id="QVH-Vh-e6S"/>
                                 </connections>
                             </menuItem>
                             <menuItem title="Save As…" keyEquivalent="S" id="Bw7-FT-i3A">
@@ -1000,11 +1000,11 @@
                                                         <scrollView autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" horizontalScrollElasticity="none" translatesAutoresizingMaskIntoConstraints="NO" id="GU3-NB-ECa" userLabel="Words List">
                                                             <rect key="frame" x="2" y="2" width="301" height="380"/>
                                                             <clipView key="contentView" id="pay-9a-faF">
-                                                                <rect key="frame" x="1" y="1" width="296" height="533"/>
+                                                                <rect key="frame" x="1" y="1" width="299" height="363"/>
                                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                 <subviews>
                                                                     <tableView verticalHuggingPriority="750" tag="102" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" selectionHighlightStyle="sourceList" alternatingRowBackgroundColors="YES" columnReordering="NO" columnResizing="NO" multipleSelection="NO" autosaveColumns="NO" typeSelect="NO" rowSizeStyle="automatic" viewBased="YES" id="vDC-jd-oB5">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="299" height="0.0"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="300" height="363"/>
                                                                         <autoresizingMask key="autoresizingMask"/>
                                                                         <size key="intercellSpacing" width="3" height="2"/>
                                                                         <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -1051,8 +1051,8 @@
                                                                 </subviews>
                                                                 <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                             </clipView>
-                                                            <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="LKy-w2-tX2">
-                                                                <rect key="frame" x="1" y="119" width="223" height="15"/>
+                                                            <scroller key="horizontalScroller" verticalHuggingPriority="750" doubleValue="0.5" horizontal="YES" id="LKy-w2-tX2">
+                                                                <rect key="frame" x="1" y="364" width="299" height="15"/>
                                                                 <autoresizingMask key="autoresizingMask"/>
                                                             </scroller>
                                                             <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="NO" id="xpB-0c-mFw">
@@ -1296,25 +1296,29 @@
             </view>
             <toolbar key="toolbar" implicitIdentifier="C9544B39-9FF8-4278-B0AA-8449F50EC2CE" autosavesConfiguration="NO" displayMode="iconAndLabel" sizeMode="regular" id="k9B-Z9-BcV">
                 <allowedToolbarItems>
-                    <toolbarItem implicitItemIdentifier="F2888295-C238-4294-BF77-57DCB50684B2" label="New" paletteLabel="New" tag="-1" image="NSNetwork" id="NPa-dD-g3j">
+                    <toolbarItem implicitItemIdentifier="F2888295-C238-4294-BF77-57DCB50684B2" label="New" paletteLabel="New" tag="-1" image="NewDoc" id="NPa-dD-g3j">
                         <connections>
                             <action selector="NewDocument:" target="Voe-Tx-rLC" id="bry-mj-hpa"/>
                         </connections>
                     </toolbarItem>
-                    <toolbarItem implicitItemIdentifier="BF99518A-DC51-49C8-9CC4-DFD2F276F514" label="Open" paletteLabel="Open" tag="-1" image="NSMultipleDocuments" id="sO0-jw-Izl">
+                    <toolbarItem implicitItemIdentifier="BF99518A-DC51-49C8-9CC4-DFD2F276F514" label="Open" paletteLabel="Open" tag="-1" image="OpenDoc" id="sO0-jw-Izl">
                         <connections>
                             <action selector="OpenFile:" target="Voe-Tx-rLC" id="Lz4-Zg-tDH"/>
                         </connections>
                     </toolbarItem>
-                    <toolbarItem implicitItemIdentifier="20CD2E99-14C6-453C-858F-3A894DD2F393" label="Save" paletteLabel="Save" tag="-1" image="NSFolderSmart" id="JTi-pl-9gU"/>
-                    <toolbarItem implicitItemIdentifier="EA64A1B3-04D2-455E-B4D2-84E78B23C5C2" label="Undo" paletteLabel="Undo" tag="-1" image="NSRefreshTemplate" id="8ID-E4-abP">
+                    <toolbarItem implicitItemIdentifier="20CD2E99-14C6-453C-858F-3A894DD2F393" label="Save" paletteLabel="Save" tag="-1" image="SaveDoc" id="JTi-pl-9gU">
+                        <connections>
+                            <action selector="OnSaveDocumet:" target="Pt1-Cc-qmC" id="hBx-10-xjx"/>
+                        </connections>
+                    </toolbarItem>
+                    <toolbarItem implicitItemIdentifier="EA64A1B3-04D2-455E-B4D2-84E78B23C5C2" label="Undo" paletteLabel="Undo" tag="-1" image="UnDo" id="8ID-E4-abP">
                         <connections>
                             <action selector="undo:" target="-1" id="82b-4q-XYa"/>
                         </connections>
                     </toolbarItem>
-                    <toolbarItem implicitItemIdentifier="62483445-BA33-4BAB-8B29-C8373A0B0F3E" label="redo" paletteLabel="redo" tag="-1" image="NSShareTemplate" id="mhp-dF-Ibb">
+                    <toolbarItem implicitItemIdentifier="62483445-BA33-4BAB-8B29-C8373A0B0F3E" label="Redo" paletteLabel="Redo" tag="-1" image="ReDo" id="mhp-dF-Ibb">
                         <connections>
-                            <action selector="open:" target="-1" id="3zh-7C-L5s"/>
+                            <action selector="redo:" target="-1" id="LKQ-w6-FK0"/>
                         </connections>
                     </toolbarItem>
                     <toolbarItem implicitItemIdentifier="4E112724-F651-47C5-8CE8-AE965C88D8BD" label="Idiomas" paletteLabel="Idiomas" id="7fQ-Vl-HtX">
@@ -1335,14 +1339,19 @@
                             </popUpButtonCell>
                         </popUpButton>
                     </toolbarItem>
-                    <toolbarItem implicitItemIdentifier="57642885-F9A4-423D-A750-7C0CF4FA625E" label="Traducir" paletteLabel="Traducir" tag="-1" image="NSPreferencesGeneral" id="LNb-UR-FrY">
+                    <toolbarItem implicitItemIdentifier="57642885-F9A4-423D-A750-7C0CF4FA625E" label="Traducir" paletteLabel="Traducir" tag="-1" image="TrdDoc" id="LNb-UR-FrY">
                         <connections>
                             <action selector="OnTranslate:" target="Pt1-Cc-qmC" id="fUG-xw-oEg"/>
                         </connections>
                     </toolbarItem>
+                    <toolbarItem implicitItemIdentifier="6D932FB9-BB2E-4368-8949-4BA52595DCCA" label="Sentece" paletteLabel="Oración" tag="-1" image="TrdOra" id="caW-ev-Gdq">
+                        <connections>
+                            <action selector="OnTranslate:" target="Pt1-Cc-qmC" id="QAM-jK-9Cj"/>
+                        </connections>
+                    </toolbarItem>
                     <toolbarItem implicitItemIdentifier="10BE3668-CC98-4971-9926-82CE85DDA990" label="Info" paletteLabel="Info" tag="-1" image="ShowInfo" id="Cg6-e1-HEM">
                         <connections>
-                            <action selector="OnNextTrd:" target="Pt1-Cc-qmC" id="3hh-mb-SVU"/>
+                            <action selector="TogleShowInfo:" target="Pt1-Cc-qmC" id="ORM-hW-IaN"/>
                         </connections>
                     </toolbarItem>
                     <toolbarItem implicitItemIdentifier="NSToolbarSpaceItem" id="T6l-2N-aNj"/>
@@ -1358,10 +1367,14 @@
                     <toolbarItem reference="T6l-2N-aNj"/>
                     <toolbarItem reference="7fQ-Vl-HtX"/>
                     <toolbarItem reference="LNb-UR-FrY"/>
-                    <toolbarItem reference="Cg6-e1-HEM"/>
+                    <toolbarItem reference="caW-ev-Gdq"/>
                     <toolbarItem reference="sm8-R0-FXf"/>
+                    <toolbarItem reference="Cg6-e1-HEM"/>
                 </defaultToolbarItems>
             </toolbar>
+            <connections>
+                <outlet property="delegate" destination="Voe-Tx-rLC" id="p98-fW-N81"/>
+            </connections>
             <point key="canvasLocation" x="557" y="-129"/>
         </window>
     </objects>
@@ -1371,14 +1384,15 @@
         <image name="Exchange" width="18" height="18"/>
         <image name="Find" width="18" height="18"/>
         <image name="ModeConj" width="18" height="18"/>
-        <image name="NSFolderSmart" width="32" height="32"/>
-        <image name="NSMultipleDocuments" width="32" height="32"/>
-        <image name="NSNetwork" width="32" height="32"/>
-        <image name="NSPreferencesGeneral" width="32" height="32"/>
-        <image name="NSRefreshTemplate" width="11" height="15"/>
-        <image name="NSShareTemplate" width="11" height="16"/>
+        <image name="NewDoc" width="32" height="32"/>
+        <image name="OpenDoc" width="32" height="32"/>
+        <image name="ReDo" width="32" height="32"/>
         <image name="SaveDict" width="18" height="18"/>
+        <image name="SaveDoc" width="32" height="32"/>
         <image name="ShowInfo" width="32" height="32"/>
+        <image name="TrdDoc" width="32" height="32"/>
+        <image name="TrdOra" width="32" height="32"/>
+        <image name="UnDo" width="32" height="32"/>
         <image name="WordRoots" width="18" height="18"/>
     </resources>
 </document>

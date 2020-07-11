@@ -10,6 +10,12 @@
 
 @interface AppDelegate : NSObject <NSApplicationDelegate>
 
+@property (copy,nonatomic) NSURL *FileUrl;
+
+- (void) AfterOfSave;
+
++ (void)ShowMsgText:(NSString*) txt InWindow:(NSWindow*) Wnd;
+
 @end
 //=========================================================================================================================================================
 

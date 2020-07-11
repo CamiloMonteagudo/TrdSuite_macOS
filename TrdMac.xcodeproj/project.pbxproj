@@ -10,6 +10,13 @@
 		9A0E76C91CF64ABC00BA9A0A /* ShowInfo.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A0E76C81CF64ABC00BA9A0A /* ShowInfo.png */; };
 		9A0E76CB1CF6515D00BA9A0A /* NoShowInfo.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A0E76CA1CF6515D00BA9A0A /* NoShowInfo.png */; };
 		9A11E6A41D1323C900A1E984 /* libPDFLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A11E6A31D1323C900A1E984 /* libPDFLibrary.a */; };
+		9A11EBDA1D15BEA500367A94 /* NewDoc.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A11EBD51D15BEA500367A94 /* NewDoc.png */; };
+		9A11EBDB1D15BEA500367A94 /* OpenDoc.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A11EBD61D15BEA500367A94 /* OpenDoc.png */; };
+		9A11EBDC1D15BEA500367A94 /* ReDo.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A11EBD71D15BEA500367A94 /* ReDo.png */; };
+		9A11EBDD1D15BEA500367A94 /* SaveDoc.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A11EBD81D15BEA500367A94 /* SaveDoc.png */; };
+		9A11EBDE1D15BEA500367A94 /* UnDo.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A11EBD91D15BEA500367A94 /* UnDo.png */; };
+		9A11EBE11D16340100367A94 /* TrdDoc.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A11EBDF1D16340100367A94 /* TrdDoc.png */; };
+		9A11EBE21D16340100367A94 /* TrdOra.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A11EBE01D16340100367A94 /* TrdOra.png */; };
 		9AA338821CDA53530079891B /* ConjCore.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9AA338811CDA53530079891B /* ConjCore.mm */; };
 		9AB06B491CEBC4FE00FE015F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9AB06B481CEBC4FE00FE015F /* Localizable.strings */; };
 		9AB91DD51CD417C10032159E /* prueba.png in Resources */ = {isa = PBXBuildFile; fileRef = 9AB91DD41CD417C10032159E /* prueba.png */; };
@@ -105,6 +112,13 @@
 		9A0E76CA1CF6515D00BA9A0A /* NoShowInfo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = NoShowInfo.png; path = Images/NoShowInfo.png; sourceTree = "<group>"; };
 		9A11E6A11D13239900A1E984 /* PDFLibrary */ = {isa = PBXFileReference; lastKnownFileType = folder; path = PDFLibrary; sourceTree = "<group>"; };
 		9A11E6A31D1323C900A1E984 /* libPDFLibrary.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libPDFLibrary.a; path = PDFLibrary/DerivedData/PDFLibrary/Build/Products/Release/libPDFLibrary.a; sourceTree = "<group>"; };
+		9A11EBD51D15BEA500367A94 /* NewDoc.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = NewDoc.png; path = Images/NewDoc.png; sourceTree = "<group>"; };
+		9A11EBD61D15BEA500367A94 /* OpenDoc.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = OpenDoc.png; path = Images/OpenDoc.png; sourceTree = "<group>"; };
+		9A11EBD71D15BEA500367A94 /* ReDo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ReDo.png; path = Images/ReDo.png; sourceTree = "<group>"; };
+		9A11EBD81D15BEA500367A94 /* SaveDoc.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = SaveDoc.png; path = Images/SaveDoc.png; sourceTree = "<group>"; };
+		9A11EBD91D15BEA500367A94 /* UnDo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = UnDo.png; path = Images/UnDo.png; sourceTree = "<group>"; };
+		9A11EBDF1D16340100367A94 /* TrdDoc.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = TrdDoc.png; path = Images/TrdDoc.png; sourceTree = "<group>"; };
+		9A11EBE01D16340100367A94 /* TrdOra.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = TrdOra.png; path = Images/TrdOra.png; sourceTree = "<group>"; };
 		9AA338801CDA53530079891B /* ConjCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConjCore.h; sourceTree = "<group>"; };
 		9AA338811CDA53530079891B /* ConjCore.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ConjCore.mm; sourceTree = "<group>"; };
 		9AB06B481CEBC4FE00FE015F /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
@@ -332,6 +346,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9A062E841D1D733A000347A1 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				9AA338801CDA53530079891B /* ConjCore.h */,
+				9AA338811CDA53530079891B /* ConjCore.mm */,
+				9BF03F671C810602005DB28F /* DictCore.h */,
+				9BF03F681C810602005DB28F /* DictCore.mm */,
+				9BE6E6F81C5EA3E400066756 /* TrdCore.h */,
+				9BE6E6F91C5EA3E400066756 /* TrdCore.m */,
+			);
+			name = Core;
+			sourceTree = "<group>";
+		};
+		9A062E851D1D73B5000347A1 /* Utiles */ = {
+			isa = PBXGroup;
+			children = (
+				9B8D842B1C92676B00DC2CB5 /* ParseMeans.h */,
+				9B8D842C1C92676B00DC2CB5 /* ParseMeans.m */,
+				9BEA83ED1C7B8046005FD583 /* EditUtils.h */,
+				9BEA83EE1C7B8046005FD583 /* EditUtils.m */,
+				9BE601351C6D20F1000DCE98 /* SyncScrollView.h */,
+				9BE601361C6D20F1000DCE98 /* SyncScrollView.m */,
+				9BD95E3E1C62E99400055E39 /* ParseText.h */,
+				9BD95E3F1C62E99400055E39 /* ParseText.m */,
+			);
+			name = Utiles;
+			sourceTree = "<group>";
+		};
 		9A11E69E1D13231400A1E984 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -344,6 +386,13 @@
 		9AB91DD31CD4179B0032159E /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				9A11EBDF1D16340100367A94 /* TrdDoc.png */,
+				9A11EBE01D16340100367A94 /* TrdOra.png */,
+				9A11EBD51D15BEA500367A94 /* NewDoc.png */,
+				9A11EBD61D15BEA500367A94 /* OpenDoc.png */,
+				9A11EBD71D15BEA500367A94 /* ReDo.png */,
+				9A11EBD81D15BEA500367A94 /* SaveDoc.png */,
+				9A11EBD91D15BEA500367A94 /* UnDo.png */,
 				9A0E76CA1CF6515D00BA9A0A /* NoShowInfo.png */,
 				9A0E76C81CF64ABC00BA9A0A /* ShowInfo.png */,
 				9ADAEAA51CEE67B300517980 /* Find.png */,
@@ -562,8 +611,8 @@
 		9BFEEB891C5C022200C59DEB = {
 			isa = PBXGroup;
 			children = (
-				9A11E69E1D13231400A1E984 /* Frameworks */,
 				9BFEEB941C5C022200C59DEB /* TrdMac */,
+				9A11E69E1D13231400A1E984 /* Frameworks */,
 				9BFEEB931C5C022200C59DEB /* Products */,
 			);
 			sourceTree = "<group>";
@@ -579,39 +628,15 @@
 		9BFEEB941C5C022200C59DEB /* TrdMac */ = {
 			isa = PBXGroup;
 			children = (
-				9AF917171CF7C8C500F82799 /* ProgressCtrller.h */,
-				9AF917181CF7C8C500F82799 /* ProgressCtrller.m */,
-				9AF917151CF7C63F00F82799 /* ProgressCtrller.xib */,
-				9AA338801CDA53530079891B /* ConjCore.h */,
-				9AA338811CDA53530079891B /* ConjCore.mm */,
-				9AB91DD31CD4179B0032159E /* Images */,
-				9BF03F671C810602005DB28F /* DictCore.h */,
-				9BF03F681C810602005DB28F /* DictCore.mm */,
 				9BD5B3071C7E869D003BC9CB /* AppData.h */,
 				9BD5B3081C7E869D003BC9CB /* AppData.m */,
-				9BE6E6211C5E92DE00066756 /* ApiTrd */,
-				9BE6E6851C5E92DF00066756 /* CommonSrc */,
-				9BE6E6A61C5E92DF00066756 /* Conj */,
-				9BE6E6B01C5E92DF00066756 /* Dict */,
-				9BE6E6BF1C5E92DF00066756 /* RedWord */,
-				9BE6E61F1C5E92B800066756 /* Dictionaries */,
 				9BFEEB971C5C022200C59DEB /* AppDelegate.h */,
 				9BFEEB981C5C022200C59DEB /* AppDelegate.m */,
-				9BFEEB9C1C5C022200C59DEB /* Images.xcassets */,
 				9BFEEB9E1C5C022200C59DEB /* MainMenu.xib */,
-				9BFEEB951C5C022200C59DEB /* Supporting Files */,
 				9B8DCCD31C5D8DA4001F0AF9 /* Translate.h */,
 				9B8DCCD41C5D8DA4001F0AF9 /* Translate.m */,
-				9BE6E6F81C5EA3E400066756 /* TrdCore.h */,
-				9BE6E6F91C5EA3E400066756 /* TrdCore.m */,
-				9BD95E3E1C62E99400055E39 /* ParseText.h */,
-				9BD95E3F1C62E99400055E39 /* ParseText.m */,
-				9BE601351C6D20F1000DCE98 /* SyncScrollView.h */,
-				9BE601361C6D20F1000DCE98 /* SyncScrollView.m */,
 				9B8BF3371C6E9E3800EF9AAE /* ToolsCrtller.h */,
 				9B8BF3381C6E9E3800EF9AAE /* ToolsCrtller.m */,
-				9BEA83ED1C7B8046005FD583 /* EditUtils.h */,
-				9BEA83EE1C7B8046005FD583 /* EditUtils.m */,
 				9BF03F5F1C80B1C9005DB28F /* DictCtrller.h */,
 				9BF03F601C80B1C9005DB28F /* DictCtrller.m */,
 				9BF03F621C80B22F005DB28F /* ConjCtrller.h */,
@@ -619,8 +644,20 @@
 				9BD25EAF1C83CB62008D2B27 /* EditDictCtrller.h */,
 				9BD25EB01C83CB62008D2B27 /* EditDictCtrller.m */,
 				9BD25EB11C83CB62008D2B27 /* EditDictCtrller.xib */,
-				9B8D842B1C92676B00DC2CB5 /* ParseMeans.h */,
-				9B8D842C1C92676B00DC2CB5 /* ParseMeans.m */,
+				9AF917171CF7C8C500F82799 /* ProgressCtrller.h */,
+				9AF917181CF7C8C500F82799 /* ProgressCtrller.m */,
+				9AF917151CF7C63F00F82799 /* ProgressCtrller.xib */,
+				9BFEEB9C1C5C022200C59DEB /* Images.xcassets */,
+				9AB91DD31CD4179B0032159E /* Images */,
+				9A062E851D1D73B5000347A1 /* Utiles */,
+				9A062E841D1D733A000347A1 /* Core */,
+				9BE6E6211C5E92DE00066756 /* ApiTrd */,
+				9BE6E6851C5E92DF00066756 /* CommonSrc */,
+				9BE6E6A61C5E92DF00066756 /* Conj */,
+				9BE6E6B01C5E92DF00066756 /* Dict */,
+				9BE6E6BF1C5E92DF00066756 /* RedWord */,
+				9BFEEB951C5C022200C59DEB /* Supporting Files */,
+				9BE6E61F1C5E92B800066756 /* Dictionaries */,
 			);
 			path = TrdMac;
 			sourceTree = "<group>";
@@ -696,11 +733,15 @@
 				9A0E76CB1CF6515D00BA9A0A /* NoShowInfo.png in Resources */,
 				9AB91DE71CD6C6680032159E /* Exchange.png in Resources */,
 				9AB91DDF1CD440440032159E /* AddTipo.png in Resources */,
+				9A11EBDE1D15BEA500367A94 /* UnDo.png in Resources */,
 				9BFEEB9D1C5C022200C59DEB /* Images.xcassets in Resources */,
 				9A0E76C91CF64ABC00BA9A0A /* ShowInfo.png in Resources */,
 				9BD25EB31C83CB62008D2B27 /* EditDictCtrller.xib in Resources */,
+				9A11EBDD1D15BEA500367A94 /* SaveDoc.png in Resources */,
 				9BE6E6E21C5E92DF00066756 /* ArrayUtil.inl in Resources */,
 				9AB91DE11CD440440032159E /* EditWord.png in Resources */,
+				9A11EBDC1D15BEA500367A94 /* ReDo.png in Resources */,
+				9A11EBE21D16340100367A94 /* TrdOra.png in Resources */,
 				9BE6E6C81C5E92DF00066756 /* CMDCOM.TOK in Resources */,
 				9ADAEAA71CEE67B300517980 /* Find.png in Resources */,
 				9AB06B491CEBC4FE00FE015F /* Localizable.strings in Resources */,
@@ -714,9 +755,12 @@
 				9BE6E6D51C5E92DF00066756 /* LENGDIC.TOK in Resources */,
 				9BFEEBA01C5C022200C59DEB /* MainMenu.xib in Resources */,
 				9AF917161CF7C63F00F82799 /* ProgressCtrller.xib in Resources */,
+				9A11EBDA1D15BEA500367A94 /* NewDoc.png in Resources */,
 				9AB91DE41CD440440032159E /* Number.png in Resources */,
 				9BE6E6201C5E92B800066756 /* Dictionaries in Resources */,
 				9AB91DE91CD6CB660032159E /* SaveDict.png in Resources */,
+				9A11EBE11D16340100367A94 /* TrdDoc.png in Resources */,
+				9A11EBDB1D15BEA500367A94 /* OpenDoc.png in Resources */,
 				9AB91DE21CD440440032159E /* Espec.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
