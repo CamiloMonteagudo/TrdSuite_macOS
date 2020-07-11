@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:TrdMac.xcodeproj">
+      location = "self:/Users/Camilo/Documents/Proyectos/TrdMac 20160703/Translator Suite.xcodeproj">
    </FileRef>
 </Workspace>

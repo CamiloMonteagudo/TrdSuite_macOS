@@ -15,66 +15,6 @@ int iUser = 0;
 
 //--------------------------------------------------------------------------------------------------------------------------------------------------------
 // Matrix de direcciones de traduccion instaladas
-//#ifdef TrdSuiteEn
-//static int _Inst[LGCount][LGCount] =
-//	{
-//  //      Es, En, It, Fr
-//  /*Es*/{ 0, 1, 0, 0 },
-//  /*En*/{ 1, 0, 1, 1 },
-//  /*It*/{ 0, 1, 0, 0 },
-//  /*Fr*/{ 0, 1, 0, 0 }
-//	};
-//
-//NSString* sPack = @"En";
-//#endif
-//#ifdef TrdSuiteEs
-//static int _Inst[LGCount][LGCount] =
-//	{
-//  //      Es, En, It, Fr
-//  /*Es*/{ 0, 1, 1, 1 },
-//  /*En*/{ 1, 0, 0, 0 },
-//  /*It*/{ 1, 0, 0, 0 },
-//  /*Fr*/{ 1, 0, 0, 0 }
-//	};
-//
-//NSString* sPack = @"Es";
-//#endif
-//#ifdef TrdSuiteIt
-//static int _Inst[LGCount][LGCount] =
-//	{
-//  //      Es, En, It, Fr
-//  /*Es*/{ 0, 0, 1, 0 },
-//  /*En*/{ 0, 0, 1, 0 },
-//  /*It*/{ 1, 1, 0, 1 },
-//  /*Fr*/{ 0, 0, 1, 0 }
-//	};
-//
-//NSString* sPack = @"It";
-//#endif
-//#ifdef TrdSuiteFr
-//static int _Inst[LGCount][LGCount] =
-//	{
-//  //      Es, En, It, Fr
-//  /*Es*/{ 0, 0, 0, 1 },
-//  /*En*/{ 0, 0, 0, 1 },
-//  /*It*/{ 0, 0, 0, 1 },
-//  /*Fr*/{ 1, 1, 1, 0 }
-//	};
-//
-//NSString* sPack = @"Fr";
-//#endif
-//#ifdef TrdSuiteAll
-//static int _Inst[LGCount][LGCount] =
-//	{
-//  //      Es, En, It, Fr
-//  /*Es*/{ 0, 1, 1, 1 },
-//  /*En*/{ 1, 0, 1, 1 },
-//  /*It*/{ 1, 1, 0, 1 },
-//  /*Fr*/{ 1, 1, 1, 0 }
-//	};
-//
-//NSString* sPack = @"All";
-//#endif
 
 //                              EsEn, EsIt, EsFr, EnEs, EnIt, EnFr, ItEs, ItEn, ItFr, FrEs, FrEn, FrIt
 static BOOL _InstDir[DIRCount] = { 1,    1,    1,    1,    1,    1,    1,    1,    1,    1,    1,    1   };

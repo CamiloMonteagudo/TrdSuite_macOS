@@ -1,0 +1,40 @@
+"UILang" = "0";
+
+"ConjViewWords"   = "Conjugaciones por palabras";
+"ConjViewModes"   = "Conjugaciones por modos";
+"ConjViewPersons" = "Conjugaciones por personas";
+
+"AppTitle" = "Translator Suite";
+"NewDoc"   = "Documento Nuevo";
+
+"TextTrdNotSaved" = "El documento traducido no ha sido guardado, ¿Desea guardarlo?";
+"TextSrcNotSaved" = "El documento original no ha sido guardado, ¿Desea guardarlo?";
+
+"Save"            = "Guardar";
+"DontSave"        = "No Guardar";
+"Cancel"          = "Cancelar";
+"WarningTitle"    = "Advertencia";
+"OK"              = "Aceptar";
+
+"SaveSourceTitle" = "Guardar el documento fuente";
+"SaveTrdTitle"    = "Guardar el documento traducido";
+"Source"          = "Fuente";
+"Translation"     = "Traducción";
+
+"NoSaveText"     = "El documento no pudo ser guardado";
+"NoLoadText"     = "El documento no pudo ser cargado";
+"NoRoot"         = "No hay raices";
+
+"SelSentence"    = "Seleccione una oración";
+
+"TrdAsTipo" = "Tranducciones como:";
+
+"mnuItemMasc" = "Masculino";
+"mnuItemFem"  = "Femenino";
+"mnuItemNtr"  = "Neutro";
+
+"mnuItemSng" = "Singular";
+"mnuItemPlr" = "Plurar";
+
+"DataFrmError" = "El formato de '%@' no es correcto";
+"Error"        = "Error";

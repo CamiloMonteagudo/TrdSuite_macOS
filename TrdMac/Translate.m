@@ -263,6 +263,9 @@
     return;
     }
   
+  _TextSrc.delegate = nil;                                                // Desabilita la atención de las vitas
+  _TextTrd.delegate = nil;
+  
   int           idx = LastOraMark;                                        // Obtiene el indice al la oracion actual
   ParseText* psMain = [ParseText GetMain];                                // Obtiene el parse principal
   ParseItem*   Item = psMain.Items[idx];                                  // Datos del item seleccionado
@@ -276,6 +279,9 @@
   ChangeItemWithParse(idx, psLast);
 
   [self SetMatchSentence: idx Scroll: edSrc? SCRLL_TRD : SCRLL_SRC ];
+  
+  _TextSrc.delegate = self;                                               // Abilita la atención de ambas vistas
+  _TextTrd.delegate = self;
   
   srcChanged = IsSrcChanged();                                            // Determina si queda algún texto cambiado
   }
@@ -600,6 +606,9 @@
     
     return _TrdModify;
     }
+  
+  if( theAction == @selector(OnTranslate:) )
+    return (_TextSrc.string.length > 0 );
   
   if( theAction == @selector(OnTrdSentece:) )
     return (LastOraMark != -1);

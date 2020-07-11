@@ -1,0 +1,117 @@
+
+/* Class = "NSButtonCell"; title = "Número"; ObjectID = "14l-9q-NyC"; */
+"14l-9q-NyC.title" = "Número";
+
+/* Class = "NSButtonCell"; title = "-"; ObjectID = "4pc-T4-Zah"; */
+"4pc-T4-Zah.title" = "-";
+
+/* Class = "NSButtonCell"; title = "Guardar"; ObjectID = "5V8-fy-L9Q"; */
+"5V8-fy-L9Q.title" = "Guardar";
+
+/* Class = "NSBox"; title = "Box"; ObjectID = "93o-TP-Kg3"; */
+"93o-TP-Kg3.title" = "Box";
+
+/* Class = "NSButtonCell"; title = "Genero"; ObjectID = "A4q-BH-pG4"; */
+"A4q-BH-pG4.title" = "Genero";
+
+/* Class = "NSButton"; ibShadowedToolTip = "Guarda los cambios a los significados de la palabra"; ObjectID = "AVo-J5-98Z"; */
+"AVo-J5-98Z.ibShadowedToolTip" = "Guarda los cambios en el significado de la palabra";
+
+/* Class = "NSBox"; title = "Box"; ObjectID = "Alr-qn-qVv"; */
+"Alr-qn-qVv.title" = "Box";
+
+/* Class = "NSTextFieldCell"; title = "Tradución como:"; ObjectID = "B7b-nF-uNG"; */
+"B7b-nF-uNG.title" = "Tradución como:";
+
+/* Class = "NSWindow"; title = "Window"; ObjectID = "F0z-JX-Cv5"; */
+"F0z-JX-Cv5.title" = "Window";
+
+/* Class = "NSButton"; ibShadowedToolTip = "Borra traduciones del tipo gramatical"; ObjectID = "FF4-a5-ZW5"; */
+"FF4-a5-ZW5.ibShadowedToolTip" = "Borra traduciones del tipo gramatical";
+
+/* Class = "NSBox"; title = "Box"; ObjectID = "G8U-uv-jHA"; */
+"G8U-uv-jHA.title" = "Box";
+
+/* Class = "NSButtonCell"; title = "-"; ObjectID = "J4Q-Q4-RoH"; */
+"J4Q-Q4-RoH.title" = "-";
+
+/* Class = "NSBox"; title = "Box"; ObjectID = "J7G-kr-rUR"; */
+"J7G-kr-rUR.title" = "Box";
+
+/* Class = "NSButtonCell"; title = "-"; ObjectID = "Lpx-YP-oGZ"; */
+"Lpx-YP-oGZ.title" = "-";
+
+/* Class = "NSTextFieldCell"; title = "Tradución como:"; ObjectID = "Qug-IO-JQw"; */
+"Qug-IO-JQw.title" = "Tradución como:";
+
+/* Class = "NSTextFieldCell"; title = "Tradución como:"; ObjectID = "SpR-tj-9io"; */
+"SpR-tj-9io.title" = "Tradución como:";
+
+/* Class = "NSTextFieldCell"; title = "Tradución como:"; ObjectID = "Sxl-Xb-wRB"; */
+"Sxl-Xb-wRB.title" = "Tradución como:";
+
+/* Class = "NSTextFieldCell"; placeholderString = "Escribir traduciones separadas por coma"; ObjectID = "WG8-gJ-syh"; */
+"WG8-gJ-syh.placeholderString" = "Escribir traduciones separadas por coma";
+
+/* Class = "NSButtonCell"; title = "-"; ObjectID = "X0d-BT-dwH"; */
+"X0d-BT-dwH.title" = "-";
+
+/* Class = "NSButton"; ibShadowedToolTip = "Borra traduciones del tipo gramatical"; ObjectID = "auA-Er-JCB"; */
+"auA-Er-JCB.ibShadowedToolTip" = "Borra traduciones del tipo gramatical";
+
+/* Class = "NSTextFieldCell"; placeholderString = "Escribir traduciones separadas por coma"; ObjectID = "bBR-3z-Zh1"; */
+"bBR-3z-Zh1.placeholderString" = "Escribir traduciones separadas por coma";
+
+/* Class = "NSTextFieldCell"; placeholderString = "Escribir traduciones separadas por coma"; ObjectID = "dfE-H2-QmL"; */
+"dfE-H2-QmL.placeholderString" = "Escribir traduciones separadas por coma";
+
+/* Class = "NSButton"; ibShadowedToolTip = "Borra traduciones del tipo gramatical"; ObjectID = "fKo-0O-e6X"; */
+"fKo-0O-e6X.ibShadowedToolTip" = "Borra traduciones del tipo gramatical";
+
+/* Class = "NSButton"; ibShadowedToolTip = "Adiciona traduciones para un tipo gramatical"; ObjectID = "fYG-dg-zsk"; */
+"fYG-dg-zsk.ibShadowedToolTip" = "Adicionar traducciones para un tipo gramatical";
+
+/* Class = "NSButtonCell"; title = "-"; ObjectID = "gdQ-y7-era"; */
+"gdQ-y7-era.title" = "-";
+
+/* Class = "NSTextFieldCell"; placeholderString = "Escribir traduciones separadas por coma"; ObjectID = "hO1-QS-d8O"; */
+"hO1-QS-d8O.placeholderString" = "Escribir traduciones separadas por coma";
+
+/* Class = "NSButton"; ibShadowedToolTip = "Borra traduciones del tipo gramatical"; ObjectID = "iSM-ZX-STc"; */
+"iSM-ZX-STc.ibShadowedToolTip" = "Borra traduciones del tipo gramatical";
+
+/* Class = "NSTextFieldCell"; title = "Tradución como:"; ObjectID = "j2f-Fa-2e9"; */
+"j2f-Fa-2e9.title" = "Tradución como:";
+
+/* Class = "NSButton"; ibShadowedToolTip = "Borra traduciones del tipo gramatical"; ObjectID = "jwf-LX-Tg2"; */
+"jwf-LX-Tg2.ibShadowedToolTip" = "Borra traduciones del tipo gramatical";
+
+/* Class = "NSButton"; ibShadowedToolTip = "Descarta todos los cambios realizados"; ObjectID = "mu0-fV-jlH"; */
+"mu0-fV-jlH.ibShadowedToolTip" = "Descartar todos los cambios realizados";
+
+/* Class = "NSButtonCell"; title = "Especialidad"; ObjectID = "n1V-0q-dxh"; */
+"n1V-0q-dxh.title" = "Especialidad";
+
+/* Class = "NSButton"; ibShadowedToolTip = "Especialidad del significado actual"; ObjectID = "oEd-TW-TnV"; */
+"oEd-TW-TnV.ibShadowedToolTip" = "Especialidad del significado actual";
+
+/* Class = "NSButtonCell"; title = "Descartar"; ObjectID = "q9z-pb-DoB"; */
+"q9z-pb-DoB.title" = "Descartar";
+
+/* Class = "NSTextFieldCell"; placeholderString = "Escribir traduciones separadas por coma"; ObjectID = "qom-DL-yjS"; */
+"qom-DL-yjS.placeholderString" = "Escribir traduciones separadas por coma";
+
+/* Class = "NSButton"; ibShadowedToolTip = "Genero del significado actual"; ObjectID = "rLk-6C-YFr"; */
+"rLk-6C-YFr.ibShadowedToolTip" = "Genero del significado actual";
+
+/* Class = "NSButton"; ibShadowedToolTip = "Número del significado actual"; ObjectID = "sAZ-II-oWB"; */
+"sAZ-II-oWB.ibShadowedToolTip" = "Número del significado actual";
+
+/* Class = "NSBox"; title = "Box"; ObjectID = "wDX-37-SGS"; */
+"wDX-37-SGS.title" = "Box";
+
+/* Class = "NSButtonCell"; title = "Adicionar"; ObjectID = "yXg-6U-wmq"; */
+"yXg-6U-wmq.title" = "Adicionar";
+
+/* Class = "NSBox"; title = "Box"; ObjectID = "zOh-Nb-xE4"; */
+"zOh-Nb-xE4.title" = "Box";

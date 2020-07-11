@@ -19,7 +19,9 @@
 		9A11EBE11D16340100367A94 /* TrdDoc.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A11EBDF1D16340100367A94 /* TrdDoc.png */; };
 		9A11EBE21D16340100367A94 /* TrdOra.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A11EBE01D16340100367A94 /* TrdOra.png */; };
 		9AA338821CDA53530079891B /* ConjCore.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9AA338811CDA53530079891B /* ConjCore.mm */; };
-		9AB06B491CEBC4FE00FE015F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9AB06B481CEBC4FE00FE015F /* Localizable.strings */; };
+		9AB821411D2D880600773BCF /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9AB821431D2D880600773BCF /* Localizable.strings */; };
+		9AB8214B1D2D8B1000773BCF /* ProgressCtrller.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9AB8214D1D2D8B1000773BCF /* ProgressCtrller.xib */; };
+		9AB821541D2D8C6C00773BCF /* EditDictCtrller.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9AB821561D2D8C6C00773BCF /* EditDictCtrller.xib */; };
 		9AB91DD51CD417C10032159E /* prueba.png in Resources */ = {isa = PBXBuildFile; fileRef = 9AB91DD41CD417C10032159E /* prueba.png */; };
 		9AB91DD71CD4234A0032159E /* Save.png in Resources */ = {isa = PBXBuildFile; fileRef = 9AB91DD61CD4234A0032159E /* Save.png */; };
 		9AB91DDF1CD440440032159E /* AddTipo.png in Resources */ = {isa = PBXBuildFile; fileRef = 9AB91DD81CD440440032159E /* AddTipo.png */; };
@@ -41,13 +43,11 @@
 		9ADA23981CD97EC00078A7CC /* WordRoots.png in Resources */ = {isa = PBXBuildFile; fileRef = 9ADA23971CD97EC00078A7CC /* WordRoots.png */; };
 		9ADAEAA71CEE67B300517980 /* Find.png in Resources */ = {isa = PBXBuildFile; fileRef = 9ADAEAA51CEE67B300517980 /* Find.png */; };
 		9ADAEAA81CEE67B300517980 /* ModeConj.png in Resources */ = {isa = PBXBuildFile; fileRef = 9ADAEAA61CEE67B300517980 /* ModeConj.png */; };
-		9AF917161CF7C63F00F82799 /* ProgressCtrller.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9AF917151CF7C63F00F82799 /* ProgressCtrller.xib */; };
 		9AF917191CF7C8C500F82799 /* ProgressCtrller.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AF917181CF7C8C500F82799 /* ProgressCtrller.m */; };
 		9B8BF3391C6E9E3800EF9AAE /* ToolsCrtller.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B8BF3381C6E9E3800EF9AAE /* ToolsCrtller.m */; };
 		9B8D842D1C92676B00DC2CB5 /* ParseMeans.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B8D842C1C92676B00DC2CB5 /* ParseMeans.m */; };
 		9B8DCCD51C5D8DA4001F0AF9 /* Translate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B8DCCD41C5D8DA4001F0AF9 /* Translate.m */; };
 		9BD25EB21C83CB62008D2B27 /* EditDictCtrller.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BD25EB01C83CB62008D2B27 /* EditDictCtrller.m */; };
-		9BD25EB31C83CB62008D2B27 /* EditDictCtrller.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9BD25EB11C83CB62008D2B27 /* EditDictCtrller.xib */; };
 		9BD5B3091C7E869D003BC9CB /* AppData.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BD5B3081C7E869D003BC9CB /* AppData.m */; };
 		9BD95E401C62E99400055E39 /* ParseText.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BD95E3F1C62E99400055E39 /* ParseText.m */; };
 		9BE601371C6D20F1000DCE98 /* SyncScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BE601361C6D20F1000DCE98 /* SyncScrollView.m */; };
@@ -118,6 +118,8 @@
 		9A062E861D1E027D000347A1 /* SaveDoc2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = SaveDoc2.png; path = Images/SaveDoc2.png; sourceTree = "<group>"; };
 		9A0E76C81CF64ABC00BA9A0A /* ShowInfo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ShowInfo.png; path = Images/ShowInfo.png; sourceTree = "<group>"; };
 		9A0E76CA1CF6515D00BA9A0A /* NoShowInfo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = NoShowInfo.png; path = Images/NoShowInfo.png; sourceTree = "<group>"; };
+		9A1007C61D31C405002137C1 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/MainMenu.strings; sourceTree = "<group>"; };
+		9A1007C81D31C409002137C1 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/MainMenu.strings; sourceTree = "<group>"; };
 		9A11E6A11D13239900A1E984 /* PDFLibrary */ = {isa = PBXFileReference; lastKnownFileType = folder; path = PDFLibrary; sourceTree = "<group>"; };
 		9A11E6A31D1323C900A1E984 /* libPDFLibrary.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libPDFLibrary.a; path = PDFLibrary/DerivedData/PDFLibrary/Build/Products/Release/libPDFLibrary.a; sourceTree = "<group>"; };
 		9A11EBD51D15BEA500367A94 /* NewDoc.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = NewDoc.png; path = Images/NewDoc.png; sourceTree = "<group>"; };
@@ -127,9 +129,21 @@
 		9A11EBD91D15BEA500367A94 /* UnDo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = UnDo.png; path = Images/UnDo.png; sourceTree = "<group>"; };
 		9A11EBDF1D16340100367A94 /* TrdDoc.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = TrdDoc.png; path = Images/TrdDoc.png; sourceTree = "<group>"; };
 		9A11EBE01D16340100367A94 /* TrdOra.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = TrdOra.png; path = Images/TrdOra.png; sourceTree = "<group>"; };
+		9A4DFAE21D30A236002F4370 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/MainMenu.strings; sourceTree = "<group>"; };
+		9A55D7161D41144E0010DC90 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/EditDictCtrller.strings; sourceTree = "<group>"; };
+		9A55D7181D4114510010DC90 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/EditDictCtrller.strings; sourceTree = "<group>"; };
+		9A55D71A1D4114530010DC90 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/EditDictCtrller.strings; sourceTree = "<group>"; };
 		9AA338801CDA53530079891B /* ConjCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConjCore.h; sourceTree = "<group>"; };
 		9AA338811CDA53530079891B /* ConjCore.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ConjCore.mm; sourceTree = "<group>"; };
-		9AB06B481CEBC4FE00FE015F /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		9AB821421D2D880600773BCF /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		9AB821451D2D88BB00773BCF /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
+		9AB821471D2D88D000773BCF /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Localizable.strings; sourceTree = "<group>"; };
+		9AB821491D2D88E500773BCF /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		9AB8214C1D2D8B1000773BCF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/ProgressCtrller.xib; sourceTree = "<group>"; };
+		9AB8214F1D2D8B1B00773BCF /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/ProgressCtrller.strings; sourceTree = "<group>"; };
+		9AB821511D2D8B1D00773BCF /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/ProgressCtrller.strings; sourceTree = "<group>"; };
+		9AB821531D2D8B1F00773BCF /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/ProgressCtrller.strings; sourceTree = "<group>"; };
+		9AB821551D2D8C6C00773BCF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/EditDictCtrller.xib; sourceTree = "<group>"; };
 		9AB91DD41CD417C10032159E /* prueba.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = prueba.png; path = Images/prueba.png; sourceTree = "<group>"; };
 		9AB91DD61CD4234A0032159E /* Save.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Save.png; path = Images/Save.png; sourceTree = "<group>"; };
 		9AB91DD81CD440440032159E /* AddTipo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = AddTipo.png; path = Images/AddTipo.png; sourceTree = "<group>"; };
@@ -151,7 +165,6 @@
 		9ADA23971CD97EC00078A7CC /* WordRoots.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = WordRoots.png; path = Images/WordRoots.png; sourceTree = "<group>"; };
 		9ADAEAA51CEE67B300517980 /* Find.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Find.png; path = Images/Find.png; sourceTree = "<group>"; };
 		9ADAEAA61CEE67B300517980 /* ModeConj.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ModeConj.png; path = Images/ModeConj.png; sourceTree = "<group>"; };
-		9AF917151CF7C63F00F82799 /* ProgressCtrller.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProgressCtrller.xib; sourceTree = "<group>"; };
 		9AF917171CF7C8C500F82799 /* ProgressCtrller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressCtrller.h; sourceTree = "<group>"; };
 		9AF917181CF7C8C500F82799 /* ProgressCtrller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgressCtrller.m; sourceTree = "<group>"; };
 		9B8BF3371C6E9E3800EF9AAE /* ToolsCrtller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToolsCrtller.h; sourceTree = "<group>"; };
@@ -162,7 +175,6 @@
 		9B8DCCD41C5D8DA4001F0AF9 /* Translate.m */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = Translate.m; sourceTree = "<group>"; };
 		9BD25EAF1C83CB62008D2B27 /* EditDictCtrller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditDictCtrller.h; sourceTree = "<group>"; };
 		9BD25EB01C83CB62008D2B27 /* EditDictCtrller.m */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = EditDictCtrller.m; sourceTree = "<group>"; };
-		9BD25EB11C83CB62008D2B27 /* EditDictCtrller.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EditDictCtrller.xib; sourceTree = "<group>"; };
 		9BD5B3071C7E869D003BC9CB /* AppData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppData.h; sourceTree = "<group>"; };
 		9BD5B3081C7E869D003BC9CB /* AppData.m */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = AppData.m; sourceTree = "<group>"; };
 		9BD95E3E1C62E99400055E39 /* ParseText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParseText.h; sourceTree = "<group>"; };
@@ -339,7 +351,7 @@
 		9BF03F631C80B22F005DB28F /* ConjCtrller.m */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = ConjCtrller.m; sourceTree = "<group>"; };
 		9BF03F671C810602005DB28F /* DictCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DictCore.h; sourceTree = "<group>"; };
 		9BF03F681C810602005DB28F /* DictCore.mm */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = DictCore.mm; sourceTree = "<group>"; };
-		9BFEEB921C5C022200C59DEB /* TrdMac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrdMac.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9BFEEB921C5C022200C59DEB /* Translator Suite.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Translator Suite.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BFEEB961C5C022200C59DEB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9BFEEB971C5C022200C59DEB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		9BFEEB981C5C022200C59DEB /* AppDelegate.m */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -641,7 +653,7 @@
 		9BFEEB931C5C022200C59DEB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				9BFEEB921C5C022200C59DEB /* TrdMac.app */,
+				9BFEEB921C5C022200C59DEB /* Translator Suite.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -664,10 +676,10 @@
 				9BF03F631C80B22F005DB28F /* ConjCtrller.m */,
 				9BD25EAF1C83CB62008D2B27 /* EditDictCtrller.h */,
 				9BD25EB01C83CB62008D2B27 /* EditDictCtrller.m */,
-				9BD25EB11C83CB62008D2B27 /* EditDictCtrller.xib */,
+				9AB821561D2D8C6C00773BCF /* EditDictCtrller.xib */,
 				9AF917171CF7C8C500F82799 /* ProgressCtrller.h */,
 				9AF917181CF7C8C500F82799 /* ProgressCtrller.m */,
-				9AF917151CF7C63F00F82799 /* ProgressCtrller.xib */,
+				9AB8214D1D2D8B1000773BCF /* ProgressCtrller.xib */,
 				9BFEEB9C1C5C022200C59DEB /* Images.xcassets */,
 				9AB91DD31CD4179B0032159E /* Images */,
 				9A062E851D1D73B5000347A1 /* Utiles */,
@@ -688,7 +700,7 @@
 			children = (
 				9BFEEB961C5C022200C59DEB /* Info.plist */,
 				9BFEEB9A1C5C022200C59DEB /* main.m */,
-				9AB06B481CEBC4FE00FE015F /* Localizable.strings */,
+				9AB821431D2D880600773BCF /* Localizable.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -696,9 +708,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		9BFEEB911C5C022200C59DEB /* TrdMac */ = {
+		9BFEEB911C5C022200C59DEB /* Translator Suite */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9BFEEBAF1C5C022200C59DEB /* Build configuration list for PBXNativeTarget "TrdMac" */;
+			buildConfigurationList = 9BFEEBAF1C5C022200C59DEB /* Build configuration list for PBXNativeTarget "Translator Suite" */;
 			buildPhases = (
 				9BFEEB8E1C5C022200C59DEB /* Sources */,
 				9BFEEB8F1C5C022200C59DEB /* Frameworks */,
@@ -708,9 +720,9 @@
 			);
 			dependencies = (
 			);
-			name = TrdMac;
+			name = "Translator Suite";
 			productName = TrdMac;
-			productReference = 9BFEEB921C5C022200C59DEB /* TrdMac.app */;
+			productReference = 9BFEEB921C5C022200C59DEB /* Translator Suite.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -727,20 +739,23 @@
 					};
 				};
 			};
-			buildConfigurationList = 9BFEEB8D1C5C022200C59DEB /* Build configuration list for PBXProject "TrdMac" */;
+			buildConfigurationList = 9BFEEB8D1C5C022200C59DEB /* Build configuration list for PBXProject "Translator Suite" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
+				es,
+				it,
+				fr,
 			);
 			mainGroup = 9BFEEB891C5C022200C59DEB;
 			productRefGroup = 9BFEEB931C5C022200C59DEB /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				9BFEEB911C5C022200C59DEB /* TrdMac */,
+				9BFEEB911C5C022200C59DEB /* Translator Suite */,
 			);
 		};
 /* End PBXProject section */
@@ -759,7 +774,7 @@
 				9BFEEB9D1C5C022200C59DEB /* Images.xcassets in Resources */,
 				9A0E76C91CF64ABC00BA9A0A /* ShowInfo.png in Resources */,
 				9ABB03D21D1F2CAF005C74E6 /* SrcShow.png in Resources */,
-				9BD25EB31C83CB62008D2B27 /* EditDictCtrller.xib in Resources */,
+				9AB821541D2D8C6C00773BCF /* EditDictCtrller.xib in Resources */,
 				9ABB03D51D1F2CAF005C74E6 /* TrdHide.png in Resources */,
 				9A11EBDD1D15BEA500367A94 /* SaveDoc.png in Resources */,
 				9BE6E6E21C5E92DF00066756 /* ArrayUtil.inl in Resources */,
@@ -768,7 +783,7 @@
 				9A11EBE21D16340100367A94 /* TrdOra.png in Resources */,
 				9BE6E6C81C5E92DF00066756 /* CMDCOM.TOK in Resources */,
 				9ADAEAA71CEE67B300517980 /* Find.png in Resources */,
-				9AB06B491CEBC4FE00FE015F /* Localizable.strings in Resources */,
+				9AB821411D2D880600773BCF /* Localizable.strings in Resources */,
 				9AB91DE31CD440440032159E /* Gener.png in Resources */,
 				9AB91DD51CD417C10032159E /* prueba.png in Resources */,
 				9A062E871D1E027D000347A1 /* SaveDoc2.png in Resources */,
@@ -779,7 +794,7 @@
 				9AB91DE01CD440440032159E /* Close.png in Resources */,
 				9BE6E6D51C5E92DF00066756 /* LENGDIC.TOK in Resources */,
 				9BFEEBA01C5C022200C59DEB /* MainMenu.xib in Resources */,
-				9AF917161CF7C63F00F82799 /* ProgressCtrller.xib in Resources */,
+				9AB8214B1D2D8B1000773BCF /* ProgressCtrller.xib in Resources */,
 				9A11EBDA1D15BEA500367A94 /* NewDoc.png in Resources */,
 				9ABB03D11D1F2CAF005C74E6 /* SrcHide.png in Resources */,
 				9AB91DE41CD440440032159E /* Number.png in Resources */,
@@ -870,10 +885,46 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		9AB821431D2D880600773BCF /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9AB821421D2D880600773BCF /* Base */,
+				9AB821451D2D88BB00773BCF /* es */,
+				9AB821471D2D88D000773BCF /* it */,
+				9AB821491D2D88E500773BCF /* fr */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		9AB8214D1D2D8B1000773BCF /* ProgressCtrller.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9AB8214C1D2D8B1000773BCF /* Base */,
+				9AB8214F1D2D8B1B00773BCF /* es */,
+				9AB821511D2D8B1D00773BCF /* it */,
+				9AB821531D2D8B1F00773BCF /* fr */,
+			);
+			name = ProgressCtrller.xib;
+			sourceTree = "<group>";
+		};
+		9AB821561D2D8C6C00773BCF /* EditDictCtrller.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9AB821551D2D8C6C00773BCF /* Base */,
+				9A55D7161D41144E0010DC90 /* es */,
+				9A55D7181D4114510010DC90 /* it */,
+				9A55D71A1D4114530010DC90 /* fr */,
+			);
+			name = EditDictCtrller.xib;
+			sourceTree = "<group>";
+		};
 		9BFEEB9E1C5C022200C59DEB /* MainMenu.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
 				9BFEEB9F1C5C022200C59DEB /* Base */,
+				9A4DFAE21D30A236002F4370 /* es */,
+				9A1007C61D31C405002137C1 /* it */,
+				9A1007C81D31C409002137C1 /* fr */,
 			);
 			name = MainMenu.xib;
 			sourceTree = "<group>";
@@ -971,7 +1022,8 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/PDFLibrary/DerivedData/PDFLibrary/Build/Products/Release",
 				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bigxsoft.MacAll;
+				PRODUCT_NAME = "Translator Suite";
 				SDKROOT = macosx;
 				USER_HEADER_SEARCH_PATHS = ../PDFLibrary;
 			};
@@ -989,7 +1041,8 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/PDFLibrary/DerivedData/PDFLibrary/Build/Products/Release",
 				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bigxsoft.MacAll;
+				PRODUCT_NAME = "Translator Suite";
 				SDKROOT = macosx;
 				USER_HEADER_SEARCH_PATHS = ../PDFLibrary;
 			};
@@ -998,7 +1051,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		9BFEEB8D1C5C022200C59DEB /* Build configuration list for PBXProject "TrdMac" */ = {
+		9BFEEB8D1C5C022200C59DEB /* Build configuration list for PBXProject "Translator Suite" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9BFEEBAD1C5C022200C59DEB /* Debug */,
@@ -1007,7 +1060,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9BFEEBAF1C5C022200C59DEB /* Build configuration list for PBXNativeTarget "TrdMac" */ = {
+		9BFEEBAF1C5C022200C59DEB /* Build configuration list for PBXNativeTarget "Translator Suite" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9BFEEBB01C5C022200C59DEB /* Debug */,

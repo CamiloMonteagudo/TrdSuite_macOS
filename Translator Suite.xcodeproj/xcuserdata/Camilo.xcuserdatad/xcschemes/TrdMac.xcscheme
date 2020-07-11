@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "9BFEEB911C5C022200C59DEB"
-               BuildableName = "TrdMac.app"
-               BlueprintName = "TrdMac"
-               ReferencedContainer = "container:TrdMac.xcodeproj">
+               BuildableName = "Translator Suite.app"
+               BlueprintName = "Translator Suite"
+               ReferencedContainer = "container:Translator Suite.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "9BFEEB911C5C022200C59DEB"
-            BuildableName = "TrdMac.app"
-            BlueprintName = "TrdMac"
-            ReferencedContainer = "container:TrdMac.xcodeproj">
+            BuildableName = "Translator Suite.app"
+            BlueprintName = "Translator Suite"
+            ReferencedContainer = "container:Translator Suite.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -50,15 +50,16 @@
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
-      allowLocationSimulation = "YES">
+      allowLocationSimulation = "YES"
+      language = "es">
       <BuildableProductRunnable
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "9BFEEB911C5C022200C59DEB"
-            BuildableName = "TrdMac.app"
-            BlueprintName = "TrdMac"
-            ReferencedContainer = "container:TrdMac.xcodeproj">
+            BuildableName = "Translator Suite.app"
+            BlueprintName = "Translator Suite"
+            ReferencedContainer = "container:Translator Suite.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -75,9 +76,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "9BFEEB911C5C022200C59DEB"
-            BuildableName = "TrdMac.app"
-            BlueprintName = "TrdMac"
-            ReferencedContainer = "container:TrdMac.xcodeproj">
+            BuildableName = "Translator Suite.app"
+            BlueprintName = "Translator Suite"
+            ReferencedContainer = "container:Translator Suite.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

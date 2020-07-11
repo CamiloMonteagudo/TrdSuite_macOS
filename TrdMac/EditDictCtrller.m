@@ -9,6 +9,7 @@
 #import "EditDictCtrller.h"
 #import "DictCore.h"
 #import "ParseMeans.h"
+#import "AppData.h"
 
 //=========================================================================================================================================================
 @interface EditDictCtrller ()
@@ -63,11 +64,23 @@
 
 @end
 
-NSArray* TypesTitle = @[@"",@"Sustantivo", @"Adjetivo", @"Nombre Propio", @"Adverbio", @"Verbo Transitivo", @"Verbo Intransitivo", @"Verbo Reflexivo", @"Verbo Auxiliar", @"Preposición", @"Participio Transitivo", @"Participio Intransitivo", @"Gerundio Transitivo", @"Gerundio Intransitivo", @"Conjunción", @"Interjección", @"Adjetivo Estático"];
-NSArray* TypesAbrev = @[@"",@"SS"        , @"AA"      , @"NP"           , @"DD"      , @"VT"              , @"VI"                , @"VR"             , @"VA"            , @"PP"         , @"PT"                   , @"PI"                     , @"GT"                 , @"GI"                   , @"CC"        , @"JJ"          , @"AI"               ];
+NSArray* TypesAbrev   = @[@"",@"SS"        , @"AA"       , @"NP"           , @"DD"      , @"VT"              , @"VI"                , @"VR"              , @"VA"              , @"PP"          , @"PT"                   , @"PI"                     , @"GT"                         , @"GI"                           , @"CC"          , @"JJ"          , @"AI"                                 ];
+NSArray* TypesTitleEn = @[@"",@"Noun"      , @"Adjective", @"Proper noun"  , @"Adverb"  , @"Transitive Verb" , @"Intransitive Verb" , @"Reflexive Verb"  , @"Auxiliary Verb"  , @"Preposition" , @"Transitive Participle", @"Intransitive Participle", @"Transitive Gerund"          , @"Intransitive Gerund"          , @"Conjunction" , @"Interjection", @"Static adjective"                   ];
+NSArray* TypesTitleEs = @[@"",@"Sustantivo", @"Adjetivo" , @"Nombre Propio", @"Adverbio", @"Verbo Transitivo", @"Verbo Intransitivo", @"Verbo Reflexivo" , @"Verbo Auxiliar"  , @"Preposición" , @"Participio Transitivo", @"Participio Intransitivo", @"Gerundio Transitivo"        , @"Gerundio Intransitivo"        , @"Conjunción"  , @"Interjección", @"Adjetivo Estático"                  ];
+NSArray* TypesTitleIt = @[@"",@"Sostantivo", @"Aggettivo", @"Nome Proprio" , @"Avverbio", @"Verbo Transitivo", @"Verbo Intransitivo", @"Verbo Riflessivo", @"Verbo Ausiliare" , @"Preposizione", @"Participio Transitivo", @"Participio Intransitivo", @"Gerundio Transitivo"        , @"Gerundio Intransitivo"        , @"Congiunzione", @"Interiezione", @"Aggettivo con posizione invariabile"];
+NSArray* TypesTitleFr = @[@"",@"Substantif", @"Adjectif" , @"Nom Propre"   , @"Adverbe" , @"Verbe Transitif" , @"Verbe Intransitif" , @"Verbe Réfléchi"  , @"Verbe Auxiliaire", @"Préposition" , @"Participe Transitif"  , @"Participe Intransitif"  , @"Participe Présent Transitif", @"Participe Présent Intransitif", @"Conjonction" , @"Interjection", @"Adjectif Fixe"                      ];
 
-NSArray* EspTitle = @[@"",@"General", @"Aeronáutica", @"Agricultura", @"Anatomía", @"Arquitectura", @"Arte", @"Automovilismo", @"Biología", @"Biotecnología", @"Botánica", @"Cocina", @"Coloquial", @"Comercio y economía", @"Computación", @"Costura", @"Deportes", @"Derecho", @"Ecología", @"Educación", @"Entomología", @"Farmacia", @"Ferrocarriles", @"Figurado", @"Filosofía", @"Física", @"Geografía", @"Gramática", @"Historia", @"Impresión", @"Ingeniería", @"Jerga", @"Literatura", @"Lógica", @"Mar", @"Matemáticas", @"Medicina", @"Meteorología", @"Militar", @"Mineralogía", @"Mitología", @"Música", @"Poesía", @"Política", @"Religión", @"Química", @"Sociología", @"Topografía", @"Veterinaria", @"Zoología"];
-NSArray* EspAbrev = @[@"",@"GG"     , @"AE"         , @"AG"         , @"AN"      , @"AQ"          , @"AJ"  , @"AU"           , @"BI"      , @"BT"           , @"BO"      , @"CC"    , @"CL"       , @"CO"                 , @"CP"         , @"CS"     , @"DE"      , @"LA"     , @"AB"      , @"ED"       , @"EN"         , @"FA"      , @"FE"           , @"FG"      , @"FL"       , @"FI"    , @"GO"       , @"GR"       , @"HI"      , @"PR"       , @"IN"        , @"JE"   , @"LI"        , @"LO"    , @"NA" , @"MA"         , @"ME"      , @"MT"          , @"ML"     , @"MN"         , @"MI"       , @"MU"    , @"PE"    , @"PO"      , @"EC"      , @"QM"     , @"SO"        , @"TP"        , @"VE"         , @"ZO"      ];
+NSArray* TypesTitles[] = {TypesTitleEs, TypesTitleEn, TypesTitleIt, TypesTitleFr};
+NSArray* TypesTitle;
+
+NSArray* EspAbrev   = @[@"",@"GG"      , @"AE"          , @"AG"         , @"AN"      , @"AQ"          , @"AJ"  , @"AU"           , @"BI"      , @"BT"           , @"BO"       , @"CC"     , @"CL"           , @"CO"                    , @"CP"          , @"CS"      , @"DE"      , @"LA"     , @"AB"      , @"ED"          , @"EN"         , @"FA"       , @"FE"            , @"FG"        , @"FL"        , @"FI"      , @"GO"        , @"GR"        , @"HI"      , @"PR"        , @"IN"         , @"JE"     , @"LI"         , @"LO"     , @"NA"  , @"MA"          , @"ME"      , @"MT"          , @"ML"       , @"MN"         , @"MI"        , @"MU"     , @"PE"      , @"PO"       , @"EC"       , @"QM"      , @"SO"        , @"TP"         , @"VE"                 , @"ZO"      ];
+NSArray* EspTitleEs = @[@"",@"General" , @"Aeronáutica" , @"Agricultura", @"Anatomía", @"Arquitectura", @"Arte", @"Automovilismo", @"Biología", @"Biotecnología", @"Botánica" , @"Cocina" , @"Coloquial"    , @"Comercio y economía"   , @"Computación" , @"Costura" , @"Deportes", @"Derecho", @"Ecología", @"Educación"   , @"Entomología", @"Farmacia" , @"Ferrocarriles" , @"Figurado"  , @"Filosofía" , @"Física"  , @"Geografía" , @"Gramática" , @"Historia", @"Impresión" , @"Ingeniería" , @"Jerga"  , @"Literatura" , @"Lógica" , @"Mar" , @"Matemáticas" , @"Medicina", @"Meteorología", @"Militar"  , @"Mineralogía", @"Mitología" , @"Música" , @"Poesía"  , @"Política" , @"Religión" , @"Química" , @"Sociología", @"Topografía" , @"Veterinaria"        , @"Zoología"];
+NSArray* EspTitleEn = @[@"",@"General" , @"Aeronautics" , @"Agriculture", @"Anatomy" , @"Architecture", @"Art" , @"Automobile"   , @"Biology" , @"Biotechnology", @"Botany"   , @"Cooking", @"Colloquial"   , @"Commerce and Economics", @"Computer"    , @"Sewing"  , @"Sport"   , @"Law"    , @"Ecology" , @"Education"   , @"Entomology" , @"Pharmacy" , @"Railway"       , @"Figurative", @"Philosophy", @"Physics" , @"Geography" , @"Grammar"   , @"History" , @"Print"     , @"Engineering", @"Slang"  , @"Literature" , @"Logic"  , @"Sea" , @"Mathematics" , @"Medicine", @"Meteorology" , @"Military" , @"Mineralogy" , @"Mythology" , @"Music"  , @"Poetical", @"Politics" , @"Religion" , @"Chemical", @"Sociology" , @"Topography" , @"Veterinary medicine", @"Zoology" ];
+NSArray* EspTitleIt = @[@"",@"Generale", @"Areonautica" , @"Agricoltura", @"Anatomia", @"Architettura", @"Arte", @"Automobilismo", @"Biologia", @"Biotecnologia", @"Botanica" , @"Cucina" , @"Colloquiale"  , @"Commercio ed economia" , @"Informatica" , @"Sartoria", @"Sport"   , @"Diritto", @"Ecologia", @"Educazione"  , @"Entomologia", @"Farmacia" , @"Ferroviaria"   , @"Figurata"  , @"Filosofia" , @"Fisica"  , @"Geografia" , @"Grammatica", @"Storia"  , @"Stampa"    , @"Ingenieria" , @"Tessile", @"Letteratura", @"Logica" , @"Mare", @"Matematica"  , @"Medicina", @"Meteorologia", @"Militare" , @"Mineralogia", @"Mitologia" , @"Musica" , @"Poesia"  , @"Politica" , @"Religione", @"Chimica" , @"Sociologia", @"Topografia" , @"Veterinaria"        , @"Zoologia"];
+NSArray* EspTitleFr = @[@"",@"Général" , @"Aéronautique", @"Agriculture", @"Anatomie", @"Architecture", @"Art" , @"Aumobilisme"  , @"Biologie", @"Biotecnologie", @"Botanique", @"Cuisine", @"Langue parlée", @"Commerce et Économie"  , @"Informatique", @"Couture" , @"Sports"  , @"Droit"  , @"Ecologie", @"Enseignement", @"Entomologie", @"Pharmacie", @"Chemins de fer", @"Figuré"    , @"Philosofie", @"Physique", @"Géographie", @"Grammaire" , @"Histoire", @"Impression", @"Génie"      , @"Jargon" , @"Littérature", @"Logique", @"Mar" , @"Mathématique", @"Médecine", @"Metéorologie", @"Militaire", @"Minéralogie", @"Mythologie", @"Musique", @"Poesie"  , @"Politique", @"Réligion" , @"Chimie"  , @"Sociologie", @"Topographie", @"Vétérinaire"        , @"Zoologie"];
+
+NSArray* EspTitles[] = {EspTitleEs, EspTitleEn, EspTitleIt, EspTitleFr};
+NSArray* EspTitle;
 
 //=========================================================================================================================================================
 @implementation EditDictCtrller
@@ -75,6 +88,9 @@ NSArray* EspAbrev = @[@"",@"GG"     , @"AE"         , @"AG"         , @"AN"     
 //--------------------------------------------------------------------------------------------------------------------------------------------------------
 - (id)initInWindow:(NSWindow*) window OnClose:(SEL) fn Target:(id) target
   {
+  TypesTitle = TypesTitles[iUser];
+  EspTitle   = EspTitles[iUser];
+  
   fnOnClose = fn;                                 // Función que se llama al terminar la edicción
   ObjFun    = target;                             // Objeto al que pertenece la función
 
@@ -164,7 +180,7 @@ NSArray* EspAbrev = @[@"",@"GG"     , @"AE"         , @"AG"         , @"AN"     
     NSString* typCode = [WrdData CodeFromType:i];
     NSString* typDesc = [self TypeDescWithCode:typCode];
     
-    NSString* sLabel = @"Traduciones como: ";
+    NSString* sLabel = NSLocalizedString(@"TrdAsTipo"   , @"");
     lbTypeDesc[i].attributedStringValue = EdictTypeLabel(sLabel, typDesc);
     TypeCode[i] = typCode;
     
@@ -434,9 +450,9 @@ BOOL inSelText;
 // Crea un menu con los generos
 - (void) CreateGenerMenu
   {
-  NSString* sMac = @"Masculino";
-  NSString* sFem = @"Femenino";
-  NSString* sNtr = @"Neutro";
+  NSString* sMac = NSLocalizedString(@"mnuItemMasc", @"");
+  NSString* sFem = NSLocalizedString(@"mnuItemFem" , @"");
+  NSString* sNtr = NSLocalizedString(@"mnuItemNtr" , @"");
   
   GenerMenu = [self CreateMenuWithTitles:@[@"",sMac,sFem,sNtr]
                                  AnAction:@selector(OnSelGener:) ];
@@ -466,8 +482,8 @@ BOOL inSelText;
 // Crea un menú con los números
 - (void) CreateNumberMenu
   {
-  NSString* sSig = @"Singular";
-  NSString* sPlr = @"Plural";
+  NSString* sSig = NSLocalizedString(@"mnuItemSng", @"");
+  NSString* sPlr = NSLocalizedString(@"mnuItemPlr", @"");
   
   NumberMenu = [self CreateMenuWithTitles:@[@"",sSig,sPlr]
                                  AnAction:@selector(OnSelNumber:) ];
@@ -570,9 +586,11 @@ BOOL inSelText;
   NSString* typCode = [WrdData CodeFromType:iType];
   NSString* typDesc = [self TypeDescWithCode:typCode];
   
+  NSString* str = NSLocalizedString(@"DataFrmError", @"");
+  
   NSAlert* msg = [NSAlert new];
-  msg.informativeText = [NSString stringWithFormat:@"El formato de '%@' no es correcto.", typDesc];
-  msg.messageText = @"Error";
+  msg.informativeText = [NSString stringWithFormat:str, typDesc];
+  msg.messageText = NSLocalizedString(@"Error", @"");
   msg.alertStyle = NSCriticalAlertStyle;
   
   [msg beginSheetModalForWindow:self.window completionHandler:nil];

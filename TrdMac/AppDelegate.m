@@ -95,6 +95,8 @@
   _ScrollTrd.SyncTo = _ScrollSrc;
   
   _TrdView.window = _window;
+
+  iUser = NSLocalizedString(@"UILang", @"comment").intValue;
   }
 
 //--------------------------------------------------------------------------------------------------------------------------------------------------------

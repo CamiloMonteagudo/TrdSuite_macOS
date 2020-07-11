@@ -70,11 +70,11 @@
         </viewController>
         <menu title="Main Menu" systemMenu="main" showsStateColumn="NO" autoenablesItems="NO" id="AYu-sK-qS6">
             <items>
-                <menuItem title="TrdMac" id="1Xt-HY-uBw">
+                <menuItem title="Translator Suite" id="1Xt-HY-uBw">
                     <modifierMask key="keyEquivalentModifierMask"/>
-                    <menu key="submenu" title="TrdMac" systemMenu="apple" id="uQy-DD-JDr">
+                    <menu key="submenu" title="Translator Suite" systemMenu="apple" id="uQy-DD-JDr">
                         <items>
-                            <menuItem title="About TrdMac" id="5kV-Vb-QxS">
+                            <menuItem title="About Translator Suite" id="5kV-Vb-QxS">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
                                     <action selector="orderFrontStandardAboutPanel:" target="-1" id="Exp-CZ-Vem"/>
@@ -88,7 +88,7 @@
                                 <menu key="submenu" title="Services" systemMenu="services" id="hz9-B4-Xy5"/>
                             </menuItem>
                             <menuItem isSeparatorItem="YES" id="4je-JR-u6R"/>
-                            <menuItem title="Hide TrdMac" keyEquivalent="h" id="Olw-nP-bQN">
+                            <menuItem title="Hide Translator Suite" keyEquivalent="h" id="Olw-nP-bQN">
                                 <connections>
                                     <action selector="hide:" target="-1" id="PnN-Uc-m68"/>
                                 </connections>
@@ -106,7 +106,7 @@
                                 </connections>
                             </menuItem>
                             <menuItem isSeparatorItem="YES" id="kCx-OE-vgT"/>
-                            <menuItem title="Quit TrdMac" keyEquivalent="q" id="4sb-4s-VLi">
+                            <menuItem title="Quit Translator Suite" keyEquivalent="q" id="4sb-4s-VLi">
                                 <connections>
                                     <action selector="terminate:" target="-1" id="Te7-pn-YzF"/>
                                 </connections>
@@ -663,7 +663,7 @@
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <menu key="submenu" title="View" id="HyV-fh-RgO">
                         <items>
-                            <menuItem title="Show Toolbar" keyEquivalent="t" id="snW-S8-Cw5">
+                            <menuItem title="Hide Toolbar" keyEquivalent="t" id="snW-S8-Cw5">
                                 <modifierMask key="keyEquivalentModifierMask" option="YES" command="YES"/>
                                 <connections>
                                     <action selector="toggleToolbarShown:" target="-1" id="BXY-wc-z0C"/>
@@ -676,19 +676,19 @@
                                 </connections>
                             </menuItem>
                             <menuItem isSeparatorItem="YES" id="1wA-l5-lKv"/>
-                            <menuItem title="Tamaño real" keyEquivalent="0" id="hQf-DZ-yjy">
+                            <menuItem title="Actual Size" keyEquivalent="0" id="hQf-DZ-yjy">
                                 <modifierMask key="keyEquivalentModifierMask" shift="YES" command="YES"/>
                                 <connections>
                                     <action selector="OnTextZoom:" target="Voe-Tx-rLC" id="iaB-zy-83d"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="Aumentar Zoom" tag="1" keyEquivalent="+" id="MXG-Sy-Qpi">
+                            <menuItem title="Zoom In" tag="1" keyEquivalent="+" id="MXG-Sy-Qpi">
                                 <modifierMask key="keyEquivalentModifierMask" shift="YES" command="YES"/>
                                 <connections>
                                     <action selector="OnTextZoom:" target="Voe-Tx-rLC" id="cTm-Sy-Uhi"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="Reducir Zoom" tag="-1" keyEquivalent="-" id="9ig-0x-116">
+                            <menuItem title="Zoom Out" tag="-1" keyEquivalent="-" id="9ig-0x-116">
                                 <modifierMask key="keyEquivalentModifierMask" shift="YES" command="YES"/>
                                 <connections>
                                     <action selector="OnTextZoom:" target="Voe-Tx-rLC" id="dH1-Kf-Ln5"/>
@@ -707,7 +707,7 @@
                                     <action selector="OnTranslate:" target="Pt1-Cc-qmC" id="nrv-xC-Xyh"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="Translate Actual Sentence" keyEquivalent="t" id="9Ja-LE-rOO">
+                            <menuItem title="Translate the Current Sentence" keyEquivalent="t" id="9Ja-LE-rOO">
                                 <modifierMask key="keyEquivalentModifierMask" control="YES" command="YES"/>
                                 <connections>
                                     <action selector="OnTrdSentece:" target="Pt1-Cc-qmC" id="ECd-Y2-8tx"/>
@@ -726,7 +726,7 @@
                                     <action selector="OnGotoSentence:" target="Pt1-Cc-qmC" id="oTV-fT-Z72"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="Previos Sentence" tag="2" keyEquivalent="" id="bSX-cK-4KX">
+                            <menuItem title="Previous Sentence" tag="2" keyEquivalent="" id="bSX-cK-4KX">
                                 <modifierMask key="keyEquivalentModifierMask" shift="YES" command="YES"/>
                                 <connections>
                                     <action selector="OnGotoSentence:" target="Pt1-Cc-qmC" id="tvq-Ei-nPs"/>
@@ -745,7 +745,7 @@
                                     <action selector="OnGotoChangedSentence:" target="Pt1-Cc-qmC" id="eEn-mH-jEZ"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="Previos  Modified Sentence" tag="2" keyEquivalent="" id="Bp3-fV-0Th">
+                            <menuItem title="Previous Modified Sentence" tag="2" keyEquivalent="" id="Bp3-fV-0Th">
                                 <modifierMask key="keyEquivalentModifierMask" control="YES" command="YES"/>
                                 <connections>
                                     <action selector="OnGotoChangedSentence:" target="Pt1-Cc-qmC" id="rje-aG-0z9"/>
@@ -781,7 +781,7 @@
                 </menuItem>
             </items>
         </menu>
-        <window title="TrdMac" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="QvC-M9-y7g">
+        <window title="Translator Suite" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="QvC-M9-y7g">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="441" y="112" width="1024" height="642"/>
@@ -903,7 +903,7 @@
                                         <rect key="frame" x="-7" y="-10" width="327" height="654"/>
                                         <font key="font" metaFont="system"/>
                                         <tabViewItems>
-                                            <tabViewItem label="Diccionario" identifier="1" id="zDf-SQ-exi">
+                                            <tabViewItem label="Dictionary" identifier="1" id="zDf-SQ-exi">
                                                 <view key="view" id="uu5-uL-Cru">
                                                     <rect key="frame" x="10" y="33" width="307" height="608"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -925,7 +925,7 @@
                                                                         <action selector="OnChangeWord:" target="nVC-Xs-2Hx" id="llC-wA-nfS"/>
                                                                     </connections>
                                                                 </searchField>
-                                                                <button hidden="YES" toolTip="Editar los signifivados de la palabra" tag="103" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9uy-j6-OTM" userLabel="Options Bnt">
+                                                                <button hidden="YES" toolTip="Edit the means of the word" tag="103" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9uy-j6-OTM" userLabel="Options Bnt">
                                                                     <rect key="frame" x="235" y="6" width="30" height="24"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="24" id="7jF-U0-ddj"/>
@@ -939,7 +939,7 @@
                                                                         <action selector="OnEdictWord:" target="nVC-Xs-2Hx" id="SeD-BA-8yG"/>
                                                                     </connections>
                                                                 </button>
-                                                                <button hidden="YES" toolTip="Busca raices de la palabra" tag="103" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="M0Y-Gj-noX" userLabel="Roots">
+                                                                <button hidden="YES" toolTip="Search roots of the word" tag="103" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="M0Y-Gj-noX" userLabel="Roots">
                                                                     <rect key="frame" x="271" y="6" width="30" height="24"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="24" id="98U-7C-6zx"/>
@@ -953,7 +953,7 @@
                                                                         <action selector="OnWordRoots:" target="nVC-Xs-2Hx" id="wl9-KI-qxf"/>
                                                                     </connections>
                                                                 </button>
-                                                                <button hidden="YES" toolTip="Borra los cambios hecho a la palabra" tag="103" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="U95-S6-5Ms" userLabel="DelChanges">
+                                                                <button hidden="YES" toolTip="Delete changes" tag="103" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="U95-S6-5Ms" userLabel="DelChanges">
                                                                     <rect key="frame" x="271" y="6" width="30" height="24"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" constant="30" id="4sI-T1-gXj"/>
@@ -1021,13 +1021,13 @@
                                                                         <constraint firstAttribute="width" constant="150" id="6ZY-xO-NzQ"/>
                                                                         <constraint firstAttribute="height" constant="17" id="uL5-gK-JV5"/>
                                                                     </constraints>
-                                                                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Diccionario" id="kH8-eF-ev2">
+                                                                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Dictionary" id="kH8-eF-ev2">
                                                                         <font key="font" metaFont="system"/>
                                                                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                                     </textFieldCell>
                                                                 </textField>
-                                                                <button hidden="YES" toolTip="Guarda permanete de los cambios del diccionario" tag="103" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NSa-PF-Lsa" userLabel="Save Dict">
+                                                                <button hidden="YES" toolTip="Save changes in dictionary" tag="103" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NSa-PF-Lsa" userLabel="Save Dict">
                                                                     <rect key="frame" x="235" y="3" width="30" height="24"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="24" id="6Ix-9X-fmi"/>
@@ -1041,7 +1041,7 @@
                                                                         <action selector="OnSaveDict:" target="nVC-Xs-2Hx" id="HRU-Qg-39o"/>
                                                                     </connections>
                                                                 </button>
-                                                                <button toolTip="Intercambia los diccionarios" tag="103" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Go1-1B-mdf" userLabel="Change Lang">
+                                                                <button toolTip="Exchange languages" tag="103" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Go1-1B-mdf" userLabel="Change Lang">
                                                                     <rect key="frame" x="271" y="3" width="30" height="24"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" constant="30" id="8Ua-rc-2XL"/>
@@ -1175,7 +1175,7 @@
                                                     </constraints>
                                                 </view>
                                             </tabViewItem>
-                                            <tabViewItem label="Conjugaciones" identifier="2" id="gv4-rN-N7K">
+                                            <tabViewItem label="Conjugations" identifier="2" id="gv4-rN-N7K">
                                                 <view key="view" id="o14-Mb-ngJ">
                                                     <rect key="frame" x="10" y="33" width="307" height="608"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1194,7 +1194,7 @@
                                                                 <action selector="OnChangeVerb:" target="yUg-FD-lwV" id="d5i-Yq-943"/>
                                                             </connections>
                                                         </searchField>
-                                                        <button toolTip="Cambia el modo que se muestran las conjugaciones" tag="201" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="R8j-HN-PSh" userLabel="BtnModes">
+                                                        <button toolTip="Change the mode to group conjugations" tag="201" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="R8j-HN-PSh" userLabel="BtnModes">
                                                             <rect key="frame" x="2" y="554" width="30" height="24"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="30" id="7Lx-oG-hgo"/>
@@ -1277,7 +1277,7 @@
                                                                 <autoresizingMask key="autoresizingMask"/>
                                                             </scroller>
                                                         </scrollView>
-                                                        <button toolTip="Fuerza a que se conjugue la palabra actual" tag="201" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Cws-96-eo1">
+                                                        <button toolTip="Search conjugations" tag="201" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Cws-96-eo1">
                                                             <rect key="frame" x="273" y="579" width="30" height="24"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="30" id="G75-ZY-J1T"/>
@@ -1296,7 +1296,7 @@
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="17" id="Rpk-kW-POr"/>
                                                             </constraints>
-                                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Cojugaciones por palabras" id="Ge2-aN-5xl">
+                                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Conjugations (by word)" id="Ge2-aN-5xl">
                                                                 <font key="font" metaFont="system"/>
                                                                 <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -1365,33 +1365,32 @@
             </view>
             <toolbar key="toolbar" implicitIdentifier="C9544B39-9FF8-4278-B0AA-8449F50EC2CE" autosavesConfiguration="NO" displayMode="iconAndLabel" sizeMode="regular" id="k9B-Z9-BcV">
                 <allowedToolbarItems>
-                    <toolbarItem implicitItemIdentifier="F2888295-C238-4294-BF77-57DCB50684B2" label="New" paletteLabel="New" tag="-1" image="NewDoc" id="NPa-dD-g3j">
+                    <toolbarItem implicitItemIdentifier="F2888295-C238-4294-BF77-57DCB50684B2" label="New" paletteLabel="New" toolTip="Create a new empty document" tag="-1" image="NewDoc" id="NPa-dD-g3j">
                         <connections>
                             <action selector="NewDocument:" target="Voe-Tx-rLC" id="bry-mj-hpa"/>
                         </connections>
                     </toolbarItem>
-                    <toolbarItem implicitItemIdentifier="BF99518A-DC51-49C8-9CC4-DFD2F276F514" label="Open" paletteLabel="Open" tag="-1" image="OpenDoc" id="sO0-jw-Izl">
+                    <toolbarItem implicitItemIdentifier="BF99518A-DC51-49C8-9CC4-DFD2F276F514" label="Open" paletteLabel="Open" toolTip="Open an existing document" tag="-1" image="OpenDoc" id="sO0-jw-Izl">
                         <connections>
                             <action selector="OpenFile:" target="Voe-Tx-rLC" id="Lz4-Zg-tDH"/>
                         </connections>
                     </toolbarItem>
-                    <toolbarItem implicitItemIdentifier="20CD2E99-14C6-453C-858F-3A894DD2F393" label="Save" paletteLabel="Save" tag="-1" id="JTi-pl-9gU">
+                    <toolbarItem implicitItemIdentifier="20CD2E99-14C6-453C-858F-3A894DD2F393" label="Save" paletteLabel="Save" toolTip="Save the source or translated text" tag="-1" id="JTi-pl-9gU">
                         <connections>
                             <action selector="OnSaveDocumet:" target="Pt1-Cc-qmC" id="hBx-10-xjx"/>
                         </connections>
                     </toolbarItem>
-                    <toolbarItem implicitItemIdentifier="EA64A1B3-04D2-455E-B4D2-84E78B23C5C2" label="Undo" paletteLabel="Undo" tag="-1" image="UnDo" id="8ID-E4-abP">
+                    <toolbarItem implicitItemIdentifier="EA64A1B3-04D2-455E-B4D2-84E78B23C5C2" label="Undo" paletteLabel="Undo" toolTip="Undo last change" tag="-1" image="UnDo" id="8ID-E4-abP">
                         <connections>
                             <action selector="undo:" target="-1" id="82b-4q-XYa"/>
                         </connections>
                     </toolbarItem>
-                    <toolbarItem implicitItemIdentifier="62483445-BA33-4BAB-8B29-C8373A0B0F3E" label="Redo" paletteLabel="Redo" tag="-1" image="ReDo" id="mhp-dF-Ibb">
+                    <toolbarItem implicitItemIdentifier="62483445-BA33-4BAB-8B29-C8373A0B0F3E" label="Redo" paletteLabel="Redo" toolTip="Revert last undo" tag="-1" image="ReDo" id="mhp-dF-Ibb">
                         <connections>
                             <action selector="redo:" target="-1" id="LKQ-w6-FK0"/>
                         </connections>
                     </toolbarItem>
-                    <toolbarItem implicitItemIdentifier="4E112724-F651-47C5-8CE8-AE965C88D8BD" label="Idiomas" paletteLabel="Idiomas" id="7fQ-Vl-HtX">
-                        <nil key="toolTip"/>
+                    <toolbarItem implicitItemIdentifier="4E112724-F651-47C5-8CE8-AE965C88D8BD" label="Languages" paletteLabel="Languages" toolTip="Translation Direction" id="7fQ-Vl-HtX">
                         <size key="minSize" width="100" height="28"/>
                         <size key="maxSize" width="209" height="46"/>
                         <popUpButton key="view" verticalHuggingPriority="750" id="DQP-DL-8Fo">
@@ -1408,25 +1407,24 @@
                             </popUpButtonCell>
                         </popUpButton>
                     </toolbarItem>
-                    <toolbarItem implicitItemIdentifier="57642885-F9A4-423D-A750-7C0CF4FA625E" label="Traducir" paletteLabel="Traducir" tag="-1" image="TrdDoc" id="LNb-UR-FrY">
+                    <toolbarItem implicitItemIdentifier="57642885-F9A4-423D-A750-7C0CF4FA625E" label="Translate" paletteLabel="Translate" toolTip="Translate current document" tag="-1" image="TrdDoc" id="LNb-UR-FrY">
                         <connections>
                             <action selector="OnTranslate:" target="Pt1-Cc-qmC" id="fUG-xw-oEg"/>
                         </connections>
                     </toolbarItem>
-                    <toolbarItem implicitItemIdentifier="6D932FB9-BB2E-4368-8949-4BA52595DCCA" label="Sentece" paletteLabel="Oración" tag="-1" image="TrdOra" id="caW-ev-Gdq">
+                    <toolbarItem implicitItemIdentifier="6D932FB9-BB2E-4368-8949-4BA52595DCCA" label="Sentence" paletteLabel="Sentence" toolTip="Translate the Current Sentence" tag="-1" image="TrdOra" id="caW-ev-Gdq">
                         <connections>
                             <action selector="OnTrdSentece:" target="Pt1-Cc-qmC" id="j0T-ml-jFG"/>
                         </connections>
                     </toolbarItem>
-                    <toolbarItem implicitItemIdentifier="10BE3668-CC98-4971-9926-82CE85DDA990" label="Info" paletteLabel="Info" tag="-1" image="ShowInfo" autovalidates="NO" id="Cg6-e1-HEM">
+                    <toolbarItem implicitItemIdentifier="10BE3668-CC98-4971-9926-82CE85DDA990" label="Info" paletteLabel="Info" toolTip="Display information on the rigth panel" tag="-1" image="ShowInfo" autovalidates="NO" id="Cg6-e1-HEM">
                         <connections>
                             <action selector="TogleShowInfo:" target="Pt1-Cc-qmC" id="ORM-hW-IaN"/>
                         </connections>
                     </toolbarItem>
                     <toolbarItem implicitItemIdentifier="NSToolbarSpaceItem" id="T6l-2N-aNj"/>
                     <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="sm8-R0-FXf"/>
-                    <toolbarItem implicitItemIdentifier="E1901069-E5F5-4573-A638-FC455F3EDE64" label="Paneles" paletteLabel="Paneles" id="PIH-4N-ko9">
-                        <nil key="toolTip"/>
+                    <toolbarItem implicitItemIdentifier="E1901069-E5F5-4573-A638-FC455F3EDE64" label="Panels" paletteLabel="Panels" toolTip="Show/Hide panels" id="PIH-4N-ko9">
                         <size key="minSize" width="104" height="24"/>
                         <size key="maxSize" width="104" height="24"/>
                         <segmentedControl key="view" verticalHuggingPriority="750" id="boz-QA-i4b">
@@ -1435,8 +1433,12 @@
                             <segmentedCell key="cell" borderStyle="border" alignment="left" style="rounded" trackingMode="momentary" id="8QA-UF-CfS">
                                 <font key="font" metaFont="system"/>
                                 <segments>
-                                    <segment image="SrcShow" imageScaling="none" width="32"/>
-                                    <segment image="TrdShow" imageScaling="none" width="32" tag="1"/>
+                                    <segment image="SrcShow" imageScaling="none" width="32">
+                                        <nil key="label"/>
+                                    </segment>
+                                    <segment image="TrdShow" imageScaling="none" width="32" tag="1">
+                                        <nil key="label"/>
+                                    </segment>
                                     <segment image="ToolShow" imageScaling="none" width="32">
                                         <nil key="label"/>
                                     </segment>
