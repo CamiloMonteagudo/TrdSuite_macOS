@@ -318,6 +318,9 @@
 // Toma el texto en 'srcTxt' y obtiene su traducción
 - (NSAttributedString*) TranslateAttributedString:(NSAttributedString*) srcTxt
   {
+  TrdCore* TrdApi = [TrdCore TrdWithDes:LGSrc AndDes:LGDes];                // Crea objeto para traducir
+  if( TrdApi==nil ) return srcTxt;
+  
   Progress = [[ProgressCtrller alloc] initInWindow:_window];                // Inicializa el dialogo de progreso
   
   [self ClearMatchSentence];                                                // Quita la oración actual
@@ -325,8 +328,6 @@
   psLast = [ParseText ParseWithText:srcTxt.string];                         // Divide el texto fuente en oraciones
   
   Progress.Count = (int)psLast.Items.count;                                 // Pone el contador de progreso
-  
-  TrdCore* TrdApi = [TrdCore TrdWithDes:LGSrc AndDes:LGDes];                // Crea objeto para traducir
   
   [TrdApi TranslateFromParse:psLast Progress:Progress];                     // Traduce todas las oraciones
   

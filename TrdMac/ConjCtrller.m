@@ -135,7 +135,14 @@
     {
     [ConjCore LoadConjLang:lng];                            // Carga la conjugacion para el idiom actual
     
-    _btnCnjFlag.title = LGFlag(lng);                        // Bandera para el idioma de conjugación
+    NSSearchFieldCell* cell = _sWord.cell;
+    
+    [cell resetSearchButtonCell];
+    cell.searchButtonCell.imagePosition = NSNoImage;
+    cell.searchButtonCell.type = NSTextCellType;
+    cell.searchButtonCell.title = LGFlag(lng);
+    
+ //   _btnCnjFlag.title = LGFlag(lng);                        // Bandera para el idioma de conjugación
     }
   
   NSString* sVerb = _sWord.stringValue;                     // Toma el contenido del editor

@@ -167,6 +167,9 @@
 /* Class = "NSButton"; ibShadowedToolTip = "Swap the languages"; ObjectID = "Go1-1B-mdf"; */
 "Go1-1B-mdf.ibShadowedToolTip" = "Échange langues";
 
+/* Class = "NSButton"; ibShadowedToolTip = "Swap the languages"; ObjectID = "Bhb-ry-x30"; */
+"Bhb-ry-x30.ibShadowedToolTip" = "Échange langues";
+
 /* Class = "NSMenuItem"; title = "Writing Direction"; ObjectID = "H1b-Si-o9J"; */
 "H1b-Si-o9J.title" = "Sens de l'écriture";
 

@@ -17,7 +17,7 @@ int iUser = 0;
 // Matrix de direcciones de traduccion instaladas
 
 //                              EsEn, EsIt, EsFr, EnEs, EnIt, EnFr, ItEs, ItEn, ItFr, FrEs, FrEn, FrIt
-static BOOL _InstDir[DIRCount] = { 1,    1,    1,    1,    1,    1,    1,    1,    1,    1,    1,    1   };
+//static BOOL _InstDir[DIRCount] = { 1,    0,    0,    1,    1,    1,    0,    1,    0,    0,    1,    0   };
 
 //=========================================================================================================================================================
 // Abreviatura de de los idiomas segun el codigo ISO
@@ -26,11 +26,11 @@ static NSString *_AbrvLng[] = { @"Es", @"En", @"It", @"Fr" };
 //--------------------------------------------------------------------------------------------------------------------------------------------------------
 // Nombre de los idiomas de traduccion segun la interfaz de usuario
 static NSString * _LngNames[LGCount][LGCount] =
-  {  //Español     , Ingles         , Italiano           , Frances
-    {@"Español" , @"Inglés"  , @"Italiano"   , @"Francés"  },   // IUser Español
-    {@"Spanish" , @"English" , @"Italian"    , @"French"   },   // IUser Inglés
-    {@"Spagnolo", @"Inglese" , @"Italiano"   , @"Francese" },   // IUser Italiano
-    {@"Espagnol", @"Anglais" , @"Italien"    , @"Français" },   // IUser Francés
+  {  //Español  , Ingles        , Italiano        , Frances
+    {@"Español" , @"Inglés   "  , @"Italiano  "   , @"Francés "  },   // IUser Español
+    {@"Spanish" , @"English "   , @"Italian   "   , @"French  "  },   // IUser Inglés
+    {@"Spagnolo", @"Inglese   " , @"Italiano    " , @"Francese " },   // IUser Italiano
+    {@"Espagnol", @"Anglais   " , @"Italien     " , @"Français " },   // IUser Francés
   };
 
 //--------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -39,9 +39,21 @@ static NSString * _LngFlags[LGCount] =  {@"🇪🇸" , @"🇺🇸"  , @"🇮🇹
 
 //--------------------------------------------------------------------------------------------------------------------------------------------------------
 // Define los idiomas fuente i destino para cada una de las direcciones de traducción
-static int _DirSrc[] = { 0,   0,  0,   1,  1,   1,   2,  2,   2,   3,   3,  3 };
-static int _DirDes[] = { 1,   2,  3,   0,  2,   3,   0,  1,   3,   0,   1,  2 };
-//                            EsEn, EsIt, EsFr, EnEs, EnIt, EnFr, ItEs, ItEn, ItFr, FrEs, FrEn, FrIt
+//static int _DirSrc[] = { 0,   0,  0,   1,  1,   1,   2,  2,   2,   3,   3,  3 };
+//static int _DirDes[] = { 1,   2,  3,   0,  2,   3,   0,  1,   3,   0,   1,  2 };
+//                      EsEn, EsIt, EsFr, EnEs, EnIt, EnFr, ItEs, ItEn, ItFr, FrEs, FrEn, FrIt
+
+static int _InstSrc[] = { 3, 3, 3, 0, 1, 2 };
+static int _InstDes[] = { 0, 1, 2, 3, 3, 3 };
+
+//static int _InstSrc[] = { 1, 1, 1, 0, 0, 0, 2, 2, 2, 3, 3, 3 };
+//static int _InstDes[] = { 0, 2, 3, 1, 2, 3, 0, 1, 3, 0, 1, 2 };
+
+//--------------------------------------------------------------------------------------------------------------------------------------------------------
+int DIRCount()
+  {
+  return sizeof(_InstSrc)/sizeof(_InstSrc[0]);
+  }
 
 //--------------------------------------------------------------------------------------------------------------------------------------------------------
 NSString* LGAbrv( int lng )
@@ -64,10 +76,10 @@ NSString* LGName( int lng )
 // Obtiene el nombre de la dirección de traducción con indice 'iDir'
 NSString* DIRName( int iDir )
   {
-  if( iDir<0 || iDir>DIRCount ) return @"";
+  if( iDir<0 || iDir>DIRCount() ) return @"";
   
-  int iSrc = _DirSrc[iDir];
-  int iDes = _DirDes[iDir];
+  int iSrc = _InstSrc[iDir];
+  int iDes = _InstDes[iDir];
   
   NSString* sSrc = _LngNames[iUser][iSrc];
   NSString* sDes = _LngNames[iUser][iDes];
@@ -79,36 +91,29 @@ NSString* DIRName( int iDir )
   }
 
 //--------------------------------------------------------------------------------------------------------------------------------------------------------
-// Determina si la dirección 'iDir' esta instalada o no
-BOOL DIRInstalled( int iDir )
-  {
-  return _InstDir[iDir];
-  }
-
-//--------------------------------------------------------------------------------------------------------------------------------------------------------
 // Determina el idioma fuente de la dirección 'iDir'
 int DIRSrc( int iDir )
   {
-  if( iDir<0 || iDir>DIRCount ) return -1;
+  if( iDir<0 || iDir>DIRCount() ) return -1;
   
-  return _DirSrc[iDir];
+  return _InstSrc[iDir];
   }
 
 //--------------------------------------------------------------------------------------------------------------------------------------------------------
 // Determina el idioma destino de la dirección 'iDir'
 int DIRDes( int iDir )
   {
-  if( iDir<0 || iDir>DIRCount ) return -1;
+  if( iDir<0 || iDir>DIRCount() ) return -1;
   
-  return _DirDes[iDir];
+  return _InstDes[iDir];
   }
 
 //--------------------------------------------------------------------------------------------------------------------------------------------------------
 // Obtiene la dirección de traducción que esta compuesta por los dos idiomas dados
 int DIRFromLangs(int src, int des)
   {
-  for( int i=0; i<DIRCount; ++i )
-    if( _DirSrc[i]==src && _DirDes[i]==des )
+  for( int i=0; i<DIRCount(); ++i )
+    if( _InstSrc[i]==src && _InstDes[i]==des )
       return i;
   
   return -1;
@@ -118,16 +123,10 @@ int DIRFromLangs(int src, int des)
 // Obtiene la primera dirección de traduccion instalada y la pone activa
 int DIRFirst()
   {
-  for( int i=0; i<DIRCount; ++i )
-    if( _InstDir[i] )
-      {
-      LGSrc = _DirSrc[i];
-      LGDes = _DirDes[i];
-      
-      return i;
-      }
-    
-  return -1;
+  LGSrc = _InstSrc[0];
+  LGDes = _InstDes[0];
+  
+  return 0;
   }
 
 //--------------------------------------------------------------------------------------------------------------------------------------------------------

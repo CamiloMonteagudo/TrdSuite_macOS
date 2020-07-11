@@ -147,7 +147,9 @@
   NSString* wrd = _sWord.stringValue;                                     // Toma la palabra actual
   NSString* word = [wrd lowercaseString];                                 // La lleva a minusculas
   
-  NSMutableArray *Roots = [ConjCore GetRootListForWord:word Lang:LGSrc];  // Obtiene sus raices
+  int src = _Trd? LGDes : LGSrc;
+  
+  NSMutableArray *Roots = [ConjCore GetRootListForWord:word Lang:src];    // Obtiene sus raices
   
   if( ![word isEqualToString:wrd] )                                       // Si tenia mayusculas
     {
@@ -158,33 +160,6 @@
     }
 
   [self CreateMenuRoots:Roots];                                           // Crea un menu con las raices y lo muestra
-  
-//  int nRoots = (int)Roots.count;                                          // Obtiene la cantidad de raices
-//  if( nRoots == 0 ) return;                                               // Si no hay niguna, no hace nada
-  
-//  _sWord.stringValue = Roots[0];
-//  [self FindActualWord];
-//  
-//  if( nRoots > 1 )
-//    {
-//    NSLog(@"Palabra '%@' raices %d", word, nRoots );
-//    
-//    for(int i=0; i<nRoots; ++i )
-//      NSLog(@"Raiz %d: %@", i, Roots[i] );
-//    }
-//  
-//  _PanelSrc.Text = Roots[0];
-//  [self FindInDictWord];
-//  
-//  if( nRoots == 1 )
-//    {
-//    Roots = nil;
-//    return;
-//    }
-//  
-//  _BtnNextRoot.hidden = FALSE;
-//  NextRoot = 1;
-  
   }
 
 //--------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -244,8 +219,6 @@
     }
   }
 
-
-
 //--------------------------------------------------------------------------------------------------------------------------------------------------------
 // Se llama cuando se cambia una palabra mediante la edicción
 - (void) OnChangedEditWord
@@ -262,12 +235,30 @@
   int des = _Trd? LGSrc : LGDes;
   
   int ret = [DictCore OpenDictSrc:src Dest:des];
-  if( ret == DICT_FAIL   ) return FALSE;
-  
+  if( ret == DICT_FAIL   )
+    {
+    [_WordsList reloadData];
+    
+    _btnEditWord.hidden   = TRUE;                                   // Esconde el boton de editar la palabra
+    _btnDelChanges.hidden = TRUE;                                   // Esconde el boton de borrar cambios
+    _btnWordRoots.hidden  = TRUE;                                   // Esconde el boton de buscar raices
+    _btnSaveDict.hidden   = TRUE;                                   // Esconde el boton de guardar cambios en el diccionario
+    
+    _WordInfo.string = @"";                                         // Pone la información de la palabra en blanco
+    return FALSE;
+    }
+
   if( ret == DICT_OPENED )
     {
     _lbFlagSrc.stringValue = LGFlag(src);
     _lbFlagDes.stringValue = LGFlag(des);
+    
+    NSSearchFieldCell* cell = _sWord.cell;
+    
+    [cell resetSearchButtonCell];
+    cell.searchButtonCell.imagePosition = NSNoImage;
+    cell.searchButtonCell.type = NSTextCellType;
+    cell.searchButtonCell.title = LGFlag(src);
     
     [_WordsList reloadData];
     _btnSaveDict.hidden = ![DictCore isDictModified];
