@@ -27,11 +27,10 @@ bool CTranslationData::Load(BOOL aLoadLangData)
 //	CStringA sFileName = MakeName(LF".dic", true, false, LF".dic");
 
   m_TranslationDict = CDictGen::Get( lngSrc, lngDes );
-  m_TranslationDict->ClearCache(TRUE);
+	if (!m_TranslationDict) return false;
   
-	if (!m_TranslationDict)
-		return false;
-	}
+  m_TranslationDict->ClearCache(TRUE);
+  }
 		
 	if(LoadSerialize(MakeName(LF"",true,false, EXT_DAT_LOAD)) == false)
 		return false;

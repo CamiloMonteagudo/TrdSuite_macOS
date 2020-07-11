@@ -75,7 +75,9 @@ static LPCSTR *TypDes = TypDesEn;
   
   CDictMain* LastDict = _Dict;
   _Dict = CDictGen::Get(src, des);
-  if( LastDict == _Dict ) return DICT_OPEN;
+  
+  if( _Dict == NULL     ) return DICT_FAIL;
+  if( _Dict == LastDict ) return DICT_OPEN;
   
   TypDes = TypsDes[des];
 
@@ -446,6 +448,8 @@ NSAttributedString* WordDataFormated(CStringA &csKey, CStringA &csData, BOOL noK
 
   NSMutableAttributedString* Str = [[NSMutableAttributedString alloc] init];
   
+  AddNSString( Str, @"      ", attrBody );
+  
   if( noKey==FALSE )
     AddCString ( Str, csKey, attrKey );
   
@@ -457,7 +461,7 @@ NSAttributedString* WordDataFormated(CStringA &csKey, CStringA &csData, BOOL noK
     TGramType sType;
     oDictData->get_ActualType(sType);
     
-    if( Str.length > 0 )
+    if( idxType > 0 )
       AddNSString( Str, @"\r\n", attrBody );
     
     AddLPCSTR  ( Str, GetTypeDesc(sType), attrType );
@@ -636,8 +640,12 @@ NSAttributedString* WordDataKeyFormated(CStringA &csKey, CStringA &csData, BOOL 
     pos1  = pos2 + 1;                                             // Pasa a buscar la otra llave
     first = FALSE;                                                // Quita bandera de primera ves
     }
+
+  // Deja espacio delante para poner la bandera
+  NSMutableAttributedString* Str2 = [[NSMutableAttributedString alloc] initWithString:@"      " attributes:attrBody ];
+  [Str2 appendAttributedString: Str ];
   
-  return Str;
+  return Str2;
   }
 
 //--------------------------------------------------------------------------------------------------------------------------------------------------------

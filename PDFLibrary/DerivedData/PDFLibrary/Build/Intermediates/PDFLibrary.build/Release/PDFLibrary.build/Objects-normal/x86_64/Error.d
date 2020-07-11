@@ -1,0 +1,9 @@
+dependencies: \
+  /Users/quatix/Documents/TrdMac/TrdMac\ 20160727/PDFLibrary/XPDF/Error.cpp \
+  /Users/quatix/Documents/TrdMac/TrdMac\ 20160727/PDFLibrary/aconf.h \
+  /Users/quatix/Documents/TrdMac/TrdMac\ 20160727/PDFLibrary/XPDF/GlobalParams.h \
+  /Users/quatix/Documents/TrdMac/TrdMac\ 20160727/PDFLibrary/goo/gtypes.h \
+  /Users/quatix/Documents/TrdMac/TrdMac\ 20160727/PDFLibrary/XPDF/CharTypes.h \
+  /Users/quatix/Documents/TrdMac/TrdMac\ 20160727/PDFLibrary/goo/GMutex.h \
+  /Users/quatix/Documents/TrdMac/TrdMac\ 20160727/PDFLibrary/XPDF/Error.h \
+  /Users/quatix/Documents/TrdMac/TrdMac\ 20160727/PDFLibrary/XPDF/config.h
