@@ -51,6 +51,7 @@
 - (IBAction)OnChagePanel:(NSSegmentedControl *)sender;
 
 - (IBAction)OnTextZoom:(id)sender;
+- (IBAction)ShowStandarAbout:(id)sender;
 
 @end
 
@@ -120,34 +121,20 @@
 // Llena el combo de idiomas con los idiomas disponible
 - (void) FillLanguajesCombo
   {
-  [_CbLangs removeAllItems];                                // Borra todos los items del como de idioma
+  [_CbLangs removeAllItems];                                  // Borra todos los items del como de idioma
   
-  for(int i=0; i<DIRCount; i++)                             // Recorre todas las direcciones de traducción
-    [self AddInstalledDir:i];                               // Agrega las direcciones que ya estan instaladas
-
-  if( _CbLangs.numberOfItems == DIRCount ) return;          // Si todas las direcciones estan instaladas, termina
-
-  [_CbLangs.menu addItem:[NSMenuItem separatorItem] ];      // Adiciona un item separador
-  
-  for(int i=0; i<DIRCount; i++)                             // Recorre todas las direcciones de traducción
-    [self AddPurchaseDir:i];                                // Agrega la dirección para comprar
-  }
-
-//--------------------------------------------------------------------------------------------------------------------------------------------------------
-// Adicciona la dirección 'iDir' al combo de idiomas si esta instalada
-- (void)AddInstalledDir:(int) iDir
-  {
-  if( !DIRInstalled(iDir) ) return;                         // Si la dirección no esta instalada no hace nada
-  
-  NSString* sDir = DIRName(iDir);                           // Obtiene el nombre de la dirección
-  
-  [_CbLangs addItemWithTitle:sDir];                         // La adicona al combo de idiomas
-  
-  NSMenuItem* Item = _CbLangs.lastItem;                     // Obtiene el item añadido al menú
-  Item.tag = iDir;                                          // Le pone la dirección que representa
-  
-  Item.target = self;                                       // Pone objeto para reportar las acciones
-  Item.action = @selector(OnSelDir:);                       // Pone la función a la que se reporta la acción
+  for(int iDir=0; iDir<DIRCount(); iDir++)                    // Recorre todas las direcciones de traducción
+    {
+    NSString* sDir = DIRName(iDir);                           // Obtiene el nombre de la dirección
+    
+    [_CbLangs addItemWithTitle:sDir];                         // La adicona al combo de idiomas
+    
+    NSMenuItem* Item = _CbLangs.lastItem;                     // Obtiene el item añadido al menú
+    Item.tag = iDir;                                          // Le pone la dirección que representa
+    
+    Item.target = self;                                       // Pone objeto para reportar las acciones
+    Item.action = @selector(OnSelDir:);                       // Pone la función a la que se reporta la acción
+    }
   }
 
 //--------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -170,39 +157,10 @@
 
 //--------------------------------------------------------------------------------------------------------------------------------------------------------
 
-NSColor* col2 = [NSColor colorWithRed:0.5 green:0.1 blue:0.1 alpha:1.0];
-NSFont*  Font = [NSFont systemFontOfSize:16];
-
-NSDictionary* attrPurchaseItem = @{ NSForegroundColorAttributeName:col2, NSFontAttributeName:Font};
-
-//--------------------------------------------------------------------------------------------------------------------------------------------------------
-// Adicciona la dirección 'iDir' al combo de idiomas si no esta instalada
-- (void)AddPurchaseDir:(int) iDir
-  {
-  if( DIRInstalled(iDir) ) return;                            // Si la direccion ya esta instalada, no hace nada
-  
-  NSString* sDir = DIRName(iDir);                             // Obtiene el nombre de la dirección
-  
-  [_CbLangs addItemWithTitle:sDir];                           // La adicona al combo de idiomas
-  
-  NSMenuItem* Item = _CbLangs.lastItem;                       // Obtien el item adicionado al combo de idiomas
-  Item.tag = iDir;                                            // Pone la dirección que retpresenta
-  
-  // Pone atributos para mostrar el item del menú
-  Item.attributedTitle = [[NSAttributedString alloc] initWithString:sDir attributes:attrPurchaseItem];
-  
-  Item.target = self;                                         // Pone objeto para reportar acciones
-  Item.action = @selector(OnPucharseDir:);                    // Pone la función a la que se reporta la acción
-  }
-
-//--------------------------------------------------------------------------------------------------------------------------------------------------------
-// Se llama cuando se selecciona una dirección de traducción para compar
-- (void)OnPucharseDir:(id)sender
-  {
-  [self SelectDirWithSrc:LGSrc AndDes:LGDes];
-  
-//  NSInteger iDir = ((NSMenuItem*)sender).tag;
-  }
+//NSColor* col2 = [NSColor colorWithRed:0.5 green:0.1 blue:0.1 alpha:1.0];
+//NSFont*  Font = [NSFont systemFontOfSize:16];
+//
+//NSDictionary* attrPurchaseItem = @{ NSForegroundColorAttributeName:col2, NSFontAttributeName:Font};
 
 //--------------------------------------------------------------------------------------------------------------------------------------------------------
 // Selecciona en el combo de idiomas las dirección con los idiomas dados
@@ -291,6 +249,17 @@ NSDictionary* attrPurchaseItem = @{ NSForegroundColorAttributeName:col2, NSFontA
     
     _ItemShowInfo.enabled = !_PanelTools.hidden;
     }
+  }
+
+//--------------------------------------------------------------------------------------------------------------------------------------------------------
+// Muestra el dialogo de About
+- (IBAction)ShowStandarAbout:(id)sender
+  {
+  NSString *AppName = [[NSProcessInfo processInfo] processName];
+  
+  NSDictionary *Options = @{ @"ApplicationName":AppName};
+  
+  [NSApp orderFrontStandardAboutPanelWithOptions:Options];
   }
 
 //--------------------------------------------------------------------------------------------------------------------------------------------------------
