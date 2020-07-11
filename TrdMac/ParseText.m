@@ -37,7 +37,7 @@ static NSCharacterSet* charsNum;
 @implementation ParseText
 
 //--------------------------------------------------------------------------------------------------------------------------------------------------------
-+(ParseText*) Now
++(void) InitData
   {
   if( !InitStaticData )
     {
@@ -52,28 +52,34 @@ static NSCharacterSet* charsNum;
     
     InitStaticData = TRUE;
     }
-  
-  return Parse;
   }
 
-
 //--------------------------------------------------------------------------------------------------------------------------------------------------------
+// Divide el texto 'txt' en oraciones y retorna el resultado
 +(ParseText*) ParseWithText:(NSString*) txt
   {
-  Parse = [ParseText new];
+  [ParseText InitData];
   
-  Parse->_Items = [NSMutableArray new];
-  Parse->Text   = txt;
+  ParseText* ps = [ParseText new];
   
-  [Parse DoParse];
+  ps->_Items = [NSMutableArray new];
+  ps->Text   = txt;
   
-  return Parse;
+  [ps DoParse];
+  
+  return ps;
   }
 
 //--------------------------------------------------------------------------------------------------------------------------------------------------------
-+(void) Clear
+// Implementa la propiedad 'Main' para obtener y poner el parse principal
++(ParseText*) GetMain
   {
-  Parse = nil;
+  return Parse;
+  }
+
++(void) SetMain:(ParseText*) ps;
+  {
+  Parse = ps;
   }
 
 //--------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -90,6 +96,18 @@ static NSCharacterSet* charsNum;
       [self SplitSentInRange:&rg];    // Divide la oración en varias si es necesario
       
       [self GetOraInRange:rg];        // Obtiene oreción y caracteres sobrantes a la izquierda
+      
+      NSInteger iEnd = rg2.location + rg2.length;                 // Indice del ultimo caracter analizado
+      if( iEnd >= Text.length )                                   // Esta al final del texto
+        {
+        NSRange rgCascara = NSMakeRange(idxLast, iEnd-idxLast);   // Toma el texto sobrante al final de la oración
+        if( rgCascara.length > 0 )                                // Si hay texto sobrante
+          {
+          NSString* cas = [Text substringWithRange: rgCascara];   // Extrae la cadena de texto
+          
+          [_Items addObject:[ParseItem ItemWithText:cas Range:rgCascara Type:ITEM_NOTRD] ];   // Lo adiciona a la lista de items
+          }
+        }
       }
    ];
   }

@@ -18,6 +18,10 @@
 #include "../PDFLibrary/PdfFilter/Errors.h"
 #import "AppDelegate.h"
 
+#define SCRLL_SRC 1
+#define SCRLL_TRD 2
+#define SCRLL_ALL 3
+
 //=========================================================================================================================================================
 @interface Translate()
   {
@@ -38,11 +42,24 @@
   NSUndoManager* UndoTrd;
   
   NSString* DocName;                      // Nombre del documento
+  
+  NSImage* icoSvSrc;                      // Icono del boton de guardar la traduccion
+  NSImage* icoSvTrd;
+  
+  ParseText* psLast;                      // Ultimo parse realizado
+  
+  BOOL srcChanged;                        // Determina si se cambio el texto fuente despues de traducido
   }
 
 @property (weak) IBOutlet ToolsCrtller *PanelTools;   // Panel de herramientas (Dicionario, conjugación)
+@property (weak) IBOutlet NSToolbarItem *btnSave;
 
 - (IBAction)OnTranslate:(id)sender;
+- (IBAction)OnTrdSentece:(id)sender;
+
+- (IBAction)OnGotoSentence:(id)sender;
+- (IBAction)OnGotoChangedSentence:(id)sender;
+
 - (IBAction)TogleShowInfo:(id)sender;
 - (IBAction)OnSaveDocumet:(id)sender;
 
@@ -58,13 +75,16 @@
   if( UndoSrc==nil ) UndoSrc = [NSUndoManager new];
   if( UndoTrd==nil ) UndoTrd = [NSUndoManager new];
   
+  icoSvSrc = [NSImage imageNamed:@"SaveDoc.png" ];
+  icoSvTrd = [NSImage imageNamed:@"SaveDoc2.png"];
+  
   NSColor* col1 = [NSColor colorWithRed:1.0 green:1.0 blue:0.0 alpha:1.0];
   NSColor* col2 = [NSColor colorWithRed:1.0 green:0.8 blue:0.8 alpha:1.0];
   
   attrMatch1 = [NSDictionary dictionaryWithObjectsAndKeys:col1, NSBackgroundColorAttributeName, nil];
   attrMatch2 = [NSDictionary dictionaryWithObjectsAndKeys:col2, NSBackgroundColorAttributeName, nil];
   
-  [ParseText Now];                            // Inicializa los datos estaticos
+  [ParseText InitData];                            // Inicializa los datos estaticos
   
   _TextSrc.delegate = self;
   _TextTrd.delegate = self;
@@ -165,52 +185,164 @@
   [_TextTrd.undoManager removeAllActions];
   
   [self ClearMatchSentence];
-  [ParseText Clear];
+  [ParseText SetMain:nil];
   
   _SrcModify = FALSE;
   _TrdModify = FALSE;
+  srcChanged = FALSE;
   
   [self setDocName: NSLocalizedString(@"NewDoc", @"")];
   }
 
 //--------------------------------------------------------------------------------------------------------------------------------------------------------
 // Cuando se oprime el boton Traducir
+//- (IBAction)OnTranslate:(id)sender
+//  {
+//  Progress = [[ProgressCtrller alloc] initInWindow:_window];
+//  
+//  _TextSrc.delegate = nil;                                                // Desabilita la atención de las vitas
+//  _TextTrd.delegate = nil;
+//  
+//  [self ClearMatchSentence];                                              // Quita la oración actual
+//  
+//  ParseText* parse = [ParseText ParseMainWithText:_TextSrc.string];       // Divide el texto fuente en oraciones
+//  Progress.Count = (int)parse.Items.count;
+//
+//  TrdCore* TrdApi = [TrdCore TrdWithDes:LGSrc AndDes:LGDes];              // Crea objeto para traducir
+//  
+//  [TrdApi TranslateFromParse:parse Progress:Progress];                    // Traduce todas las oraciones
+//
+//  [_TextTrd.textStorage beginEditing];                                    // Pone vista tradución en modo ediccion
+//  
+//  [_TextTrd.textStorage setAttributedString:_TextSrc.attributedString ];  // Duplica el texto en ambas vistas
+//  
+//  for( NSInteger i=parse.Items.count-1; i>=0; --i )                       // Recorre todas las oraciones del texto
+//    {
+//    ParseItem* Item = parse.Items[i];                                     // Toma oracion actual
+//  
+//    if( Item.Type == ITEM_TRD)                                            // Si un item traducido
+//      [_TextTrd replaceCharactersInRange:Item.rgSrc withString:Item.txtTrd];  // Lo sustituye en el texto traducido
+//    }
+//  
+//  [_TextTrd.textStorage endEditing];                                      // Quita modo edición, para vista traducción
+//  
+//  _TrdModify = TRUE;                                                      // Pone el texto traducido como modificado
+//  
+//  _TextSrc.delegate = self;                                               // Abilita la atención de ambas vistas
+//  _TextTrd.delegate = self;
+//  
+//  [Progress Finish];
+//  }
+//
+//--------------------------------------------------------------------------------------------------------------------------------------------------------
+// Cuando se oprime el boton Traducir
 - (IBAction)OnTranslate:(id)sender
   {
-  Progress = [[ProgressCtrller alloc] initInWindow:_window];
-  
   _TextSrc.delegate = nil;                                                // Desabilita la atención de las vitas
   _TextTrd.delegate = nil;
-  
-  [self ClearMatchSentence];                                              // Quita la oración actual
-  
-  ParseText* parse = [ParseText ParseWithText:_TextSrc.string];           // Divide el texto en oraciones
-  Progress.Count = (int)parse.Items.count;
 
-  [_TextTrd.textStorage setAttributedString:_TextSrc.attributedString ];  // Duplica el texto en ambas vistas
+  NSAttributedString* trdTxt = [self TranslateAttributedString:_TextSrc.textStorage];   // Traduce texto fuente
   
-  TrdCore* TrdApi = [TrdCore TrdWithDes:LGSrc AndDes:LGDes];              // Crea objeto para traducir
-  
-  [TrdApi TranslateFromParse:parse Progress:Progress];                    // Traduce todas las oraciones
+  [_TextTrd.textStorage setAttributedString:trdTxt ];                     // Pone el texto traducido en la vista
 
-  [_TextTrd.textStorage beginEditing];                                    // Pone vista tradución en modo ediccion
-  
-  for( NSInteger i=parse.Items.count-1; i>=0; --i )                       // Recorre todas las oraciones del texto
-    {
-    ParseItem* Item = parse.Items[i];                                     // Toma oracion actual
-  
-    if( Item.Type == ITEM_TRD)                                            // Si un item traducido
-      [_TextTrd replaceCharactersInRange:Item.rgSrc withString:Item.txtTrd];  // Lo sustituye en el texto traducido
-    }
-  
-  [_TextTrd.textStorage endEditing];                                      // Quita modo edición, para vista traducción
-  
-  _TrdModify = TRUE;                                                      // Pone el texto traducido como modificado
+  [ParseText SetMain:psLast];                                             // Establece el parse principal
   
   _TextSrc.delegate = self;                                               // Abilita la atención de ambas vistas
   _TextTrd.delegate = self;
   
-  [Progress Finish];
+  srcChanged = FALSE;
+  }
+
+//--------------------------------------------------------------------------------------------------------------------------------------------------------
+// Traduce la oracion donde esta el cursor
+- (IBAction)OnTrdSentece:(id)sender
+  {
+  if( LastOraMark == -1 )
+    {
+    [AppDelegate ShowMsgText:@"SelSentence" InWindow:_window ];
+    return;
+    }
+  
+  int           idx = LastOraMark;                                        // Obtiene el indice al la oracion actual
+  ParseText* psMain = [ParseText GetMain];                                // Obtiene el parse principal
+  ParseItem*   Item = psMain.Items[idx];                                  // Datos del item seleccionado
+  
+  NSAttributedString* srcTxt = [_TextSrc.textStorage attributedSubstringFromRange: Item.rgSrc];   // Texto fuente del item seleccionado
+
+  NSAttributedString* trdTxt = [self TranslateAttributedString:srcTxt];
+  
+  [_TextTrd.textStorage replaceCharactersInRange:Item.rgTrd withAttributedString:trdTxt];
+  
+  ChangeItemWithParse(idx, psLast);
+
+  [self SetMatchSentence: idx Scroll: edSrc? SCRLL_TRD : SCRLL_SRC ];
+  
+  srcChanged = IsSrcChanged();                                            // Determina si queda algún texto cambiado
+  }
+
+//--------------------------------------------------------------------------------------------------------------------------------------------------------
+// Se mueve entre las oraciones del texto, según el tag de sender
+- (IBAction)OnGotoSentence:(id)sender
+  {
+  NSInteger idx = -1;
+  NSInteger tag = [sender tag];
+  
+       if( tag == 0 ) idx = HomeSentence();
+  else if( tag == 1 ) idx = NextSentenceAtPos(LastOraMark);
+  else if( tag == 2 ) idx = PrevioSentenceAtPos(LastOraMark);
+  else if( tag == 3 ) idx = LastSentence();
+  
+  if( idx>=0 ) [self SetMatchSentence: (int)idx Scroll:SCRLL_ALL];
+  }
+
+//--------------------------------------------------------------------------------------------------------------------------------------------------------
+// Se mueve entre las oraciones modificadas del texto, según el tag de sender
+- (IBAction)OnGotoChangedSentence:(id)sender
+  {
+  NSInteger idx = -1;
+  NSInteger tag = [sender tag];
+  
+       if( tag == 1 ) idx = NextSentenceChgdAtPos(LastOraMark);
+  else if( tag == 2 ) idx = PrevioSentenceChgdAtPos(LastOraMark);
+  
+  if( idx>=0 ) [self SetMatchSentence: (int)idx Scroll:SCRLL_ALL];
+  }
+
+//--------------------------------------------------------------------------------------------------------------------------------------------------------
+// Toma el texto en 'srcTxt' y obtiene su traducción
+- (NSAttributedString*) TranslateAttributedString:(NSAttributedString*) srcTxt
+  {
+  Progress = [[ProgressCtrller alloc] initInWindow:_window];                // Inicializa el dialogo de progreso
+  
+  [self ClearMatchSentence];                                                // Quita la oración actual
+  
+  psLast = [ParseText ParseWithText:srcTxt.string];                         // Divide el texto fuente en oraciones
+  
+  Progress.Count = (int)psLast.Items.count;                                 // Pone el contador de progreso
+  
+  TrdCore* TrdApi = [TrdCore TrdWithDes:LGSrc AndDes:LGDes];                // Crea objeto para traducir
+  
+  [TrdApi TranslateFromParse:psLast Progress:Progress];                     // Traduce todas las oraciones
+  
+  NSMutableAttributedString* trdTxt = [[NSMutableAttributedString alloc] initWithAttributedString:srcTxt];
+  
+  [trdTxt beginEditing];                                                    // Modo ediccion para la cadena traducida
+  
+  for( NSInteger i=psLast.Items.count-1; i>=0; --i )                        // Recorre todas las oraciones del texto
+    {
+    ParseItem* Item = psLast.Items[i];                                      // Toma oracion actual
+    
+    if( Item.Type == ITEM_TRD)                                              // Si es un item traducido
+      [trdTxt replaceCharactersInRange:Item.rgSrc withString:Item.txtTrd];  // Lo sustituye en el texto traducido
+    }
+  
+  [trdTxt endEditing];                                                      // Quita modo edición, para el texto traducido
+  
+  _TrdModify = TRUE;                                                        // Pone el texto traducido como modificado
+  
+  [Progress Finish];                                                        // Finaliza el dialogo de progreso
+  
+  return trdTxt;                                                            // Retorna el texto traducido
   }
 
 //--------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -294,9 +426,9 @@
        }
      }
    
-   [((AppDelegate*)NSApp.delegate) AfterOfSave];
+   [((AppDelegate*)NSApp.delegate) AfterOfSave];            // Realiza la acción pendiente despues de la salva, si la hubiera
    }];
-}
+  }
 
 //--------------------------------------------------------------------------------------------------------------------------------------------------------
 // Obtiene el nombre por defecto para el fichero que se quiere guardar
@@ -324,6 +456,7 @@
   }
 
 //--------------------------------------------------------------------------------------------------------------------------------------------------------
+// Se llama cada vez que cambia la selección del texto
 - (void)textViewDidChangeSelection:(NSNotification *)notification
   {
   NSTextView* NowText = notification.object;                  // Toma el texto donde cambio la selección
@@ -364,12 +497,14 @@
 
   if( edSrc )
     {
-    EditSrcRange( affectedCharRange, replacementString);      // Actualiza el parse de oraciones del texto fuente
+    if( EditSrcRange( affectedCharRange, replacementString, _TextSrc.string) )      // Actualiza el parse de oraciones del texto fuente
+      srcChanged = TRUE;
+    
     _SrcModify = TRUE;
     }
   else
     {
-    EditTrdRange( affectedCharRange, replacementString);      // Actualiza el parse de oraciones del texto traducido
+    EditTrdRange( affectedCharRange, replacementString, _TextTrd.string);      // Actualiza el parse de oraciones del texto traducido
     _TrdModify = TRUE;
     }
   
@@ -381,27 +516,32 @@
 - (void) MarkSentenceFromText:(NSTextView*) txt
   {
   NSInteger iPos = txt.selectedRange.location;              // Obtiene la posición del cursor
+  NSInteger len  = txt.string.length;
+  
+  if( iPos >= len ) iPos = txt.string.length-1;
   
   int  iOra;
   Byte Tipo;
   
-  if( edSrc ) Tipo = SentenceSrcAtPos( iPos, &iOra );        // Oración en la posición iPos del texto fuente
-  else        Tipo = SentenceTrdAtPos( iPos, &iOra );        // Oración en la posición iPos del texto traducido
+  int scrll;
+  
+  if( edSrc ) {scrll=SCRLL_TRD; Tipo = SentenceSrcAtPos( iPos, &iOra );}   // Oración en la posición iPos del texto fuente
+  else        {scrll=SCRLL_SRC; Tipo = SentenceTrdAtPos( iPos, &iOra );}   // Oración en la posición iPos del texto traducido
 
-       if( Tipo==ITEM_TRD   ) [self SetMatchSentence:iOra];  // Señala la oración normal
-  else if( Tipo==ITEM_CHGED ) [self SetMatchSentence:iOra];  // Señala la oración como cambiada
+       if( Tipo==ITEM_TRD   ) [self SetMatchSentence:iOra Scroll:scrll];  // Señala la oración normal
+  else if( Tipo==ITEM_CHGED ) [self SetMatchSentence:iOra Scroll:scrll];  // Señala la oración como cambiada
   else if( Tipo==ITEM_NOTRD ) [self ClearMatchSentence];     // No señala nimguna oración
   }
 
 //--------------------------------------------------------------------------------------------------------------------------------------------------------
 // Resalta la oracion con indice 'idx' en el texto de origen y traducido
-- (void) SetMatchSentence:(int) idx
+- (void) SetMatchSentence:(int) idx Scroll:(int) scrll
   {
   if( idx == LastOraMark ) return;                            // Si ya esa oración estaba marcada, no ha nada
   
   [self ClearMatchSentence];                                  // Quita la oración marcada anteriormente
   
-  ParseItem* Item = [ParseText Now].Items[idx];               // Obtiene los datos de la oración
+  ParseItem* Item = [ParseText GetMain].Items[idx];           // Obtiene los datos de la oración
   
   rgSrcMark = Item.rgSrc;                                     // Rango que ocupa la oración original
   rgTrdMark = Item.rgTrd;                                     // Rango que ocupa la oración traducida
@@ -414,8 +554,8 @@
   
   [SyncScrollView PauseSync];                                 // Pausa sincronismo entre los dos scrollers
   
-  if( edSrc ) [_TextTrd scrollRangeToVisible:rgTrdMark];      // Asegura que este visible la oración original
-  else        [_TextSrc scrollRangeToVisible:rgSrcMark];      // Asegura que esta visible la oración traducida
+  if( scrll & SCRLL_SRC ) [_TextSrc scrollRangeToVisible:rgSrcMark];    // Asegura que esta visible la oración original
+  if( scrll & SCRLL_TRD ) [_TextTrd scrollRangeToVisible:rgTrdMark];    // Asegura que este visible la oración traducida
   
   [SyncScrollView ActiveSync];                                // Activa al sincronismo entre los scrollers
   
@@ -447,11 +587,29 @@
   
   if( theAction == @selector(OnSaveDocumet:) )
     {
-    if( Responder==_TextSrc ) return _SrcModify;
+    if( Responder==_TextSrc )
+      {
+      if( _btnSave.image != icoSvSrc )
+        _btnSave.image = icoSvSrc;
+      
+      return _SrcModify;
+      }
+    
+    if( _btnSave.image != icoSvTrd )
+      _btnSave.image = icoSvTrd;
     
     return _TrdModify;
     }
   
+  if( theAction == @selector(OnTrdSentece:) )
+    return (LastOraMark != -1);
+  
+  if( theAction == @selector(OnGotoSentence:) )
+    return ([ParseText GetMain] != nil);
+
+  if( theAction == @selector(OnGotoChangedSentence:) )
+    return srcChanged;
+
   return YES;
   }
 

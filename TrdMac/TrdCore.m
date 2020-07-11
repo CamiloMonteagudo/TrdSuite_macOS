@@ -131,50 +131,56 @@ static TrdCore* nowTrd;                         // Direccion de traducción actu
   }
 
 //------------------------------------------------------------------------------------------------------
-// Traduce un texto en la direccion actual
+// Traduce el texto represntado en ps segun la direccion actual
 -(void) TranslateFromParse:(ParseText*) ps Progress:(ProgressCtrller*) Prog
   {
-  HUTRD hUser = TDOpenUser((void*)trdAPI);
+  HUTRD hUser = TDOpenUser((void*)trdAPI);                        // Obtiene un usuario para la traduccion
   
-  NSInteger offset = 0;
-  NSInteger n = ps.Items.count;                                  // Obtiene numero de item en el parse
+  NSInteger offset = 0;                                           // Desplazamiento por diferencia de tamaño con la traducción
+  NSInteger n = ps.Items.count;                                   // Obtiene numero de item en el parse
   
-  for( TInt i=0; i<n; ++i )                                      // Recorre todos los items
+  for( TInt i=0; i<n; ++i )                                       // Recorre todos los items
     {
-    ParseItem *Item = ps.Items[i];
+    ParseItem *Item = ps.Items[i];                                // Obtiene el item actual
     
-    if( Item.Type == 0 || Prog.Cancel)
-      [Item setTrd:Item.txtSrc WithOffset:offset];
-    else
+    if( Item.Type == 0 || Prog.Cancel )                           // Si es un item que no se traduce, o esta en modo cancelar
+      {
+      [Item setTrd:Item.txtSrc WithOffset:offset];                // Toma el item como esta
+      
+      if( Item.Type != 0 && Prog.Cancel )                         // Si se cancelo el proceso
+        Item.chgTrd = TRUE;                                       // Marca que la traducción necesita cambiar
+      }
+    else                                                          // Si es un item que hay que traducir
       {
       CStringA src2;
       
-      const char* cStr = [Item.txtSrc cStringUsingEncoding:NSISOLatin1StringEncoding ];
-      if( cStr!=NULL )
+      const char* cStr = [Item.txtSrc cStringUsingEncoding:NSISOLatin1StringEncoding ];   // Lo codifica en código ANSI
+      if( cStr!=NULL )                                            // Si se puede codificar
         {
-        src2 = cStr;
+        src2 = cStr;                                              // Toma la cadena como esta
         }
-      else
+      else                                                        // Si no se pudo, la codifica aproximadamente
         {
         NSData* sDat = [Item.txtSrc dataUsingEncoding:NSISOLatin1StringEncoding allowLossyConversion:YES];
         src2 = CStringA( (const char*)sDat.bytes, (int)sDat.length);
         }
       
-      TDSetSentence( hUser,  src2);
-      TDTranslate( hUser, 0 );
+      TDSetSentence( hUser,  src2);                               // Pone la traducción a traducir
+      TDTranslate( hUser, 0 );                                    // La traduce
       
-      CStringA cTrd( TDGetSentence( hUser ) );
+      CStringA cTrd( TDGetSentence( hUser ) );                    // Obtine la oración traducida
       
-      NSString* sTrd = [NSString stringWithCString:cTrd.c_str() encoding:NSISOLatin1StringEncoding];
+      NSString* sTrd = [NSString stringWithCString:cTrd.c_str() encoding:NSISOLatin1StringEncoding];   // La codifica en UNICODE
       
-      offset = [Item setTrd:sTrd WithOffset:offset];
+      offset = [Item setTrd:sTrd WithOffset:offset];              // Le pone la traducción al item y actualiza desplasamiento
       }
     
-    Prog.Pos = i;
+    Prog.Pos = i;                                                 // Actualiza posición del progreso
+    
     [[NSRunLoop currentRunLoop] runMode:NSDefaultRunLoopMode beforeDate: [NSDate date] ];   // Procesa los mensajes
     }
   
-  TDFreeUser(hUser);
+  TDFreeUser(hUser);                                              // Libera los recursos de traducción
   }
 
 @end

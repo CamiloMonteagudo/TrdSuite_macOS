@@ -37,9 +37,11 @@
 
 @property (nonatomic) NSMutableArray* Items;
 
++(void) InitData;
+
 +(ParseText*) ParseWithText:(NSString*) txt;
-+(ParseText*) Now;
-+(void) Clear;
++(ParseText*) GetMain;
++(void)       SetMain:(ParseText*) ps;
 
 @end
 

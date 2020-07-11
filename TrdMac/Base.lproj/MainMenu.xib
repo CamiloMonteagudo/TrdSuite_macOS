@@ -15,6 +15,10 @@
         <customObject id="Voe-Tx-rLC" customClass="AppDelegate">
             <connections>
                 <outlet property="CbLangs" destination="DQP-DL-8Fo" id="kM7-5b-QKi"/>
+                <outlet property="ItemShowInfo" destination="Cg6-e1-HEM" id="1Fo-J1-2jo"/>
+                <outlet property="PanelSrc" destination="1bt-gn-tPl" id="cUb-l3-NlS"/>
+                <outlet property="PanelTools" destination="CSJ-k6-KSh" id="oZm-sT-ryL"/>
+                <outlet property="PanelTrd" destination="US0-kQ-0y9" id="YN4-hs-Y9J"/>
                 <outlet property="ScrollSrc" destination="yo9-Ps-NQV" id="ygj-ZI-vhh"/>
                 <outlet property="ScrollTrd" destination="dv6-pr-dVs" id="9C6-89-mWc"/>
                 <outlet property="TrdView" destination="Pt1-Cc-qmC" id="jpY-lJ-5TW"/>
@@ -27,6 +31,7 @@
                 <outlet property="PanelTools" destination="RdU-c4-PF9" id="wxS-HY-vDX"/>
                 <outlet property="TextSrc" destination="joe-30-2p8" id="LPb-6w-eZg"/>
                 <outlet property="TextTrd" destination="xYR-ea-pUG" id="SWf-EW-f2I"/>
+                <outlet property="btnSave" destination="JTi-pl-9gU" id="mas-Yv-ZOe"/>
             </connections>
         </customObject>
         <viewController id="RdU-c4-PF9" customClass="ToolsCrtller">
@@ -670,6 +675,82 @@
                                     <action selector="runToolbarCustomizationPalette:" target="-1" id="pQI-g3-MTW"/>
                                 </connections>
                             </menuItem>
+                            <menuItem isSeparatorItem="YES" id="1wA-l5-lKv"/>
+                            <menuItem title="Tamaño real" keyEquivalent="0" id="hQf-DZ-yjy">
+                                <modifierMask key="keyEquivalentModifierMask" shift="YES" command="YES"/>
+                                <connections>
+                                    <action selector="OnTextZoom:" target="Voe-Tx-rLC" id="iaB-zy-83d"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Aumentar Zoom" tag="1" keyEquivalent="+" id="MXG-Sy-Qpi">
+                                <modifierMask key="keyEquivalentModifierMask" shift="YES" command="YES"/>
+                                <connections>
+                                    <action selector="OnTextZoom:" target="Voe-Tx-rLC" id="cTm-Sy-Uhi"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Reducir Zoom" tag="-1" keyEquivalent="-" id="9ig-0x-116">
+                                <modifierMask key="keyEquivalentModifierMask" shift="YES" command="YES"/>
+                                <connections>
+                                    <action selector="OnTextZoom:" target="Voe-Tx-rLC" id="dH1-Kf-Ln5"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="67d-Dh-lKQ"/>
+                        </items>
+                    </menu>
+                </menuItem>
+                <menuItem title="Translation" id="2vM-Hw-sJK">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <menu key="submenu" title="Translation" id="eTw-SG-11X">
+                        <items>
+                            <menuItem title="Translate Document" keyEquivalent="T" id="9gS-cC-o2J">
+                                <connections>
+                                    <action selector="OnTranslate:" target="Pt1-Cc-qmC" id="nrv-xC-Xyh"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Translate Actual Sentence" keyEquivalent="t" id="9Ja-LE-rOO">
+                                <modifierMask key="keyEquivalentModifierMask" control="YES" command="YES"/>
+                                <connections>
+                                    <action selector="OnTrdSentece:" target="Pt1-Cc-qmC" id="ECd-Y2-8tx"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="t2C-Ee-8FL"/>
+                            <menuItem title="First Sentence" keyEquivalent="" id="ng7-Hg-qYY">
+                                <modifierMask key="keyEquivalentModifierMask" shift="YES" command="YES"/>
+                                <connections>
+                                    <action selector="OnGotoSentence:" target="Pt1-Cc-qmC" id="iK4-IM-590"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Next Sentence" tag="1" keyEquivalent="" id="Dbl-aj-wEC">
+                                <modifierMask key="keyEquivalentModifierMask" shift="YES" command="YES"/>
+                                <connections>
+                                    <action selector="OnGotoSentence:" target="Pt1-Cc-qmC" id="oTV-fT-Z72"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Previos Sentence" tag="2" keyEquivalent="" id="bSX-cK-4KX">
+                                <modifierMask key="keyEquivalentModifierMask" shift="YES" command="YES"/>
+                                <connections>
+                                    <action selector="OnGotoSentence:" target="Pt1-Cc-qmC" id="tvq-Ei-nPs"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Last Sentence" tag="3" keyEquivalent="" id="aMe-SX-gq6">
+                                <modifierMask key="keyEquivalentModifierMask" shift="YES" command="YES"/>
+                                <connections>
+                                    <action selector="OnGotoSentence:" target="Pt1-Cc-qmC" id="A3t-A7-z2i"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="YMD-cZ-Upa"/>
+                            <menuItem title="Next Modified Sentence" tag="1" keyEquivalent="" id="8So-Eh-jpp">
+                                <modifierMask key="keyEquivalentModifierMask" control="YES" command="YES"/>
+                                <connections>
+                                    <action selector="OnGotoChangedSentence:" target="Pt1-Cc-qmC" id="eEn-mH-jEZ"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Previos  Modified Sentence" tag="2" keyEquivalent="" id="Bp3-fV-0Th">
+                                <modifierMask key="keyEquivalentModifierMask" control="YES" command="YES"/>
+                                <connections>
+                                    <action selector="OnGotoChangedSentence:" target="Pt1-Cc-qmC" id="rje-aG-0z9"/>
+                                </connections>
+                            </menuItem>
                         </items>
                     </menu>
                 </menuItem>
@@ -693,18 +774,6 @@
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
                                     <action selector="arrangeInFront:" target="-1" id="DRN-fu-gQh"/>
-                                </connections>
-                            </menuItem>
-                        </items>
-                    </menu>
-                </menuItem>
-                <menuItem title="Help" id="wpr-3q-Mcd">
-                    <modifierMask key="keyEquivalentModifierMask"/>
-                    <menu key="submenu" title="Help" systemMenu="help" id="F2S-fz-NVQ">
-                        <items>
-                            <menuItem title="TrdMac Help" keyEquivalent="?" id="FKE-Sm-Kum">
-                                <connections>
-                                    <action selector="showHelp:" target="-1" id="y7X-2Q-9no"/>
                                 </connections>
                             </menuItem>
                         </items>
@@ -1004,7 +1073,7 @@
                                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                 <subviews>
                                                                     <tableView verticalHuggingPriority="750" tag="102" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" selectionHighlightStyle="sourceList" alternatingRowBackgroundColors="YES" columnReordering="NO" columnResizing="NO" multipleSelection="NO" autosaveColumns="NO" typeSelect="NO" rowSizeStyle="automatic" viewBased="YES" id="vDC-jd-oB5">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="300" height="363"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="299" height="0.0"/>
                                                                         <autoresizingMask key="autoresizingMask"/>
                                                                         <size key="intercellSpacing" width="3" height="2"/>
                                                                         <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -1051,7 +1120,7 @@
                                                                 </subviews>
                                                                 <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                             </clipView>
-                                                            <scroller key="horizontalScroller" verticalHuggingPriority="750" doubleValue="0.5" horizontal="YES" id="LKy-w2-tX2">
+                                                            <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="0.5" horizontal="YES" id="LKy-w2-tX2">
                                                                 <rect key="frame" x="1" y="364" width="299" height="15"/>
                                                                 <autoresizingMask key="autoresizingMask"/>
                                                             </scroller>
@@ -1306,7 +1375,7 @@
                             <action selector="OpenFile:" target="Voe-Tx-rLC" id="Lz4-Zg-tDH"/>
                         </connections>
                     </toolbarItem>
-                    <toolbarItem implicitItemIdentifier="20CD2E99-14C6-453C-858F-3A894DD2F393" label="Save" paletteLabel="Save" tag="-1" image="SaveDoc" id="JTi-pl-9gU">
+                    <toolbarItem implicitItemIdentifier="20CD2E99-14C6-453C-858F-3A894DD2F393" label="Save" paletteLabel="Save" tag="-1" id="JTi-pl-9gU">
                         <connections>
                             <action selector="OnSaveDocumet:" target="Pt1-Cc-qmC" id="hBx-10-xjx"/>
                         </connections>
@@ -1346,16 +1415,38 @@
                     </toolbarItem>
                     <toolbarItem implicitItemIdentifier="6D932FB9-BB2E-4368-8949-4BA52595DCCA" label="Sentece" paletteLabel="Oración" tag="-1" image="TrdOra" id="caW-ev-Gdq">
                         <connections>
-                            <action selector="OnTranslate:" target="Pt1-Cc-qmC" id="QAM-jK-9Cj"/>
+                            <action selector="OnTrdSentece:" target="Pt1-Cc-qmC" id="j0T-ml-jFG"/>
                         </connections>
                     </toolbarItem>
-                    <toolbarItem implicitItemIdentifier="10BE3668-CC98-4971-9926-82CE85DDA990" label="Info" paletteLabel="Info" tag="-1" image="ShowInfo" id="Cg6-e1-HEM">
+                    <toolbarItem implicitItemIdentifier="10BE3668-CC98-4971-9926-82CE85DDA990" label="Info" paletteLabel="Info" tag="-1" image="ShowInfo" autovalidates="NO" id="Cg6-e1-HEM">
                         <connections>
                             <action selector="TogleShowInfo:" target="Pt1-Cc-qmC" id="ORM-hW-IaN"/>
                         </connections>
                     </toolbarItem>
                     <toolbarItem implicitItemIdentifier="NSToolbarSpaceItem" id="T6l-2N-aNj"/>
                     <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="sm8-R0-FXf"/>
+                    <toolbarItem implicitItemIdentifier="E1901069-E5F5-4573-A638-FC455F3EDE64" label="Paneles" paletteLabel="Paneles" id="PIH-4N-ko9">
+                        <nil key="toolTip"/>
+                        <size key="minSize" width="104" height="24"/>
+                        <size key="maxSize" width="104" height="24"/>
+                        <segmentedControl key="view" verticalHuggingPriority="750" id="boz-QA-i4b">
+                            <rect key="frame" x="0.0" y="14" width="104" height="24"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <segmentedCell key="cell" borderStyle="border" alignment="left" style="rounded" trackingMode="momentary" id="8QA-UF-CfS">
+                                <font key="font" metaFont="system"/>
+                                <segments>
+                                    <segment image="SrcShow" imageScaling="none" width="32"/>
+                                    <segment image="TrdShow" imageScaling="none" width="32" tag="1"/>
+                                    <segment image="ToolShow" imageScaling="none" width="32">
+                                        <nil key="label"/>
+                                    </segment>
+                                </segments>
+                            </segmentedCell>
+                            <connections>
+                                <action selector="OnChagePanel:" target="Voe-Tx-rLC" id="Rq2-Jd-SgN"/>
+                            </connections>
+                        </segmentedControl>
+                    </toolbarItem>
                 </allowedToolbarItems>
                 <defaultToolbarItems>
                     <toolbarItem reference="NPa-dD-g3j"/>
@@ -1370,6 +1461,8 @@
                     <toolbarItem reference="caW-ev-Gdq"/>
                     <toolbarItem reference="sm8-R0-FXf"/>
                     <toolbarItem reference="Cg6-e1-HEM"/>
+                    <toolbarItem reference="T6l-2N-aNj"/>
+                    <toolbarItem reference="PIH-4N-ko9"/>
                 </defaultToolbarItems>
             </toolbar>
             <connections>
@@ -1388,10 +1481,12 @@
         <image name="OpenDoc" width="32" height="32"/>
         <image name="ReDo" width="32" height="32"/>
         <image name="SaveDict" width="18" height="18"/>
-        <image name="SaveDoc" width="32" height="32"/>
         <image name="ShowInfo" width="32" height="32"/>
+        <image name="SrcShow" width="32" height="20"/>
+        <image name="ToolShow" width="32" height="20"/>
         <image name="TrdDoc" width="32" height="32"/>
         <image name="TrdOra" width="32" height="32"/>
+        <image name="TrdShow" width="32" height="20"/>
         <image name="UnDo" width="32" height="32"/>
         <image name="WordRoots" width="18" height="18"/>
     </resources>

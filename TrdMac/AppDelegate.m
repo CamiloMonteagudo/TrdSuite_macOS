@@ -13,12 +13,25 @@
 #import "SyncScrollView.h"
 #import "AppData.h"
 
+#define ZOOM_STEP 1.5
+
 //=========================================================================================================================================================
 @interface AppDelegate ()
   {
   BOOL SaveTrd;                         // Indica que hay que intentar guardar el texto traducido
   BOOL SaveSrc;                         // Indica que hay que intentar guardar el texto traducido
   int  SaveTipo;                        // Indica el tipo de salva, 0- Normal, 1- Cerrando App, 2-Nuevo documento, 2-Abrir un documento
+  
+  NSImage* icoToolShow;
+  NSImage* icoToolHide;
+  
+  NSImage* icoTrdShow;
+  NSImage* icoTrdHide;
+  
+  NSImage* icoSrcShow;
+  NSImage* icoSrcHide;
+  
+  CGFloat Zoom;
   }
 
 @property (assign) IBOutlet NSWindow *window;
@@ -27,9 +40,17 @@
 @property (weak)   IBOutlet SyncScrollView *ScrollTrd;
 @property (weak)   IBOutlet NSPopUpButton *CbLangs;
 
+@property (weak) IBOutlet NSView *PanelSrc;
+@property (weak) IBOutlet NSView *PanelTrd;
+@property (weak) IBOutlet NSView *PanelTools;
+@property (weak) IBOutlet NSToolbarItem *ItemShowInfo;
+
 
 - (IBAction)OpenFile:(id)sender;
 - (IBAction)NewDocument:(id)sender;
+- (IBAction)OnChagePanel:(NSSegmentedControl *)sender;
+
+- (IBAction)OnTextZoom:(id)sender;
 
 @end
 
@@ -47,6 +68,16 @@
   
   [_TrdView NewText];
   
+  icoToolShow = [NSImage imageNamed:@"ToolShow.png" ];
+  icoToolHide = [NSImage imageNamed:@"ToolHide.png"];
+  
+  icoTrdShow = [NSImage imageNamed:@"TrdShow.png" ];
+  icoTrdHide = [NSImage imageNamed:@"TrdHide.png"];
+  
+  icoSrcShow = [NSImage imageNamed:@"SrcShow.png" ];
+  icoSrcHide = [NSImage imageNamed:@"SrcHide.png"];
+  
+
 //  NSString* lg = [[NSLocale currentLocale] identifier];
 //  NSString* name = [[NSLocale currentLocale] displayNameForKey:NSLocaleIdentifier value:lg ];
 //  
@@ -57,8 +88,8 @@
 // Se llama después de cargar el XIB files
 - (void)awakeFromNib
   {
-  [_TrdView.TextSrc scaleUnitSquareToSize:NSMakeSize(1.5, 1.5)];
-  [_TrdView.TextTrd scaleUnitSquareToSize:NSMakeSize(1.5, 1.5)];
+  Zoom = 1;
+  [self DoZoom: ZOOM_STEP];
   
   _ScrollSrc.SyncTo = _ScrollTrd;
   _ScrollTrd.SyncTo = _ScrollSrc;
@@ -231,6 +262,58 @@ NSDictionary* attrPurchaseItem = @{ NSForegroundColorAttributeName:col2, NSFontA
   }
 
 //--------------------------------------------------------------------------------------------------------------------------------------------------------
+// Se muestran o esconden los paneles
+- (IBAction)OnChagePanel:(NSSegmentedControl *)sender
+  {
+  NSInteger idx = sender.selectedSegment;
+  if( idx == 0 )
+    {
+    _PanelSrc.hidden = !_PanelSrc.hidden;
+    
+    if( _PanelSrc.hidden ) [sender setImage:icoSrcHide forSegment:0];
+    else                   [sender setImage:icoSrcShow forSegment:0];
+    }
+  else if( idx==1 )
+    {
+    _PanelTrd.hidden = !_PanelTrd.hidden;
+    
+    if( _PanelTrd.hidden ) [sender setImage:icoTrdHide forSegment:1];
+    else                   [sender setImage:icoTrdShow forSegment:1];
+    }
+  else if( idx==2 )
+    {
+    _PanelTools.hidden = !_PanelTools.hidden;
+    
+    if( _PanelTools.hidden ) [sender setImage:icoToolHide forSegment:2];
+    else                     [sender setImage:icoToolShow forSegment:2];
+    
+    _ItemShowInfo.enabled = !_PanelTools.hidden;
+    }
+  }
+
+//--------------------------------------------------------------------------------------------------------------------------------------------------------
+// Cambia la apliación de los textos de traducción
+- (IBAction)OnTextZoom:(id)sender
+  {
+  NSInteger tag = [sender tag];                                           // Define el tipo de zoom a aplicar
+
+       if( tag>0 ) { [self DoZoom: ZOOM_STEP    ]; Zoom /= ZOOM_STEP; }   // Se aumenta el zoom
+  else if( tag<0 ) { [self DoZoom: (1/ZOOM_STEP)]; Zoom *= ZOOM_STEP; }   // Se reduce el zoom
+  else             { [self DoZoom: Zoom         ]; Zoom  = 1;         }   // Se pone al tamaño real
+  }
+
+//--------------------------------------------------------------------------------------------------------------------------------------------------------
+// Cambia la escala en que se muestran los textos de traducción
+- (void) DoZoom:(CGFloat) zoomVal
+  {
+  [_TrdView.TextSrc scaleUnitSquareToSize:NSMakeSize(zoomVal, zoomVal)];
+  [_TrdView.TextTrd scaleUnitSquareToSize:NSMakeSize(zoomVal, zoomVal)];
+  
+  [_TrdView.TextSrc sizeToFit];
+  [_TrdView.TextTrd sizeToFit];
+  }
+
+//--------------------------------------------------------------------------------------------------------------------------------------------------------
 // Se llama cuando se cierra la ultima ventana de la aplicación, para confirmar que se cierre la aplicación
 - (BOOL)applicationShouldTerminateAfterLastWindowClosed:(NSApplication*)sender
   {
@@ -386,6 +469,23 @@ NSDictionary* attrPurchaseItem = @{ NSForegroundColorAttributeName:col2, NSFontA
     [alert.window orderOut:nil];
     }];
   }
+
+//--------------------------------------------------------------------------------------------------------------------------------------------------------
+// Se llama cada vez que sea necesario actulizar el Menú o el Toobar
+- (BOOL)validateUserInterfaceItem:(id <NSValidatedUserInterfaceItem>)anItem
+  {
+  SEL theAction = [anItem action];
+  
+  if( theAction == @selector(OnTextZoom:) )
+    {
+    NSInteger tag = [anItem tag];                                           // Define el tipo de zoom a aplicar
+    
+    return !(tag==0 && Zoom==1);
+    }
+  
+  return YES;
+  }
+
 
 @end
 //=========================================================================================================================================================

@@ -191,44 +191,36 @@
 // Crea un menu con todas las raices disponibles
 - (void) CreateMenuRoots:(NSMutableArray*) roots
   {
-  BOOL word = TRUE;
-  if( roots.count == 0 )
+  if( roots.count == 0 )                                                // Si no hay ninguna raiz
+    [roots insertObject:NSLocalizedString(@"NoRoot", @"") atIndex:0];   // Adiciona un cartelito
+  
+  NSMenu* Mnu = [[NSMenu alloc] init];                                  // Crea el menu
+  [Mnu addItem: [NSMenuItem separatorItem]];                            // Para Pulls Down menu, el primer item se ignora
+  
+  for( int i=0; i<roots.count; ++i )                                    // Recorre todas las raices
     {
-    word = FALSE;
-    [roots insertObject:NSLocalizedString(@"NoRoot", @"") atIndex:0];
+    NSMenuItem* Item = [[NSMenuItem alloc] init ];                      // Crea un item de menu
+    
+    Item.title  = roots[i];                                             // Le pone la raiz en item del menu
+    Item.tag    = roots.count;                                          // Guarda la cantidad de raices
+    Item.target = self;                                                 // Pone objeto donde se atiende la accion
+    Item.action = @selector(OnSelectRoot:);                             // Pone procedimiento para atender la accion
+    
+    [Mnu addItem:Item];                                                 // Adiciona le item con la raiza al menu
     }
   
-  NSMenu* Mnu = [[NSMenu alloc] init];
-  
-  for( int i=0; i<roots.count; ++i )
-    {
-    NSMenuItem* Item = [[NSMenuItem alloc] init ];
-    
-    Item.title  = roots[i];
-    Item.tag    = word;
-    Item.target = self;
-    Item.action = @selector(OnSelectRoot:);
-    Item.state = NSOffState;
-    
-    [Mnu addItem:Item];
-    }
-  
- // _btnWordRoots.menu = Mnu;
-  
-  [self ShowMenu:Mnu AtButton:_btnWordRoots];
+  [self ShowMenu:Mnu AtButton:_btnWordRoots];                           // Manda a poner el menu, debajo de bonton
   }
 
 //--------------------------------------------------------------------------------------------------------------------------------------------------------
-// Muestra el menú 'Mnu' sobre el boton 'Bnt'
+// Muestra el menú 'Mnu' debajo del boton 'Bnt'
 - (void)ShowMenu:(NSMenu*) Mnu AtButton:(NSView*) Bnt
   {
-  NSPopUpButtonCell* cel = [[NSPopUpButtonCell alloc] initTextCell:@"" pullsDown:NO];
+  NSPopUpButtonCell* cel = [[NSPopUpButtonCell alloc] initTextCell:@"" pullsDown:YES];
   cel.menu = Mnu;
   
   NSSize szBtn = Bnt.frame.size;
-//  NSRect rc = NSMakeRect(0, -Mnu.size.height, 0, 0);
-//  NSRect rc = NSMakeRect(-(Mnu.size.width-szBtn.width), Mnu.size.height+szBtn.height, Mnu.size.width, Mnu.size.height);
-  NSRect rc = NSMakeRect(szBtn.width-Mnu.size.width+10, szBtn.height, Mnu.size.width, Mnu.size.height);
+  NSRect rc = NSMakeRect(szBtn.width-Mnu.size.width, szBtn.height-8, 0, 0);
   
   [cel performClickWithFrame:rc inView:Bnt];
   }
@@ -239,7 +231,7 @@
   {
   NSMenuItem* Item = sender;
   
-  if( !Item.tag )
+  if( Item.tag == 0 )
     {
     _btnWordRoots.hidden = TRUE;
     }

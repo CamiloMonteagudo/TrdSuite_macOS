@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9A062E871D1E027D000347A1 /* SaveDoc2.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A062E861D1E027D000347A1 /* SaveDoc2.png */; };
 		9A0E76C91CF64ABC00BA9A0A /* ShowInfo.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A0E76C81CF64ABC00BA9A0A /* ShowInfo.png */; };
 		9A0E76CB1CF6515D00BA9A0A /* NoShowInfo.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A0E76CA1CF6515D00BA9A0A /* NoShowInfo.png */; };
 		9A11E6A41D1323C900A1E984 /* libPDFLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A11E6A31D1323C900A1E984 /* libPDFLibrary.a */; };
@@ -31,6 +32,12 @@
 		9AB91DE71CD6C6680032159E /* Exchange.png in Resources */ = {isa = PBXBuildFile; fileRef = 9AB91DE61CD6C6680032159E /* Exchange.png */; };
 		9AB91DE91CD6CB660032159E /* SaveDict.png in Resources */ = {isa = PBXBuildFile; fileRef = 9AB91DE81CD6CB660032159E /* SaveDict.png */; };
 		9AB91DEB1CD6CF9A0032159E /* DelChanges.png in Resources */ = {isa = PBXBuildFile; fileRef = 9AB91DEA1CD6CF9A0032159E /* DelChanges.png */; };
+		9ABB03D11D1F2CAF005C74E6 /* SrcHide.png in Resources */ = {isa = PBXBuildFile; fileRef = 9ABB03CB1D1F2CAF005C74E6 /* SrcHide.png */; };
+		9ABB03D21D1F2CAF005C74E6 /* SrcShow.png in Resources */ = {isa = PBXBuildFile; fileRef = 9ABB03CC1D1F2CAF005C74E6 /* SrcShow.png */; };
+		9ABB03D31D1F2CAF005C74E6 /* ToolHide.png in Resources */ = {isa = PBXBuildFile; fileRef = 9ABB03CD1D1F2CAF005C74E6 /* ToolHide.png */; };
+		9ABB03D41D1F2CAF005C74E6 /* ToolShow.png in Resources */ = {isa = PBXBuildFile; fileRef = 9ABB03CE1D1F2CAF005C74E6 /* ToolShow.png */; };
+		9ABB03D51D1F2CAF005C74E6 /* TrdHide.png in Resources */ = {isa = PBXBuildFile; fileRef = 9ABB03CF1D1F2CAF005C74E6 /* TrdHide.png */; };
+		9ABB03D61D1F2CAF005C74E6 /* TrdShow.png in Resources */ = {isa = PBXBuildFile; fileRef = 9ABB03D01D1F2CAF005C74E6 /* TrdShow.png */; };
 		9ADA23981CD97EC00078A7CC /* WordRoots.png in Resources */ = {isa = PBXBuildFile; fileRef = 9ADA23971CD97EC00078A7CC /* WordRoots.png */; };
 		9ADAEAA71CEE67B300517980 /* Find.png in Resources */ = {isa = PBXBuildFile; fileRef = 9ADAEAA51CEE67B300517980 /* Find.png */; };
 		9ADAEAA81CEE67B300517980 /* ModeConj.png in Resources */ = {isa = PBXBuildFile; fileRef = 9ADAEAA61CEE67B300517980 /* ModeConj.png */; };
@@ -108,6 +115,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9A062E861D1E027D000347A1 /* SaveDoc2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = SaveDoc2.png; path = Images/SaveDoc2.png; sourceTree = "<group>"; };
 		9A0E76C81CF64ABC00BA9A0A /* ShowInfo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ShowInfo.png; path = Images/ShowInfo.png; sourceTree = "<group>"; };
 		9A0E76CA1CF6515D00BA9A0A /* NoShowInfo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = NoShowInfo.png; path = Images/NoShowInfo.png; sourceTree = "<group>"; };
 		9A11E6A11D13239900A1E984 /* PDFLibrary */ = {isa = PBXFileReference; lastKnownFileType = folder; path = PDFLibrary; sourceTree = "<group>"; };
@@ -134,6 +142,12 @@
 		9AB91DE61CD6C6680032159E /* Exchange.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Exchange.png; path = Images/Exchange.png; sourceTree = "<group>"; };
 		9AB91DE81CD6CB660032159E /* SaveDict.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = SaveDict.png; path = Images/SaveDict.png; sourceTree = "<group>"; };
 		9AB91DEA1CD6CF9A0032159E /* DelChanges.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = DelChanges.png; path = Images/DelChanges.png; sourceTree = "<group>"; };
+		9ABB03CB1D1F2CAF005C74E6 /* SrcHide.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = SrcHide.png; path = Images/SrcHide.png; sourceTree = "<group>"; };
+		9ABB03CC1D1F2CAF005C74E6 /* SrcShow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = SrcShow.png; path = Images/SrcShow.png; sourceTree = "<group>"; };
+		9ABB03CD1D1F2CAF005C74E6 /* ToolHide.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ToolHide.png; path = Images/ToolHide.png; sourceTree = "<group>"; };
+		9ABB03CE1D1F2CAF005C74E6 /* ToolShow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ToolShow.png; path = Images/ToolShow.png; sourceTree = "<group>"; };
+		9ABB03CF1D1F2CAF005C74E6 /* TrdHide.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = TrdHide.png; path = Images/TrdHide.png; sourceTree = "<group>"; };
+		9ABB03D01D1F2CAF005C74E6 /* TrdShow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = TrdShow.png; path = Images/TrdShow.png; sourceTree = "<group>"; };
 		9ADA23971CD97EC00078A7CC /* WordRoots.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = WordRoots.png; path = Images/WordRoots.png; sourceTree = "<group>"; };
 		9ADAEAA51CEE67B300517980 /* Find.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Find.png; path = Images/Find.png; sourceTree = "<group>"; };
 		9ADAEAA61CEE67B300517980 /* ModeConj.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ModeConj.png; path = Images/ModeConj.png; sourceTree = "<group>"; };
@@ -386,6 +400,13 @@
 		9AB91DD31CD4179B0032159E /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				9ABB03CB1D1F2CAF005C74E6 /* SrcHide.png */,
+				9ABB03CC1D1F2CAF005C74E6 /* SrcShow.png */,
+				9ABB03CD1D1F2CAF005C74E6 /* ToolHide.png */,
+				9ABB03CE1D1F2CAF005C74E6 /* ToolShow.png */,
+				9ABB03CF1D1F2CAF005C74E6 /* TrdHide.png */,
+				9ABB03D01D1F2CAF005C74E6 /* TrdShow.png */,
+				9A062E861D1E027D000347A1 /* SaveDoc2.png */,
 				9A11EBDF1D16340100367A94 /* TrdDoc.png */,
 				9A11EBE01D16340100367A94 /* TrdOra.png */,
 				9A11EBD51D15BEA500367A94 /* NewDoc.png */,
@@ -730,13 +751,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				9AB91DD71CD4234A0032159E /* Save.png in Resources */,
+				9ABB03D61D1F2CAF005C74E6 /* TrdShow.png in Resources */,
 				9A0E76CB1CF6515D00BA9A0A /* NoShowInfo.png in Resources */,
 				9AB91DE71CD6C6680032159E /* Exchange.png in Resources */,
 				9AB91DDF1CD440440032159E /* AddTipo.png in Resources */,
 				9A11EBDE1D15BEA500367A94 /* UnDo.png in Resources */,
 				9BFEEB9D1C5C022200C59DEB /* Images.xcassets in Resources */,
 				9A0E76C91CF64ABC00BA9A0A /* ShowInfo.png in Resources */,
+				9ABB03D21D1F2CAF005C74E6 /* SrcShow.png in Resources */,
 				9BD25EB31C83CB62008D2B27 /* EditDictCtrller.xib in Resources */,
+				9ABB03D51D1F2CAF005C74E6 /* TrdHide.png in Resources */,
 				9A11EBDD1D15BEA500367A94 /* SaveDoc.png in Resources */,
 				9BE6E6E21C5E92DF00066756 /* ArrayUtil.inl in Resources */,
 				9AB91DE11CD440440032159E /* EditWord.png in Resources */,
@@ -747,6 +771,7 @@
 				9AB06B491CEBC4FE00FE015F /* Localizable.strings in Resources */,
 				9AB91DE31CD440440032159E /* Gener.png in Resources */,
 				9AB91DD51CD417C10032159E /* prueba.png in Resources */,
+				9A062E871D1E027D000347A1 /* SaveDoc2.png in Resources */,
 				9AB91DEB1CD6CF9A0032159E /* DelChanges.png in Resources */,
 				9ADAEAA81CEE67B300517980 /* ModeConj.png in Resources */,
 				9ADA23981CD97EC00078A7CC /* WordRoots.png in Resources */,
@@ -756,11 +781,14 @@
 				9BFEEBA01C5C022200C59DEB /* MainMenu.xib in Resources */,
 				9AF917161CF7C63F00F82799 /* ProgressCtrller.xib in Resources */,
 				9A11EBDA1D15BEA500367A94 /* NewDoc.png in Resources */,
+				9ABB03D11D1F2CAF005C74E6 /* SrcHide.png in Resources */,
 				9AB91DE41CD440440032159E /* Number.png in Resources */,
 				9BE6E6201C5E92B800066756 /* Dictionaries in Resources */,
+				9ABB03D41D1F2CAF005C74E6 /* ToolShow.png in Resources */,
 				9AB91DE91CD6CB660032159E /* SaveDict.png in Resources */,
 				9A11EBE11D16340100367A94 /* TrdDoc.png in Resources */,
 				9A11EBDB1D15BEA500367A94 /* OpenDoc.png in Resources */,
+				9ABB03D31D1F2CAF005C74E6 /* ToolHide.png in Resources */,
 				9AB91DE21CD440440032159E /* Espec.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
