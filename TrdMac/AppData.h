@@ -10,7 +10,6 @@
 
 //=========================================================================================================================================================
 #define LGCount  4
-#define DIRCount 12
 
 #define FindOpt    (NSCaseInsensitiveSearch|NSDiacriticInsensitiveSearch)
 #define DirChangedNotification  @"DirChangedNotification"
@@ -36,11 +35,11 @@ extern NSString*  LGAbrv( int lng );
 extern NSString*  LGName( int lng );
 
 extern NSString* DIRName( int iDir );
-extern BOOL      DIRInstalled( int iDir );
 extern int       DIRSrc( int iDir );
 extern int       DIRDes( int iDir );
 extern int       DIRFromLangs(int src, int des);
 extern int       DIRFirst();
+extern int       DIRCount();
 
 extern BOOL IsLetter( NSInteger idx, NSString* Txt );
 
